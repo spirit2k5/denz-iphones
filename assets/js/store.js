@@ -1,0 +1,1 @@
+(()=>{const parts=["assets/js/parts/store-01.txt","assets/js/parts/store-02.txt","assets/js/parts/store-03.txt"];let code="";for(const p of parts){const x=new XMLHttpRequest();x.open("GET",p,false);x.send(null);if((x.status>=200&&x.status<300)||x.status===0)code+=x.responseText;else throw new Error("Failed to load "+p+" ("+x.status+")");}(0,eval)(code);})();
