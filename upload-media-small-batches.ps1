@@ -1,5 +1,5 @@
-$ErrorActionPreference = 'Stop'
 param([string]$InputPath)
+$ErrorActionPreference = 'Stop'
 
 $BatchLimitMB = 10
 $BatchLimit = $BatchLimitMB * 1MB
