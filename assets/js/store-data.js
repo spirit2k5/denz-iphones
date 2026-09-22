@@ -4344,17 +4344,7 @@ window.DENZ_PRODUCTS=[
       "512GB"
     ],
     "notes": "22 battery cycles. eSIM-only American stock.",
-    "images": [
-      "assets/img/products/brand-new/17-pro-max/img-01.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-02.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-03.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-04.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-05.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-06.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-07.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-08.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-09.jpg"
-    ]
+    "images": []
   },
   {
     "category": "refurbished",
@@ -4382,19 +4372,7 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "Battery was changed with an original Apple battery.",
     "images": [
-      "assets/img/products/brand-new/15/img-02.jpg",
-      "assets/img/products/brand-new/15/img-03.jpg",
-      "assets/img/products/brand-new/15/img-05.jpg",
-      "assets/img/products/brand-new/15/img-06.jpg",
-      "assets/img/products/brand-new/15/img-07.jpg",
-      "assets/img/products/brand-new/15/img-08.jpg",
-      "assets/img/products/brand-new/15/img-09.jpg",
-      "assets/img/products/brand-new/15/img-10.jpg",
-      "assets/img/products/brand-new/15/img-11.jpg",
-      "assets/img/products/brand-new/15/img-12.jpg",
-      "assets/img/products/brand-new/15/img-13.jpg",
-      "assets/img/products/brand-new/15/img-14.jpg",
-      "assets/img/products/brand-new/15/img-15.jpg"
+      "assets/videos/refurbished/iphone-15-128-r8000-poster.jpg"
     ],
     "video": "assets/videos/refurbished/iphone-15-128-r8000.mp4",
     "poster": "assets/videos/refurbished/iphone-15-128-r8000-poster.jpg"
@@ -4425,24 +4403,7 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "Battery was replaced with an original battery.",
     "images": [
-      "assets/img/products/brand-new/13/img-01.jpg",
-      "assets/img/products/brand-new/13/img-02.jpg",
-      "assets/img/products/brand-new/13/img-03.jpg",
-      "assets/img/products/brand-new/13/img-04.jpg",
-      "assets/img/products/brand-new/13/img-05.jpg",
-      "assets/img/products/brand-new/13/img-06.jpg",
-      "assets/img/products/brand-new/13/img-07.jpg",
-      "assets/img/products/brand-new/13/img-08.jpg",
-      "assets/img/products/brand-new/13/img-09.jpg",
-      "assets/img/products/brand-new/13/img-10.jpg",
-      "assets/img/products/brand-new/13/img-11.jpg",
-      "assets/img/products/brand-new/13/img-12.jpg",
-      "assets/img/products/brand-new/13/img-13.jpg",
-      "assets/img/products/brand-new/13/img-14.jpg",
-      "assets/img/products/brand-new/13/img-15.jpg",
-      "assets/img/products/brand-new/13/img-17.jpg",
-      "assets/img/products/brand-new/13/img-18.jpg",
-      "assets/img/products/brand-new/13/img-19.jpg"
+      "assets/videos/refurbished/iphone-13-128-r6300-poster.jpg"
     ],
     "video": "assets/videos/refurbished/iphone-13-128-r6300.mp4",
     "poster": "assets/videos/refurbished/iphone-13-128-r6300-poster.jpg"
@@ -4473,26 +4434,7 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "Clean unit. Everything works.",
     "images": [
-      "assets/img/products/brand-new/xr/img-01.jpg",
-      "assets/img/products/brand-new/xr/img-02.jpg",
-      "assets/img/products/brand-new/xr/img-03.jpg",
-      "assets/img/products/brand-new/xr/img-04.jpg",
-      "assets/img/products/brand-new/xr/img-05.jpg",
-      "assets/img/products/brand-new/xr/img-06.jpg",
-      "assets/img/products/brand-new/xr/img-07.jpg",
-      "assets/img/products/brand-new/xr/img-08.jpg",
-      "assets/img/products/brand-new/xr/img-09.jpg",
-      "assets/img/products/brand-new/xr/img-10.jpg",
-      "assets/img/products/brand-new/xr/img-11.jpg",
-      "assets/img/products/brand-new/xr/img-12.jpg",
-      "assets/img/products/brand-new/xr/img-13.jpg",
-      "assets/img/products/brand-new/xr/img-14.jpg",
-      "assets/img/products/brand-new/xr/img-15.jpg",
-      "assets/img/products/brand-new/xr/img-16.jpg",
-      "assets/img/products/brand-new/xr/img-17.jpg",
-      "assets/img/products/brand-new/xr/img-18.jpg",
-      "assets/img/products/brand-new/xr/img-19.jpg",
-      "assets/img/products/brand-new/xr/img-20.jpg"
+      "assets/videos/refurbished/iphone-xr-64-r3850-poster.jpg"
     ],
     "video": "assets/videos/refurbished/iphone-xr-64-r3850.mp4",
     "poster": "assets/videos/refurbished/iphone-xr-64-r3850-poster.jpg"
@@ -4522,26 +4464,7 @@ window.DENZ_PRODUCTS=[
       "64GB"
     ],
     "notes": "Current refurbished iPhone 12 stock.",
-    "images": [
-      "assets/img/products/brand-new/12/img-01.jpg",
-      "assets/img/products/brand-new/12/img-02.jpg",
-      "assets/img/products/brand-new/12/img-03.jpg",
-      "assets/img/products/brand-new/12/img-04.jpg",
-      "assets/img/products/brand-new/12/img-05.jpg",
-      "assets/img/products/brand-new/12/img-06.jpg",
-      "assets/img/products/brand-new/12/img-07.jpg",
-      "assets/img/products/brand-new/12/img-08.jpg",
-      "assets/img/products/brand-new/12/img-09.jpg",
-      "assets/img/products/brand-new/12/img-10.jpg",
-      "assets/img/products/brand-new/12/img-11.jpg",
-      "assets/img/products/brand-new/12/img-12.jpg",
-      "assets/img/products/brand-new/12/img-13.jpg",
-      "assets/img/products/brand-new/12/img-14.jpg",
-      "assets/img/products/brand-new/12/img-15.jpg",
-      "assets/img/products/brand-new/12/img-16.jpg",
-      "assets/img/products/brand-new/12/img-17.jpg",
-      "assets/img/products/brand-new/12/img-18.jpg"
-    ]
+    "images": []
   },
   {
     "category": "refurbished",
@@ -4569,18 +4492,7 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "eSIM-only unit.",
     "images": [
-      "assets/img/products/brand-new/15-pro/img-01.jpg",
-      "assets/img/products/brand-new/15-pro/img-02.jpg",
-      "assets/img/products/brand-new/15-pro/img-03.jpg",
-      "assets/img/products/brand-new/15-pro/img-04.jpg",
-      "assets/img/products/brand-new/15-pro/img-05.jpg",
-      "assets/img/products/brand-new/15-pro/img-06.jpg",
-      "assets/img/products/brand-new/15-pro/img-07.jpg",
-      "assets/img/products/brand-new/15-pro/img-08.jpg",
-      "assets/img/products/brand-new/15-pro/img-09.jpg",
-      "assets/img/products/brand-new/15-pro/img-10.jpg",
-      "assets/img/products/brand-new/15-pro/img-11.jpg",
-      "assets/img/products/brand-new/15-pro/img-12.jpg"
+      "assets/videos/refurbished/iphone-15-pro-128-r10500-poster.jpg"
     ],
     "video": "assets/videos/refurbished/iphone-15-pro-128-r10500.mp4",
     "poster": "assets/videos/refurbished/iphone-15-pro-128-r10500-poster.jpg"
@@ -4611,24 +4523,7 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "Cheapest iPhone 13 listing. Body has scratches, screen has no scratches; a case hides most body marks. First come, first served.",
     "images": [
-      "assets/img/products/brand-new/13/img-01.jpg",
-      "assets/img/products/brand-new/13/img-02.jpg",
-      "assets/img/products/brand-new/13/img-03.jpg",
-      "assets/img/products/brand-new/13/img-04.jpg",
-      "assets/img/products/brand-new/13/img-05.jpg",
-      "assets/img/products/brand-new/13/img-06.jpg",
-      "assets/img/products/brand-new/13/img-07.jpg",
-      "assets/img/products/brand-new/13/img-08.jpg",
-      "assets/img/products/brand-new/13/img-09.jpg",
-      "assets/img/products/brand-new/13/img-10.jpg",
-      "assets/img/products/brand-new/13/img-11.jpg",
-      "assets/img/products/brand-new/13/img-12.jpg",
-      "assets/img/products/brand-new/13/img-13.jpg",
-      "assets/img/products/brand-new/13/img-14.jpg",
-      "assets/img/products/brand-new/13/img-15.jpg",
-      "assets/img/products/brand-new/13/img-17.jpg",
-      "assets/img/products/brand-new/13/img-18.jpg",
-      "assets/img/products/brand-new/13/img-19.jpg"
+      "assets/videos/refurbished/iphone-13-128-r5500-poster.jpg"
     ],
     "video": "assets/videos/refurbished/iphone-13-128-r5500.mp4",
     "poster": "assets/videos/refurbished/iphone-13-128-r5500-poster.jpg"
@@ -4658,22 +4553,7 @@ window.DENZ_PRODUCTS=[
       "64GB"
     ],
     "notes": "Battery changed. Current reading shown as 100%.",
-    "images": [
-      "assets/img/products/brand-new/11/img-01.jpg",
-      "assets/img/products/brand-new/11/img-02.jpg",
-      "assets/img/products/brand-new/11/img-03.jpg",
-      "assets/img/products/brand-new/11/img-04.jpg",
-      "assets/img/products/brand-new/11/img-05.jpg",
-      "assets/img/products/brand-new/11/img-06.jpg",
-      "assets/img/products/brand-new/11/img-09.jpg",
-      "assets/img/products/brand-new/11/img-10.jpg",
-      "assets/img/products/brand-new/11/img-11.jpg",
-      "assets/img/products/brand-new/11/img-12.jpg",
-      "assets/img/products/brand-new/11/img-13.jpg",
-      "assets/img/products/brand-new/11/img-14.jpg",
-      "assets/img/products/brand-new/11/img-15.jpg",
-      "assets/img/products/brand-new/11/img-16.jpg"
-    ]
+    "images": []
   },
   {
     "category": "refurbished",
@@ -4701,21 +4581,7 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "Clean iPhone 16 Plus refurbished stock.",
     "images": [
-      "assets/img/products/brand-new/16-plus/img-01.jpg",
-      "assets/img/products/brand-new/16-plus/img-02.jpg",
-      "assets/img/products/brand-new/16-plus/img-03.jpg",
-      "assets/img/products/brand-new/16-plus/img-04.jpg",
-      "assets/img/products/brand-new/16-plus/img-05.jpg",
-      "assets/img/products/brand-new/16-plus/img-06.jpg",
-      "assets/img/products/brand-new/16-plus/img-07.jpg",
-      "assets/img/products/brand-new/16-plus/img-08.jpg",
-      "assets/img/products/brand-new/16-plus/img-09.jpg",
-      "assets/img/products/brand-new/16-plus/img-10.jpg",
-      "assets/img/products/brand-new/16-plus/img-11.jpg",
-      "assets/img/products/brand-new/16-plus/img-12.jpg",
-      "assets/img/products/brand-new/16-plus/img-13.webp",
-      "assets/img/products/brand-new/16-plus/img-14.webp",
-      "assets/img/products/brand-new/16-plus/img-15.webp"
+      "assets/videos/refurbished/iphone-16-plus-128-r13000-poster.jpg"
     ],
     "video": "assets/videos/refurbished/iphone-16-plus-128-r13000.mp4",
     "poster": "assets/videos/refurbished/iphone-16-plus-128-r13000-poster.jpg"
@@ -4745,26 +4611,7 @@ window.DENZ_PRODUCTS=[
       "128GB"
     ],
     "notes": "Clean refurbished iPhone 13 stock.",
-    "images": [
-      "assets/img/products/brand-new/13/img-01.jpg",
-      "assets/img/products/brand-new/13/img-02.jpg",
-      "assets/img/products/brand-new/13/img-03.jpg",
-      "assets/img/products/brand-new/13/img-04.jpg",
-      "assets/img/products/brand-new/13/img-05.jpg",
-      "assets/img/products/brand-new/13/img-06.jpg",
-      "assets/img/products/brand-new/13/img-07.jpg",
-      "assets/img/products/brand-new/13/img-08.jpg",
-      "assets/img/products/brand-new/13/img-09.jpg",
-      "assets/img/products/brand-new/13/img-10.jpg",
-      "assets/img/products/brand-new/13/img-11.jpg",
-      "assets/img/products/brand-new/13/img-12.jpg",
-      "assets/img/products/brand-new/13/img-13.jpg",
-      "assets/img/products/brand-new/13/img-14.jpg",
-      "assets/img/products/brand-new/13/img-15.jpg",
-      "assets/img/products/brand-new/13/img-17.jpg",
-      "assets/img/products/brand-new/13/img-18.jpg",
-      "assets/img/products/brand-new/13/img-19.jpg"
-    ]
+    "images": []
   },
   {
     "category": "refurbished",
@@ -4791,7 +4638,9 @@ window.DENZ_PRODUCTS=[
       "64GB"
     ],
     "notes": "Running the new iOS 26. Small phone with camera/software generation similar to iPhone 11.",
-    "images": [],
+    "images": [
+      "assets/videos/refurbished/iphone-se-2-64-r2500-poster.jpg"
+    ],
     "video": "assets/videos/refurbished/iphone-se-2-64-r2500.mp4",
     "poster": "assets/videos/refurbished/iphone-se-2-64-r2500-poster.jpg"
   },
@@ -4820,20 +4669,7 @@ window.DENZ_PRODUCTS=[
       "Ask storage"
     ],
     "notes": "Discounted because this specific unit uses MTN only.",
-    "images": [
-      "assets/img/products/brand-new/14-pro-max/img-01.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-02.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-03.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-04.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-05.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-06.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-07.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-08.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-09.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-10.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-11.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-12.jpg"
-    ]
+    "images": []
   },
   {
     "category": "refurbished",
@@ -4860,22 +4696,7 @@ window.DENZ_PRODUCTS=[
       "64GB"
     ],
     "notes": "Current refurbished iPhone 11 stock.",
-    "images": [
-      "assets/img/products/brand-new/11/img-01.jpg",
-      "assets/img/products/brand-new/11/img-02.jpg",
-      "assets/img/products/brand-new/11/img-03.jpg",
-      "assets/img/products/brand-new/11/img-04.jpg",
-      "assets/img/products/brand-new/11/img-05.jpg",
-      "assets/img/products/brand-new/11/img-06.jpg",
-      "assets/img/products/brand-new/11/img-09.jpg",
-      "assets/img/products/brand-new/11/img-10.jpg",
-      "assets/img/products/brand-new/11/img-11.jpg",
-      "assets/img/products/brand-new/11/img-12.jpg",
-      "assets/img/products/brand-new/11/img-13.jpg",
-      "assets/img/products/brand-new/11/img-14.jpg",
-      "assets/img/products/brand-new/11/img-15.jpg",
-      "assets/img/products/brand-new/11/img-16.jpg"
-    ]
+    "images": []
   },
   {
     "category": "refurbished",
@@ -4902,21 +4723,7 @@ window.DENZ_PRODUCTS=[
       "128GB"
     ],
     "notes": "iPhone 15 special.",
-    "images": [
-      "assets/img/products/brand-new/15/img-02.jpg",
-      "assets/img/products/brand-new/15/img-03.jpg",
-      "assets/img/products/brand-new/15/img-05.jpg",
-      "assets/img/products/brand-new/15/img-06.jpg",
-      "assets/img/products/brand-new/15/img-07.jpg",
-      "assets/img/products/brand-new/15/img-08.jpg",
-      "assets/img/products/brand-new/15/img-09.jpg",
-      "assets/img/products/brand-new/15/img-10.jpg",
-      "assets/img/products/brand-new/15/img-11.jpg",
-      "assets/img/products/brand-new/15/img-12.jpg",
-      "assets/img/products/brand-new/15/img-13.jpg",
-      "assets/img/products/brand-new/15/img-14.jpg",
-      "assets/img/products/brand-new/15/img-15.jpg"
-    ]
+    "images": []
   },
   {
     "category": "refurbished",
@@ -4944,15 +4751,7 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "Very clean iPhone 17 Pro Max.",
     "images": [
-      "assets/img/products/brand-new/17-pro-max/img-01.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-02.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-03.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-04.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-05.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-06.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-07.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-08.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-09.jpg"
+      "assets/videos/refurbished/iphone-17-pro-max-256-b98-poster.jpg"
     ],
     "video": "assets/videos/refurbished/iphone-17-pro-max-256-b98.mp4",
     "poster": "assets/videos/refurbished/iphone-17-pro-max-256-b98-poster.jpg"
@@ -4983,15 +4782,7 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "Very clean iPhone 17 Pro Max.",
     "images": [
-      "assets/img/products/brand-new/17-pro-max/img-01.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-02.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-03.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-04.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-05.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-06.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-07.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-08.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-09.jpg"
+      "assets/videos/refurbished/iphone-17-pro-max-256-b100-poster.jpg"
     ],
     "video": "assets/videos/refurbished/iphone-17-pro-max-256-b100.mp4",
     "poster": "assets/videos/refurbished/iphone-17-pro-max-256-b100-poster.jpg"
