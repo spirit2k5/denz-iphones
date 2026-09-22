@@ -1,0 +1,39 @@
+name: Rebuild store catalogue
+
+on:
+  push:
+    paths:
+      - ".github/workflows/rebuild-store-data.yml"
+      - "assets/js/store-data.gz.b64"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Decode catalogue
+        shell: bash
+        run: |
+          base64 -d assets/js/store-data.gz.b64 > /tmp/store-data.js.gz
+          gzip -dc /tmp/store-data.js.gz > assets/js/store-data.js
+          node --check assets/js/store-data.js
+          test -s assets/js/store-data.js
+
+      - name: Commit normal catalogue
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/js/store-data.js
+          if git diff --cached --quiet; then
+            echo "No catalogue changes needed."
+            exit 0
+          fi
+          git commit -m "Fix live store catalogue loader"
+          git push
