@@ -1,0 +1,48 @@
+(() => {
+const META=window.DENZ_META||{}, PRODUCTS=window.DENZ_PRODUCTS||[];
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const CART_KEY='denz-cart-v8', THEME_KEY='denz-theme-v8';
+const money=n=>new Intl.NumberFormat('en-ZA',{style:'currency',currency:'ZAR',maximumFractionDigits:0}).format(n||0);
+const wa=msg=>`https://wa.me/${META.whatsapp||'27829319390'}?text=${encodeURIComponent(msg)}`;
+const safeGet=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}}, safeSet=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}};
+const getCart=()=>safeGet(CART_KEY,[]),setCart=c=>{safeSet(CART_KEY,c);updateCartCount();renderDrawer();};
+const toast=msg=>{let t=$('.toast');if(!t){t=document.createElement('div');t.className='toast';document.body.appendChild(t)}t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)};
+function updateCartCount(){const n=getCart().length;$$('[data-cart-count]').forEach(x=>x.textContent=n)}
+function initTheme(){let t=localStorage.getItem(THEME_KEY)||'light';document.documentElement.dataset.theme=t;$$('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem(THEME_KEY,t)}))}
+function initNav(){const page=location.pathname.split('/').pop()||'index.html';$$('[data-nav]').forEach(a=>{if(a.getAttribute('href')===page)a.classList.add('active')})}
+function low(p){let v=Object.values(p.prices||{}).filter(x=>Number.isFinite(x));return v.length?Math.min(...v):null}
+function price(p){let vals=Object.values(p.prices||{}).filter(x=>Number.isFinite(x));if(!vals.length)return 'Ask Denz';if(p.category!=='brand-new'&&vals.length===1)return money(vals[0]);return `From ${money(Math.min(...vals))}`}
+function catClass(c){return c==='brand-new'?'new':c==='preowned'?'owned':'refurb'}
+function preferredStorage(p){return Object.keys(p.prices||{})[0]||'Confirm with Denz'}
+function preferredColor(p){return p.colors?.[0]?.name||'As shown / confirm with Denz'}
+function imagesFor(p,color){let arr=p.colorImages?.[color];return arr?.length?arr:(p.images||[])}
+function mediaCard(p,color){
+ if(p.video){return `<div class="card-video-wrap"><video class="card-video" controls muted playsinline preload="metadata" poster="${p.poster||''}"><source src="${p.video}" type="video/mp4"></video><span class="video-chip">SUPPLIED STOCK VIDEO</span></div>`}
+ if(p.category==='refurbished'&&!(p.images||[]).length){return `<div class="refurb-video-missing"><span class="video-play">▶</span><strong>Current stock video</strong><small>Ask Denz for the matching video before ordering this unit.</small></div>`}
+ let imgs=imagesFor(p,color),src=imgs[0]||'assets/img/brand/denz-logo.jpg';
+ return `<div class="card-gallery" data-card-gallery><img data-card-image src="${src}" alt="${p.name} ${color||''}" loading="lazy"><button class="card-arrow prev" type="button" data-card-prev aria-label="Previous image">‹</button><button class="card-arrow next" type="button" data-card-next aria-label="Next image">›</button><span class="card-counter" data-card-counter>1/${Math.max(1,imgs.length)}</span><div class="card-thumbs" data-card-thumbs>${imgs.map((im,i)=>`<button type="button" class="card-thumb ${i===0?'active':''}" data-card-thumb="${i}"><img src="${im}" alt="${p.name} ${color||''} view ${i+1}" loading="lazy"></button>`).join('')}</div></div>`
+}
+function card(p){
+ let storage=preferredStorage(p),color=preferredColor(p),specs=[p.battery&&`Battery ${p.battery}`,p.network,p.condition].filter(Boolean),known=p.prices?.[storage];
+ let colors=p.colors?.length?`<div class="card-option"><div class="card-option-head"><span>Colour</span><strong data-card-color-label>${color}</strong></div><div class="card-colors">${p.colors.map(c=>`<button type="button" class="card-color ${c.name===color?'active':''}" data-card-color="${c.name}" title="${c.name}"><span class="swatch" style="--swatch:${c.hex}"></span><span>${c.name}</span></button>`).join('')}</div></div>`:`<div class="card-stock-note">Specific stock unit · supplied stock media</div>`;
+ let storageCtl=(p.storageOptions||[]).length?`<div class="card-option"><div class="card-option-head"><span>Storage</span><strong data-card-storage-label>${storage}</strong></div><div class="card-storage">${p.storageOptions.map(s=>`<button type="button" class="card-storage-btn ${s===storage?'active':''}" data-card-storage="${s}">${s}${Number.isFinite(p.prices?.[s])?` · ${money(p.prices[s])}`:''}</button>`).join('')}</div></div>`:'';
+ return `<article class="product-card interactive-card" data-product-id="${p.id}" data-selected-color="${color}" data-selected-storage="${storage}">
+ <div class="product-media">${mediaCard(p,color)}<div class="badge-row"><span class="badge ${catClass(p.category)}">${p.categoryLabel}</span>${p.network&&p.network!=='Unlocked'?`<span class="badge alert">${p.network}</span>`:''}</div></div>
+ <div class="product-body"><div class="product-title-row"><div><h3>${p.name}</h3><p>${p.condition}</p></div><strong data-card-price>${Number.isFinite(known)?money(known):price(p)}</strong></div><div class="mini-specs">${specs.slice(0,3).map(s=>`<span>${s}</span>`).join('')}</div>${colors}${storageCtl}
+ <div class="card-actions"><button class="card-add" type="button" data-card-add>Add to cart</button><a target="_blank" rel="noreferrer" class="card-wa" data-card-wa>WhatsApp</a></div><a href="product.html?id=${encodeURIComponent(p.id)}" class="card-details">Full details →</a></div></article>`
+}
+function bindCard(cardEl){
+ const p=PRODUCTS.find(x=>x.id===cardEl.dataset.productId);if(!p)return;
+ let color=cardEl.dataset.selectedColor||preferredColor(p),storage=cardEl.dataset.selectedStorage||preferredStorage(p),imgs=imagesFor(p,color),idx=0;
+ const main=()=> $('[data-card-image]',cardEl),counter=()=> $('[data-card-counter]',cardEl),thumbWrap=()=> $('[data-card-thumbs]',cardEl);
+ const renderThumbs=()=>{let w=thumbWrap();if(!w)return;w.innerHTML=imgs.map((im,i)=>`<button type="button" class="card-thumb ${i===idx?'active':''}" data-card-thumb="${i}"><img src="${im}" alt="${p.name} ${color} view ${i+1}" loading="lazy"></button>`).join('');$$('[data-card-thumb]',w).forEach(b=>b.addEventListener('click',()=>show(Number(b.dataset.cardThumb))))};
+ const show=n=>{if(!imgs.length)return;idx=(n+imgs.length)%imgs.length;let im=main();if(im){im.src=imgs[idx];im.alt=`${p.name} ${color} view ${idx+1}`};let c=counter();if(c)c.textContent=`${idx+1}/${imgs.length}`;$$('[data-card-thumb]',cardEl).forEach((b,i)=>b.classList.toggle('active',i===idx));let active=$$('[data-card-thumb]',cardEl)[idx],tw=thumbWrap();if(active&&tw){let left=active.offsetLeft-(tw.clientWidth-active.clientWidth)/2;tw.scrollTo({left:Math.max(0,left),behavior:'smooth'})}};
+ const sync=()=>{let val=p.prices?.[storage],priceEl=$('[data-card-price]',cardEl);if(priceEl)priceEl.textContent=Number.isFinite(val)?money(val):'Ask Denz';let waEl=$('[data-card-wa]',cardEl),pr=Number.isFinite(val)?money(val):'price to confirm';if(waEl)waEl.href=wa(`Hi Denz, I want the ${p.name} (${p.categoryLabel}), ${storage}, colour: ${color}. Listed price: ${pr}. Please confirm stock.`)};
+ $$('[data-card-color]',cardEl).forEach(b=>b.addEventListener('click',()=>{color=b.dataset.cardColor;cardEl.dataset.selectedColor=color;$$('[data-card-color]',cardEl).forEach(x=>x.classList.remove('active'));b.classList.add('active');let lab=$('[data-card-color-label]',cardEl);if(lab)lab.textContent=color;imgs=imagesFor(p,color);idx=0;if(main()&&imgs[0])main().src=imgs[0];renderThumbs();show(0);sync()}));
+ $$('[data-card-storage]',cardEl).forEach(b=>b.addEventListener('click',()=>{storage=b.dataset.cardStorage;cardEl.dataset.selectedStorage=storage;$$('[data-card-storage]',cardEl).forEach(x=>x.classList.remove('active'));b.classList.add('active');let lab=$('[data-card-storage-label]',cardEl);if(lab)lab.textContent=storage;sync()}));
+ $('[data-card-prev]',cardEl)?.addEventListener('click',()=>show(idx-1));$('[data-card-next]',cardEl)?.addEventListener('click',()=>show(idx+1));
+ let touchX=null;let gallery=$('[data-card-gallery]',cardEl);gallery?.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].clientX},{passive:true});gallery?.addEventListener('touchend',e=>{if(touchX===null)return;let dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>35)show(idx+(dx<0?1:-1));touchX=null},{passive:true});
+ $('[data-card-add]',cardEl)?.addEventListener('click',()=>{let val=p.prices?.[storage],hero=p.video?(p.poster||''):(imgs[idx]||imgs[0]||'');let cart=getCart();cart.push({uid:Date.now()+'-'+Math.random(),id:p.id,name:p.name,category:p.categoryLabel,storage,color,price:Number.isFinite(val)?val:null,image:hero});setCart(cart);toast(`${p.name} · ${color} · ${storage} added`);openDrawer()});
+ renderThumbs();show(0);sync();
+}
+function renderGrid(el,list){if(!el)return;el.innerHTML=list.length?list.map(card).j
