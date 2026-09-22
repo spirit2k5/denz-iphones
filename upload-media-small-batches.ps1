@@ -75,12 +75,16 @@ if (-not $Source -and -not $Zip) {
     }
 
     if (-not $Source) {
-        $Zip = foreach ($root in $roots) {
-            Get-ChildItem -LiteralPath $root -File -Filter '$.zip' -Recurse -ErrorAction SilentlyContinue |
-                Where-Object {
-                    $_.Name -match '(?i)(carlton.*R100|denz.*iphone|fixed.*delivery|carlton_fixed)'
-                }
-        } | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+        $ZipCandidates = @()
+        foreach ($root in $roots) {
+            $ZipCandidates += @(
+                Get-ChildItem -LiteralPath $root -File -Filter '*.zip' -Recurse -ErrorAction SilentlyContinue |
+                    Where-Object {
+                        $_.Name -match '(?i)(carlton.*R100|denz.*iphone|fixed.*delivery|carlton_fixed)'
+                    }
+            )
+        }
+        $Zip = $ZipCandidates | Sort-Object LastWriteTime -Descending | Select-Object -First 1
     }
 }
 
