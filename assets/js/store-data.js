@@ -4322,8 +4322,20 @@ window.DENZ_PRODUCTS=[
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
-    "colors": [],
-    "colorImages": {},
+    "colors": [
+      {
+        "name": "Silver",
+        "hex": "#dddeda"
+      },
+      {
+        "name": "Cosmic Orange",
+        "hex": "#d87845"
+      },
+      {
+        "name": "Deep Blue",
+        "hex": "#33485e"
+      }
+    ],
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4344,13 +4356,39 @@ window.DENZ_PRODUCTS=[
       "512GB"
     ],
     "notes": "22 battery cycles. eSIM-only American stock.",
-    "images": []
+    "images": [
+      "assets/img/products/brand-new/17-pro-max/img-01.jpg",
+      "assets/img/products/brand-new/17-pro-max/img-02.jpg",
+      "assets/img/products/brand-new/17-pro-max/img-03.jpg",
+      "assets/img/products/brand-new/17-pro-max/img-04.jpg",
+      "assets/img/products/brand-new/17-pro-max/img-05.jpg?v=20260922-verified",
+      "assets/img/products/brand-new/17-pro-max/img-06.jpg",
+      "assets/img/products/brand-new/17-pro-max/img-07.jpg",
+      "assets/img/products/brand-new/17-pro-max/img-08.jpg",
+      "assets/img/products/brand-new/17-pro-max/img-09.jpg"
+    ],
+    "colorImages": {
+      "Silver": [
+        "assets/img/products/brand-new/17-pro-max/img-05.jpg?v=20260922-verified",
+        "assets/img/products/brand-new/17-pro-max/img-06.jpg",
+        "assets/img/products/brand-new/17-pro-max/img-07.jpg"
+      ],
+      "Cosmic Orange": [
+        "assets/img/products/brand-new/17-pro-max/img-01.jpg",
+        "assets/img/products/brand-new/17-pro-max/img-08.jpg",
+        "assets/img/products/brand-new/17-pro-max/img-09.jpg"
+      ],
+      "Deep Blue": [
+        "assets/img/products/brand-new/17-pro-max/img-02.jpg",
+        "assets/img/products/brand-new/17-pro-max/img-03.jpg",
+        "assets/img/products/brand-new/17-pro-max/img-04.jpg"
+      ]
+    }
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
     "colors": [],
-    "colorImages": {},
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4371,9 +4409,6 @@ window.DENZ_PRODUCTS=[
       "128GB"
     ],
     "notes": "Battery was changed with an original Apple battery.",
-    "images": [
-      "assets/videos/refurbished/iphone-15-128-r8000-poster.jpg"
-    ],
     "video": "assets/videos/refurbished/iphone-15-128-r8000.mp4",
     "poster": "assets/videos/refurbished/iphone-15-128-r8000-poster.jpg"
   },
@@ -4381,7 +4416,6 @@ window.DENZ_PRODUCTS=[
     "category": "refurbished",
     "categoryLabel": "Refurbished",
     "colors": [],
-    "colorImages": {},
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4402,9 +4436,6 @@ window.DENZ_PRODUCTS=[
       "128GB"
     ],
     "notes": "Battery was replaced with an original battery.",
-    "images": [
-      "assets/videos/refurbished/iphone-13-128-r6300-poster.jpg"
-    ],
     "video": "assets/videos/refurbished/iphone-13-128-r6300.mp4",
     "poster": "assets/videos/refurbished/iphone-13-128-r6300-poster.jpg"
   },
@@ -4412,7 +4443,6 @@ window.DENZ_PRODUCTS=[
     "category": "refurbished",
     "categoryLabel": "Refurbished",
     "colors": [],
-    "colorImages": {},
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4433,17 +4463,38 @@ window.DENZ_PRODUCTS=[
       "64GB"
     ],
     "notes": "Clean unit. Everything works.",
-    "images": [
-      "assets/videos/refurbished/iphone-xr-64-r3850-poster.jpg"
-    ],
     "video": "assets/videos/refurbished/iphone-xr-64-r3850.mp4",
     "poster": "assets/videos/refurbished/iphone-xr-64-r3850-poster.jpg"
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
-    "colors": [],
-    "colorImages": {},
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#171719"
+      },
+      {
+        "name": "White",
+        "hex": "#f4f2ed"
+      },
+      {
+        "name": "Blue",
+        "hex": "#2e5984"
+      },
+      {
+        "name": "Green",
+        "hex": "#b5c9b8"
+      },
+      {
+        "name": "Purple",
+        "hex": "#b8a6cc"
+      },
+      {
+        "name": "(PRODUCT)RED",
+        "hex": "#b91f2d"
+      }
+    ],
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4464,13 +4515,63 @@ window.DENZ_PRODUCTS=[
       "64GB"
     ],
     "notes": "Current refurbished iPhone 12 stock.",
-    "images": []
+    "images": [
+      "assets/img/products/brand-new/12/img-01.jpg",
+      "assets/img/products/brand-new/12/img-02.jpg",
+      "assets/img/products/brand-new/12/img-03.jpg",
+      "assets/img/products/brand-new/12/img-04.jpg",
+      "assets/img/products/brand-new/12/img-05.jpg",
+      "assets/img/products/brand-new/12/img-06.jpg",
+      "assets/img/products/brand-new/12/img-07.jpg",
+      "assets/img/products/brand-new/12/img-08.jpg",
+      "assets/img/products/brand-new/12/img-09.jpg",
+      "assets/img/products/brand-new/12/img-10.jpg",
+      "assets/img/products/brand-new/12/img-11.jpg",
+      "assets/img/products/brand-new/12/img-12.jpg",
+      "assets/img/products/brand-new/12/img-13.jpg",
+      "assets/img/products/brand-new/12/img-14.jpg",
+      "assets/img/products/brand-new/12/img-15.jpg",
+      "assets/img/products/brand-new/12/img-16.jpg",
+      "assets/img/products/brand-new/12/img-17.jpg",
+      "assets/img/products/brand-new/12/img-18.jpg"
+    ],
+    "colorImages": {
+      "Black": [
+        "assets/img/products/brand-new/12/img-02.jpg",
+        "assets/img/products/brand-new/12/img-14.jpg",
+        "assets/img/products/brand-new/12/img-18.jpg"
+      ],
+      "White": [
+        "assets/img/products/brand-new/12/img-01.jpg",
+        "assets/img/products/brand-new/12/img-03.jpg",
+        "assets/img/products/brand-new/12/img-04.jpg"
+      ],
+      "Blue": [
+        "assets/img/products/brand-new/12/img-11.jpg",
+        "assets/img/products/brand-new/12/img-12.jpg",
+        "assets/img/products/brand-new/12/img-13.jpg"
+      ],
+      "Green": [
+        "assets/img/products/brand-new/12/img-08.jpg",
+        "assets/img/products/brand-new/12/img-09.jpg",
+        "assets/img/products/brand-new/12/img-10.jpg"
+      ],
+      "Purple": [
+        "assets/img/products/brand-new/12/img-15.jpg",
+        "assets/img/products/brand-new/12/img-16.jpg",
+        "assets/img/products/brand-new/12/img-17.jpg"
+      ],
+      "(PRODUCT)RED": [
+        "assets/img/products/brand-new/12/img-05.jpg",
+        "assets/img/products/brand-new/12/img-06.jpg",
+        "assets/img/products/brand-new/12/img-07.jpg"
+      ]
+    }
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
     "colors": [],
-    "colorImages": {},
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4491,9 +4592,6 @@ window.DENZ_PRODUCTS=[
       "128GB"
     ],
     "notes": "eSIM-only unit.",
-    "images": [
-      "assets/videos/refurbished/iphone-15-pro-128-r10500-poster.jpg"
-    ],
     "video": "assets/videos/refurbished/iphone-15-pro-128-r10500.mp4",
     "poster": "assets/videos/refurbished/iphone-15-pro-128-r10500-poster.jpg"
   },
@@ -4501,7 +4599,6 @@ window.DENZ_PRODUCTS=[
     "category": "refurbished",
     "categoryLabel": "Refurbished",
     "colors": [],
-    "colorImages": {},
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4522,17 +4619,38 @@ window.DENZ_PRODUCTS=[
       "128GB"
     ],
     "notes": "Cheapest iPhone 13 listing. Body has scratches, screen has no scratches; a case hides most body marks. First come, first served.",
-    "images": [
-      "assets/videos/refurbished/iphone-13-128-r5500-poster.jpg"
-    ],
     "video": "assets/videos/refurbished/iphone-13-128-r5500.mp4",
     "poster": "assets/videos/refurbished/iphone-13-128-r5500-poster.jpg"
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
-    "colors": [],
-    "colorImages": {},
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#1f2020"
+      },
+      {
+        "name": "White",
+        "hex": "#f2f0e9"
+      },
+      {
+        "name": "Green",
+        "hex": "#a7c1ad"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#f3d46b"
+      },
+      {
+        "name": "Purple",
+        "hex": "#c7b8d5"
+      },
+      {
+        "name": "(PRODUCT)RED",
+        "hex": "#c82532"
+      }
+    ],
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4553,13 +4671,55 @@ window.DENZ_PRODUCTS=[
       "64GB"
     ],
     "notes": "Battery changed. Current reading shown as 100%.",
-    "images": []
+    "images": [
+      "assets/img/products/brand-new/11/img-01.jpg",
+      "assets/img/products/brand-new/11/img-02.jpg",
+      "assets/img/products/brand-new/11/img-03.jpg",
+      "assets/img/products/brand-new/11/img-04.jpg",
+      "assets/img/products/brand-new/11/img-05.jpg",
+      "assets/img/products/brand-new/11/img-06.jpg",
+      "assets/img/products/brand-new/11/img-09.jpg",
+      "assets/img/products/brand-new/11/img-10.jpg",
+      "assets/img/products/brand-new/11/img-11.jpg",
+      "assets/img/products/brand-new/11/img-12.jpg",
+      "assets/img/products/brand-new/11/img-13.jpg",
+      "assets/img/products/brand-new/11/img-14.jpg",
+      "assets/img/products/brand-new/11/img-15.jpg",
+      "assets/img/products/brand-new/11/img-16.jpg"
+    ],
+    "colorImages": {
+      "Black": [
+        "assets/img/products/brand-new/11/img-01.jpg",
+        "assets/img/products/brand-new/11/img-14.jpg",
+        "assets/img/products/brand-new/11/img-15.jpg"
+      ],
+      "White": [
+        "assets/img/products/brand-new/11/img-02.jpg"
+      ],
+      "Green": [
+        "assets/img/products/brand-new/11/img-03.jpg",
+        "assets/img/products/brand-new/11/img-04.jpg"
+      ],
+      "Yellow": [
+        "assets/img/products/brand-new/11/img-05.jpg",
+        "assets/img/products/brand-new/11/img-06.jpg",
+        "assets/img/products/brand-new/11/img-16.jpg"
+      ],
+      "Purple": [
+        "assets/img/products/brand-new/11/img-09.jpg",
+        "assets/img/products/brand-new/11/img-10.jpg"
+      ],
+      "(PRODUCT)RED": [
+        "assets/img/products/brand-new/11/img-11.jpg",
+        "assets/img/products/brand-new/11/img-12.jpg",
+        "assets/img/products/brand-new/11/img-13.jpg"
+      ]
+    }
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
     "colors": [],
-    "colorImages": {},
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4580,17 +4740,38 @@ window.DENZ_PRODUCTS=[
       "128GB"
     ],
     "notes": "Clean iPhone 16 Plus refurbished stock.",
-    "images": [
-      "assets/videos/refurbished/iphone-16-plus-128-r13000-poster.jpg"
-    ],
     "video": "assets/videos/refurbished/iphone-16-plus-128-r13000.mp4",
     "poster": "assets/videos/refurbished/iphone-16-plus-128-r13000-poster.jpg"
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
-    "colors": [],
-    "colorImages": {},
+    "colors": [
+      {
+        "name": "Midnight",
+        "hex": "#23262a"
+      },
+      {
+        "name": "Starlight",
+        "hex": "#faf7ef"
+      },
+      {
+        "name": "Blue",
+        "hex": "#447792"
+      },
+      {
+        "name": "Pink",
+        "hex": "#f4c8cf"
+      },
+      {
+        "name": "Green",
+        "hex": "#4e6858"
+      },
+      {
+        "name": "(PRODUCT)RED",
+        "hex": "#c51f2b"
+      }
+    ],
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4611,13 +4792,63 @@ window.DENZ_PRODUCTS=[
       "128GB"
     ],
     "notes": "Clean refurbished iPhone 13 stock.",
-    "images": []
+    "images": [
+      "assets/img/products/brand-new/13/img-01.jpg",
+      "assets/img/products/brand-new/13/img-02.jpg",
+      "assets/img/products/brand-new/13/img-03.jpg",
+      "assets/img/products/brand-new/13/img-04.jpg",
+      "assets/img/products/brand-new/13/img-05.jpg",
+      "assets/img/products/brand-new/13/img-06.jpg",
+      "assets/img/products/brand-new/13/img-07.jpg",
+      "assets/img/products/brand-new/13/img-08.jpg",
+      "assets/img/products/brand-new/13/img-09.jpg",
+      "assets/img/products/brand-new/13/img-10.jpg",
+      "assets/img/products/brand-new/13/img-11.jpg",
+      "assets/img/products/brand-new/13/img-12.jpg",
+      "assets/img/products/brand-new/13/img-13.jpg",
+      "assets/img/products/brand-new/13/img-14.jpg",
+      "assets/img/products/brand-new/13/img-15.jpg",
+      "assets/img/products/brand-new/13/img-17.jpg",
+      "assets/img/products/brand-new/13/img-18.jpg",
+      "assets/img/products/brand-new/13/img-19.jpg"
+    ],
+    "colorImages": {
+      "Midnight": [
+        "assets/img/products/brand-new/13/img-18.jpg",
+        "assets/img/products/brand-new/13/img-19.jpg",
+        "assets/img/products/brand-new/13/img-01.jpg",
+        "assets/img/products/brand-new/13/img-02.jpg"
+      ],
+      "Starlight": [
+        "assets/img/products/brand-new/13/img-03.jpg",
+        "assets/img/products/brand-new/13/img-04.jpg",
+        "assets/img/products/brand-new/13/img-05.jpg"
+      ],
+      "Blue": [
+        "assets/img/products/brand-new/13/img-06.jpg",
+        "assets/img/products/brand-new/13/img-07.jpg",
+        "assets/img/products/brand-new/13/img-08.jpg"
+      ],
+      "Pink": [
+        "assets/img/products/brand-new/13/img-09.jpg",
+        "assets/img/products/brand-new/13/img-10.jpg",
+        "assets/img/products/brand-new/13/img-11.jpg"
+      ],
+      "Green": [
+        "assets/img/products/brand-new/13/img-15.jpg",
+        "assets/img/products/brand-new/13/img-17.jpg"
+      ],
+      "(PRODUCT)RED": [
+        "assets/img/products/brand-new/13/img-13.jpg",
+        "assets/img/products/brand-new/13/img-12.jpg",
+        "assets/img/products/brand-new/13/img-14.jpg"
+      ]
+    }
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
     "colors": [],
-    "colorImages": {},
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4638,17 +4869,30 @@ window.DENZ_PRODUCTS=[
       "64GB"
     ],
     "notes": "Running the new iOS 26. Small phone with camera/software generation similar to iPhone 11.",
-    "images": [
-      "assets/videos/refurbished/iphone-se-2-64-r2500-poster.jpg"
-    ],
     "video": "assets/videos/refurbished/iphone-se-2-64-r2500.mp4",
     "poster": "assets/videos/refurbished/iphone-se-2-64-r2500-poster.jpg"
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
-    "colors": [],
-    "colorImages": {},
+    "colors": [
+      {
+        "name": "Space Black",
+        "hex": "#3b3a3c"
+      },
+      {
+        "name": "Silver",
+        "hex": "#e4e2de"
+      },
+      {
+        "name": "Gold",
+        "hex": "#d5bf9d"
+      },
+      {
+        "name": "Deep Purple",
+        "hex": "#554d5f"
+      }
+    ],
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4669,13 +4913,72 @@ window.DENZ_PRODUCTS=[
       "Ask storage"
     ],
     "notes": "Discounted because this specific unit uses MTN only.",
-    "images": []
+    "images": [
+      "assets/img/products/brand-new/14-pro-max/img-01.jpg",
+      "assets/img/products/brand-new/14-pro-max/img-02.jpg",
+      "assets/img/products/brand-new/14-pro-max/img-03.jpg",
+      "assets/img/products/brand-new/14-pro-max/img-04.jpg",
+      "assets/img/products/brand-new/14-pro-max/img-05.jpg",
+      "assets/img/products/brand-new/14-pro-max/img-06.jpg",
+      "assets/img/products/brand-new/14-pro-max/img-07.jpg",
+      "assets/img/products/brand-new/14-pro-max/img-08.jpg",
+      "assets/img/products/brand-new/14-pro-max/img-09.jpg",
+      "assets/img/products/brand-new/14-pro-max/img-10.jpg",
+      "assets/img/products/brand-new/14-pro-max/img-11.jpg",
+      "assets/img/products/brand-new/14-pro-max/img-12.jpg"
+    ],
+    "colorImages": {
+      "Space Black": [
+        "assets/img/products/brand-new/14-pro-max/img-02.jpg",
+        "assets/img/products/brand-new/14-pro-max/img-03.jpg",
+        "assets/img/products/brand-new/14-pro-max/img-04.jpg"
+      ],
+      "Silver": [
+        "assets/img/products/brand-new/14-pro-max/img-05.jpg",
+        "assets/img/products/brand-new/14-pro-max/img-06.jpg",
+        "assets/img/products/brand-new/14-pro-max/img-07.jpg"
+      ],
+      "Gold": [
+        "assets/img/products/brand-new/14-pro-max/img-09.jpg",
+        "assets/img/products/brand-new/14-pro-max/img-08.jpg",
+        "assets/img/products/brand-new/14-pro-max/img-10.jpg"
+      ],
+      "Deep Purple": [
+        "assets/img/products/brand-new/14-pro-max/img-01.jpg",
+        "assets/img/products/brand-new/14-pro-max/img-11.jpg",
+        "assets/img/products/brand-new/14-pro-max/img-12.jpg"
+      ]
+    }
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
-    "colors": [],
-    "colorImages": {},
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#1f2020"
+      },
+      {
+        "name": "White",
+        "hex": "#f2f0e9"
+      },
+      {
+        "name": "Green",
+        "hex": "#a7c1ad"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#f3d46b"
+      },
+      {
+        "name": "Purple",
+        "hex": "#c7b8d5"
+      },
+      {
+        "name": "(PRODUCT)RED",
+        "hex": "#c82532"
+      }
+    ],
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4696,13 +4999,76 @@ window.DENZ_PRODUCTS=[
       "64GB"
     ],
     "notes": "Current refurbished iPhone 11 stock.",
-    "images": []
+    "images": [
+      "assets/img/products/brand-new/11/img-01.jpg",
+      "assets/img/products/brand-new/11/img-02.jpg",
+      "assets/img/products/brand-new/11/img-03.jpg",
+      "assets/img/products/brand-new/11/img-04.jpg",
+      "assets/img/products/brand-new/11/img-05.jpg",
+      "assets/img/products/brand-new/11/img-06.jpg",
+      "assets/img/products/brand-new/11/img-09.jpg",
+      "assets/img/products/brand-new/11/img-10.jpg",
+      "assets/img/products/brand-new/11/img-11.jpg",
+      "assets/img/products/brand-new/11/img-12.jpg",
+      "assets/img/products/brand-new/11/img-13.jpg",
+      "assets/img/products/brand-new/11/img-14.jpg",
+      "assets/img/products/brand-new/11/img-15.jpg",
+      "assets/img/products/brand-new/11/img-16.jpg"
+    ],
+    "colorImages": {
+      "Black": [
+        "assets/img/products/brand-new/11/img-01.jpg",
+        "assets/img/products/brand-new/11/img-14.jpg",
+        "assets/img/products/brand-new/11/img-15.jpg"
+      ],
+      "White": [
+        "assets/img/products/brand-new/11/img-02.jpg"
+      ],
+      "Green": [
+        "assets/img/products/brand-new/11/img-03.jpg",
+        "assets/img/products/brand-new/11/img-04.jpg"
+      ],
+      "Yellow": [
+        "assets/img/products/brand-new/11/img-05.jpg",
+        "assets/img/products/brand-new/11/img-06.jpg",
+        "assets/img/products/brand-new/11/img-16.jpg"
+      ],
+      "Purple": [
+        "assets/img/products/brand-new/11/img-09.jpg",
+        "assets/img/products/brand-new/11/img-10.jpg"
+      ],
+      "(PRODUCT)RED": [
+        "assets/img/products/brand-new/11/img-11.jpg",
+        "assets/img/products/brand-new/11/img-12.jpg",
+        "assets/img/products/brand-new/11/img-13.jpg"
+      ]
+    }
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
-    "colors": [],
-    "colorImages": {},
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#242426"
+      },
+      {
+        "name": "Blue",
+        "hex": "#d5e6ea"
+      },
+      {
+        "name": "Green",
+        "hex": "#d8e8dd"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#f5e9bd"
+      },
+      {
+        "name": "Pink",
+        "hex": "#efd4d7"
+      }
+    ],
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4723,13 +5089,51 @@ window.DENZ_PRODUCTS=[
       "128GB"
     ],
     "notes": "iPhone 15 special.",
-    "images": []
+    "images": [
+      "assets/img/products/brand-new/15/img-02.jpg",
+      "assets/img/products/brand-new/15/img-03.jpg",
+      "assets/img/products/brand-new/15/img-05.jpg",
+      "assets/img/products/brand-new/15/img-06.jpg",
+      "assets/img/products/brand-new/15/img-07.jpg",
+      "assets/img/products/brand-new/15/img-08.jpg",
+      "assets/img/products/brand-new/15/img-09.jpg",
+      "assets/img/products/brand-new/15/img-10.jpg",
+      "assets/img/products/brand-new/15/img-11.jpg",
+      "assets/img/products/brand-new/15/img-12.jpg",
+      "assets/img/products/brand-new/15/img-13.jpg",
+      "assets/img/products/brand-new/15/img-14.jpg",
+      "assets/img/products/brand-new/15/img-15.jpg"
+    ],
+    "colorImages": {
+      "Black": [
+        "assets/img/products/brand-new/15/img-13.jpg",
+        "assets/img/products/brand-new/15/img-12.jpg",
+        "assets/img/products/brand-new/15/img-14.jpg"
+      ],
+      "Blue": [
+        "assets/img/products/brand-new/15/img-09.jpg",
+        "assets/img/products/brand-new/15/img-10.jpg",
+        "assets/img/products/brand-new/15/img-11.jpg"
+      ],
+      "Green": [
+        "assets/img/products/brand-new/15/img-06.jpg",
+        "assets/img/products/brand-new/15/img-07.jpg",
+        "assets/img/products/brand-new/15/img-08.jpg"
+      ],
+      "Yellow": [
+        "assets/img/products/brand-new/15/img-02.jpg",
+        "assets/img/products/brand-new/15/img-03.jpg"
+      ],
+      "Pink": [
+        "assets/img/products/brand-new/15/img-05.jpg",
+        "assets/img/products/brand-new/15/img-15.jpg"
+      ]
+    }
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
     "colors": [],
-    "colorImages": {},
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4750,9 +5154,6 @@ window.DENZ_PRODUCTS=[
       "256GB"
     ],
     "notes": "Very clean iPhone 17 Pro Max.",
-    "images": [
-      "assets/videos/refurbished/iphone-17-pro-max-256-b98-poster.jpg"
-    ],
     "video": "assets/videos/refurbished/iphone-17-pro-max-256-b98.mp4",
     "poster": "assets/videos/refurbished/iphone-17-pro-max-256-b98-poster.jpg"
   },
@@ -4760,7 +5161,6 @@ window.DENZ_PRODUCTS=[
     "category": "refurbished",
     "categoryLabel": "Refurbished",
     "colors": [],
-    "colorImages": {},
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4781,9 +5181,6 @@ window.DENZ_PRODUCTS=[
       "256GB"
     ],
     "notes": "Very clean iPhone 17 Pro Max.",
-    "images": [
-      "assets/videos/refurbished/iphone-17-pro-max-256-b100-poster.jpg"
-    ],
     "video": "assets/videos/refurbished/iphone-17-pro-max-256-b100.mp4",
     "poster": "assets/videos/refurbished/iphone-17-pro-max-256-b100-poster.jpg"
   }
