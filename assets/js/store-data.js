@@ -1,3 +1,8 @@
+window.DENZ_META={
+  whatsapp:"27829319390",
+  maps:"https://www.google.com/maps/dir/?api=1&destination=-26.208546990084738,27.888779757672495",
+  mapsEmbed:"https://www.google.com/maps?q=-26.208546990084738,27.888779757672495&z=17&output=embed"
+};
 window.DENZ_PRODUCTS=[
   {
     "id": "bn-xr",
@@ -4749,4 +4754,4 @@ window.DENZ_PRODUCTS=[
 /* DENZ_SUPABASE_LIVE_INVENTORY */
 (()=>{const U="https://vpgexijihrozwugqqagy.supabase.co",K="sb_publishable_ijbK9YBBaV9j8kyBzwbFOA_iepnbPtC",fallback=window.DENZ_PRODUCTS;
 const map=r=>({id:r.source_id||r.id,name:r.name,category:r.category,categoryLabel:r.category_label,condition:r.condition||"",battery:r.battery||"",network:r.network||"Unlocked",notes:r.notes||"",prices:r.prices||{},storageOptions:r.storage_options||Object.keys(r.prices||{}),colors:r.colors||[],images:r.images||[],colorImages:r.color_images||{},video:r.video_url||null,poster:r.poster_url||null,included:r.included||[],warranty:r.warranty||"",delivery:r.delivery||"Nationwide delivery available",featured:!!r.featured,stockQuantity:Number(r.stock_quantity||0),status:r.status||"available"});
-window.DENZ_DATA_READY=fetch(U+"/rest/v1/denz_products?select=*&status=eq.available&order=sort_order.asc,created_at.asc",{cache:"no-store",headers:{apikey:K,Authorization:"Bearer "+K}}).then(async r=>{if(!r.ok)throw new Error("Inventory API "+r.status);const rows=await r.json();if(Array.isArray(rows)&&rows.length)window.DENZ_PRODUCTS=rows.map(map);return window.DENZ_PRODUCTS}).catch(e=>{console.warn("Using built-in inventory",e);window.DENZ_PRODUCTS=fallback;return fallback})})();
+window.DENZ_DATA_READY=fetch(U+"/rest/v1/denz_products?select=*&status=eq.available&order=sort_order.asc,created_at.asc",{cache:"no-store",headers:{apikey:K,Authorization:"Bearer "+K}}).then(async r=>{if(!r.ok)throw new Error("Inventory API "+r.status);const rows=await r.json();if(Array.isArray(rows))window.DENZ_PRODUCTS=rows.map(map);return window.DENZ_PRODUCTS}).catch(e=>{console.warn("Using built-in inventory",e);window.DENZ_PRODUCTS=fallback;return fallback})})();
