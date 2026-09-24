@@ -8,3 +8,182 @@
 .refurb-autoplay-video{pointer-events:none}
 .refurb-autoplay-video::-webkit-media-controls{display:none!important}
 .refurb-autoplay-video::-webkit-media-controls-enclosure{display:none!important}
+
+
+/* DENZ_RESPONSIVE_V1
+   Device-aware responsive overrides. The layout responds to viewport size,
+   pointer type and orientation without allowing page-level horizontal overflow. */
+html,body{max-width:100%;overflow-x:hidden}
+body{min-width:0}
+main,.shell,.hud-inner,.footer,.section,.hero,.product-card,.info-card,.policy-card,.contact-card,.checkout-panel{min-width:0}
+img,video,iframe,svg,canvas{max-width:100%;height:auto}
+input,select,textarea,button{max-width:100%}
+table{max-width:100%}
+.price-table-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.poster-grid img{height:auto;object-fit:contain}
+.map-frame{max-width:100%}
+
+/* Small laptops and tablets: keep navigation available without squeezing it. */
+@media(max-width:1050px){
+  .hud-inner{
+    width:min(100% - 28px,1240px);
+    height:auto;
+    min-height:72px;
+    padding:8px 0 9px;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:8px 12px;
+  }
+  .brand{min-width:0;max-width:100%}
+  .brand-copy{min-width:0}
+  .brand-copy strong,.brand-copy small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hud-actions{min-width:max-content}
+  .nav{
+    display:flex;
+    grid-column:1/-1;
+    width:100%;
+    overflow-x:auto;
+    overscroll-behavior-inline:contain;
+    scrollbar-width:none;
+    gap:6px;
+    padding:2px 0 1px;
+    scroll-snap-type:x proximity;
+  }
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{flex:0 0 auto;white-space:nowrap;scroll-snap-align:start}
+  .hero-grid,.feature-band{gap:28px}
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .product-detail{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px}
+  .main-product-image,.main-video{min-height:440px}
+  .main-video video{min-height:420px}
+}
+
+/* Phones / portrait tablets. */
+@media(max-width:780px){
+  .shell{width:min(100% - 28px,1200px)}
+  .announcement{padding:7px 12px;line-height:1.35}
+  .hud-inner{width:min(100% - 20px,1240px)}
+  .brand img{flex:0 0 42px}
+  .nav a{font-size:12px;padding:8px 9px}
+  .hero{min-height:0;padding:32px 0 38px}
+  .hero-grid{grid-template-columns:1fr;gap:26px}
+  .hero-copy,.hero-stage{min-width:0}
+  .hero-copy h1{font-size:clamp(44px,12vw,58px);overflow-wrap:anywhere}
+  .hero-copy p{font-size:16px}
+  .hero-stage{width:100%;min-height:clamp(330px,90vw,430px)}
+  .phone-art{width:min(78vw,390px)}
+  .section{padding:64px 0}
+  .section-head{gap:14px}
+  .section-head h2{font-size:clamp(38px,10vw,52px);overflow-wrap:anywhere}
+  .category-grid,.product-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-auto-flow:row;
+    grid-auto-columns:auto;
+    overflow:visible;
+    scroll-snap-type:none;
+    width:100%;
+  }
+  .interactive-card,.product-card{width:100%;max-width:100%}
+  .interactive-card .product-media,.card-gallery,.card-video-wrap,.refurb-video-missing{
+    width:100%;
+    height:clamp(320px,54vw,365px);
+  }
+  .card-gallery>img{height:calc(100% - 73px)}
+  .card-arrow{top:40%;transform:translateY(-50%)}
+  .product-detail{grid-template-columns:1fr;gap:24px;padding:28px 0 64px}
+  .gallery{width:100%;position:static}
+  .main-product-image,.main-video{width:100%;min-height:clamp(340px,95vw,470px)}
+  .main-video video{min-height:clamp(320px,90vw,450px)}
+  .detail-panel{min-width:0}
+  .detail-panel h1{font-size:clamp(39px,11vw,50px);overflow-wrap:anywhere}
+  .all-photo-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .layby-grid,.contact-grid,.about-grid,.cart-page-grid,.poster-grid{grid-template-columns:1fr}
+  .info-card,.policy-card,.contact-card,.checkout-panel{padding:18px}
+  .map-frame{height:min(65vh,430px)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+
+/* Phones: everything becomes one full-width column. */
+@media(max-width:560px){
+  .shell{width:calc(100% - 22px)}
+  .hud-inner{width:calc(100% - 16px);gap:7px 8px}
+  .brand{gap:8px}
+  .brand img{width:38px;height:38px;border-radius:11px}
+  .brand-copy strong{font-size:14px}
+  .brand-copy small{display:none}
+  .icon-btn{width:40px}
+  .cart-btn{padding:0 10px}
+  .cart-label{display:none}
+  .nav{margin-top:1px}
+  .nav a{font-size:11px;padding:7px 8px}
+  .hero-copy h1{font-size:clamp(39px,12.5vw,50px)}
+  .hero-copy p{font-size:15px;line-height:1.55}
+  .hero-actions{display:grid;grid-template-columns:1fr;gap:9px}
+  .hero-actions a{width:100%}
+  .hero-stage{min-height:330px;border-radius:24px}
+  .hero-orbit{font-size:7px;max-width:42%;white-space:normal;text-align:center}
+  .trust-strip{grid-template-columns:1fr}
+  .category-grid,.product-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+    width:100%;
+    padding-bottom:0;
+  }
+  .product-card{scroll-snap-align:none}
+  .interactive-card .product-media,.card-gallery,.card-video-wrap,.refurb-video-missing{
+    height:clamp(360px,105vw,430px);
+  }
+  .card-gallery>img{height:calc(100% - 74px)}
+  .product-body{padding:16px}
+  .product-title-row{gap:8px}
+  .product-title-row h3{font-size:18px}
+  .product-title-row>strong{font-size:15px}
+  .card-actions{grid-template-columns:minmax(0,1fr) 96px}
+  .toolbar{grid-template-columns:1fr}
+  .filters{display:flex;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}
+  .filters button{flex:0 0 auto}
+  .main-product-image,.main-video{min-height:clamp(320px,100vw,420px);border-radius:22px}
+  .main-video video{min-height:clamp(300px,94vw,400px)}
+  .thumbs{max-width:100%}
+  .all-photo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .spec-grid{grid-template-columns:1fr}
+  .option-title{align-items:flex-start;flex-direction:column;gap:5px}
+  .storage-options,.color-options{max-width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}
+  .storage-btn,.color-btn{flex:0 0 auto}
+  .poster-grid{gap:12px}
+  .poster-grid img{border-radius:15px}
+  .price-table-wrap{border-radius:14px}
+  .price-table-wrap table{min-width:560px}
+  .cart-drawer{width:100%;height:min(88dvh,760px);max-width:100vw}
+  .drawer-head{padding:18px}
+  .drawer-scroll{padding:12px 14px 24px}
+  .cart-line{grid-template-columns:58px minmax(0,1fr) auto;gap:9px}
+  .cart-line-img{width:58px;height:58px}
+  .cart-line strong{overflow-wrap:anywhere}
+  .form-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:24px}
+  .footer-bottom{display:block}
+  .footer-bottom span{display:block;margin:5px 0}
+  .toast{width:calc(100% - 28px);max-width:420px;text-align:center;border-radius:15px}
+}
+
+@media(max-width:360px){
+  .shell{width:calc(100% - 16px)}
+  .hud-inner{width:calc(100% - 12px)}
+  .brand-copy strong{font-size:13px}
+  .hero-copy h1{font-size:38px}
+  .section-head h2{font-size:36px}
+  .card-actions{grid-template-columns:1fr}
+  .card-wa{min-height:44px}
+  .cart-line{grid-template-columns:50px minmax(0,1fr)}
+  .cart-line-img{width:50px;height:50px}
+  .cart-line>button{grid-column:2;justify-self:start}
+}
+
+/* Device tags set by JS. Useful for touch targets and future layout work. */
+body[data-device="mobile"] button,
+body[data-device="mobile"] .btn-primary,
+body[data-device="mobile"] .btn-secondary,
+body[data-device="mobile"] .btn-blue{min-height:44px}
+body[data-device="mobile"] .card-arrow{width:42px;height:42px}
