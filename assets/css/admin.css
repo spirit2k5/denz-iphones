@@ -4,3 +4,49 @@
 .owner-form label{margin:0}
 .owner-form p{grid-column:1/-1;margin:0;min-height:20px}
 @media(max-width:900px){.owner-form{grid-template-columns:1fr}}
+
+
+/* DENZ_ADMIN_RESPONSIVE_V1 */
+html,body{max-width:100%;overflow-x:hidden}
+main,.card,.grid,.editor,.row,.rowmain{min-width:0}
+img,video{max-width:100%;height:auto}
+input,select,textarea,button{max-width:100%}
+@media(max-width:900px){
+  header{height:auto;min-height:66px;padding:10px 16px;gap:12px;flex-wrap:wrap}
+  header>div{display:flex;gap:6px;flex-wrap:wrap}
+  header a{margin-right:4px}
+  main{padding:20px 14px 44px}
+  .grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .owner-form{grid-template-columns:1fr}
+  .bar{gap:10px;flex-wrap:wrap}
+  .bar input{max-width:none}
+  .row{align-items:flex-start;flex-wrap:wrap}
+  .rowmain{flex:1 1 240px}
+}
+@media(max-width:600px){
+  header{padding:9px 12px}
+  header>a{font-size:14px}
+  main{padding:16px 10px 36px}
+  .auth{margin:4vh auto;padding:20px 16px}
+  h1{font-size:clamp(30px,10vw,38px)}
+  .stats{grid-template-columns:1fr 1fr;gap:8px}
+  .stats div{padding:12px}
+  .two{grid-template-columns:1fr}
+  .actions{flex-wrap:wrap}
+  .actions>*{flex:1 1 150px;text-align:center}
+  .bar,.top{align-items:flex-start}
+  .top{flex-direction:column}
+  .editor form{padding:0 12px 18px}
+  .price-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto}
+  .row{padding:12px}
+  .rowmain{flex-basis:100%}
+  .row>div:last-child{width:100%;display:flex;gap:7px}
+  .row>div:last-child button{flex:1}
+  .owner-form{padding:12px}
+}
+@media(max-width:380px){
+  .stats{grid-template-columns:1fr}
+  .price-row{grid-template-columns:1fr}
+  .price-row button{min-height:40px}
+}
