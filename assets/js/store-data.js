@@ -4322,20 +4322,7 @@ window.DENZ_PRODUCTS=[
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
-    "colors": [
-      {
-        "name": "Silver",
-        "hex": "#dddeda"
-      },
-      {
-        "name": "Cosmic Orange",
-        "hex": "#d87845"
-      },
-      {
-        "name": "Deep Blue",
-        "hex": "#33485e"
-      }
-    ],
+    "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4346,44 +4333,19 @@ window.DENZ_PRODUCTS=[
     ],
     "id": "rf-17-pro-max-512-current",
     "name": "iPhone 17 Pro Max",
-    "condition": "Still new · American stock",
+    "condition": "Still new",
     "battery": "100%",
-    "network": "eSIM only",
+    "network": "eSIM only · American stock",
     "prices": {
       "512GB": 23500
     },
     "storageOptions": [
       "512GB"
     ],
-    "notes": "22 battery cycles. eSIM-only American stock.",
+    "notes": "Cycle count 22.",
     "images": [
-      "assets/img/products/brand-new/17-pro-max/img-01.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-02.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-03.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-04.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-05.jpg?v=20260922-verified",
-      "assets/img/products/brand-new/17-pro-max/img-06.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-07.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-08.jpg",
-      "assets/img/products/brand-new/17-pro-max/img-09.jpg"
-    ],
-    "colorImages": {
-      "Silver": [
-        "assets/img/products/brand-new/17-pro-max/img-05.jpg?v=20260922-verified",
-        "assets/img/products/brand-new/17-pro-max/img-06.jpg",
-        "assets/img/products/brand-new/17-pro-max/img-07.jpg"
-      ],
-      "Cosmic Orange": [
-        "assets/img/products/brand-new/17-pro-max/img-01.jpg",
-        "assets/img/products/brand-new/17-pro-max/img-08.jpg",
-        "assets/img/products/brand-new/17-pro-max/img-09.jpg"
-      ],
-      "Deep Blue": [
-        "assets/img/products/brand-new/17-pro-max/img-02.jpg",
-        "assets/img/products/brand-new/17-pro-max/img-03.jpg",
-        "assets/img/products/brand-new/17-pro-max/img-04.jpg"
-      ]
-    }
+      "assets/img/products/refurbished/iphone-17-pro-max-512-r23500.webp"
+    ]
   },
   {
     "category": "refurbished",
@@ -4401,16 +4363,15 @@ window.DENZ_PRODUCTS=[
     "name": "iPhone 15",
     "condition": "9/10 · Clean",
     "battery": "92%",
-    "network": "Unlocked",
     "prices": {
       "128GB": 8000
     },
     "storageOptions": [
       "128GB"
     ],
-    "notes": "Battery was changed with an original Apple battery.",
-    "video": "assets/videos/refurbished/iphone-15-128-r8000.mp4",
-    "poster": "assets/videos/refurbished/iphone-15-128-r8000-poster.jpg"
+    "notes": "Battery has been changed with an original Apple battery.",
+    "video": "assets/videos/refurbished/iphone-15-128-r8000-correct.mp4",
+    "poster": "assets/videos/refurbished/iphone-15-128-r8000-correct-poster.jpg"
   },
   {
     "category": "refurbished",
@@ -4428,16 +4389,15 @@ window.DENZ_PRODUCTS=[
     "name": "iPhone 13",
     "condition": "8/10",
     "battery": "100%",
-    "network": "Unlocked",
     "prices": {
       "128GB": 6300
     },
     "storageOptions": [
       "128GB"
     ],
-    "notes": "Battery was replaced with an original battery.",
-    "video": "assets/videos/refurbished/iphone-13-128-r6300.mp4",
-    "poster": "assets/videos/refurbished/iphone-13-128-r6300-poster.jpg"
+    "notes": "Battery has been replaced with an original battery.",
+    "video": "assets/videos/refurbished/iphone-13-128-r6300-correct.mp4",
+    "poster": "assets/videos/refurbished/iphone-13-128-r6300-correct-poster.jpg"
   },
   {
     "category": "refurbished",
@@ -4455,46 +4415,20 @@ window.DENZ_PRODUCTS=[
     "name": "iPhone XR",
     "condition": "10/10 · Clean",
     "battery": "91%",
-    "network": "Unlocked",
     "prices": {
       "64GB": 3850
     },
     "storageOptions": [
       "64GB"
     ],
-    "notes": "Clean unit. Everything works.",
+    "notes": "Everything works.",
     "video": "assets/videos/refurbished/iphone-xr-64-r3850.mp4",
     "poster": "assets/videos/refurbished/iphone-xr-64-r3850-poster.jpg"
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
-    "colors": [
-      {
-        "name": "Black",
-        "hex": "#171719"
-      },
-      {
-        "name": "White",
-        "hex": "#f4f2ed"
-      },
-      {
-        "name": "Blue",
-        "hex": "#2e5984"
-      },
-      {
-        "name": "Green",
-        "hex": "#b5c9b8"
-      },
-      {
-        "name": "Purple",
-        "hex": "#b8a6cc"
-      },
-      {
-        "name": "(PRODUCT)RED",
-        "hex": "#b91f2d"
-      }
-    ],
+    "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4507,66 +4441,16 @@ window.DENZ_PRODUCTS=[
     "name": "iPhone 12",
     "condition": "7/10",
     "battery": "86%",
-    "network": "Unlocked",
     "prices": {
       "64GB": 4500
     },
     "storageOptions": [
       "64GB"
     ],
-    "notes": "Current refurbished iPhone 12 stock.",
+    "notes": "",
     "images": [
-      "assets/img/products/brand-new/12/img-01.jpg",
-      "assets/img/products/brand-new/12/img-02.jpg",
-      "assets/img/products/brand-new/12/img-03.jpg",
-      "assets/img/products/brand-new/12/img-04.jpg",
-      "assets/img/products/brand-new/12/img-05.jpg",
-      "assets/img/products/brand-new/12/img-06.jpg",
-      "assets/img/products/brand-new/12/img-07.jpg",
-      "assets/img/products/brand-new/12/img-08.jpg",
-      "assets/img/products/brand-new/12/img-09.jpg",
-      "assets/img/products/brand-new/12/img-10.jpg",
-      "assets/img/products/brand-new/12/img-11.jpg",
-      "assets/img/products/brand-new/12/img-12.jpg",
-      "assets/img/products/brand-new/12/img-13.jpg",
-      "assets/img/products/brand-new/12/img-14.jpg",
-      "assets/img/products/brand-new/12/img-15.jpg",
-      "assets/img/products/brand-new/12/img-16.jpg",
-      "assets/img/products/brand-new/12/img-17.jpg",
-      "assets/img/products/brand-new/12/img-18.jpg"
-    ],
-    "colorImages": {
-      "Black": [
-        "assets/img/products/brand-new/12/img-02.jpg",
-        "assets/img/products/brand-new/12/img-14.jpg",
-        "assets/img/products/brand-new/12/img-18.jpg"
-      ],
-      "White": [
-        "assets/img/products/brand-new/12/img-01.jpg",
-        "assets/img/products/brand-new/12/img-03.jpg",
-        "assets/img/products/brand-new/12/img-04.jpg"
-      ],
-      "Blue": [
-        "assets/img/products/brand-new/12/img-11.jpg",
-        "assets/img/products/brand-new/12/img-12.jpg",
-        "assets/img/products/brand-new/12/img-13.jpg"
-      ],
-      "Green": [
-        "assets/img/products/brand-new/12/img-08.jpg",
-        "assets/img/products/brand-new/12/img-09.jpg",
-        "assets/img/products/brand-new/12/img-10.jpg"
-      ],
-      "Purple": [
-        "assets/img/products/brand-new/12/img-15.jpg",
-        "assets/img/products/brand-new/12/img-16.jpg",
-        "assets/img/products/brand-new/12/img-17.jpg"
-      ],
-      "(PRODUCT)RED": [
-        "assets/img/products/brand-new/12/img-05.jpg",
-        "assets/img/products/brand-new/12/img-06.jpg",
-        "assets/img/products/brand-new/12/img-07.jpg"
-      ]
-    }
+      "assets/img/products/refurbished/iphone-12-64-r4500.webp"
+    ]
   },
   {
     "category": "refurbished",
@@ -4591,7 +4475,7 @@ window.DENZ_PRODUCTS=[
     "storageOptions": [
       "128GB"
     ],
-    "notes": "eSIM-only unit.",
+    "notes": "",
     "video": "assets/videos/refurbished/iphone-15-pro-128-r10500.mp4",
     "poster": "assets/videos/refurbished/iphone-15-pro-128-r10500-poster.jpg"
   },
@@ -4609,48 +4493,22 @@ window.DENZ_PRODUCTS=[
     ],
     "id": "rf-13-128-r5500",
     "name": "iPhone 13",
-    "condition": "Body scratches · Screen clean",
+    "condition": "Body scratches · screen not scratched",
     "battery": "86%",
-    "network": "Unlocked",
     "prices": {
       "128GB": 5500
     },
     "storageOptions": [
       "128GB"
     ],
-    "notes": "Cheapest iPhone 13 listing. Body has scratches, screen has no scratches; a case hides most body marks. First come, first served.",
-    "video": "assets/videos/refurbished/iphone-13-128-r5500.mp4",
-    "poster": "assets/videos/refurbished/iphone-13-128-r5500-poster.jpg"
+    "notes": "Cheapest iPhone 13 available. Scratches are less visible with a case. Only one at this price; first come, first serve.",
+    "video": "assets/videos/refurbished/iphone-13-128-r5500-correct.mp4",
+    "poster": "assets/videos/refurbished/iphone-13-128-r5500-correct-poster.jpg"
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
-    "colors": [
-      {
-        "name": "Black",
-        "hex": "#1f2020"
-      },
-      {
-        "name": "White",
-        "hex": "#f2f0e9"
-      },
-      {
-        "name": "Green",
-        "hex": "#a7c1ad"
-      },
-      {
-        "name": "Yellow",
-        "hex": "#f3d46b"
-      },
-      {
-        "name": "Purple",
-        "hex": "#c7b8d5"
-      },
-      {
-        "name": "(PRODUCT)RED",
-        "hex": "#c82532"
-      }
-    ],
+    "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4659,62 +4517,19 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "id": "rf-11-64-b100",
+    "id": "rf-11-64-r4200-b100",
     "name": "iPhone 11",
     "condition": "7/10",
     "battery": "100%",
-    "network": "Unlocked",
     "prices": {
       "64GB": 4200
     },
     "storageOptions": [
       "64GB"
     ],
-    "notes": "Battery changed. Current reading shown as 100%.",
-    "images": [
-      "assets/img/products/brand-new/11/img-01.jpg",
-      "assets/img/products/brand-new/11/img-02.jpg",
-      "assets/img/products/brand-new/11/img-03.jpg",
-      "assets/img/products/brand-new/11/img-04.jpg",
-      "assets/img/products/brand-new/11/img-05.jpg",
-      "assets/img/products/brand-new/11/img-06.jpg",
-      "assets/img/products/brand-new/11/img-09.jpg",
-      "assets/img/products/brand-new/11/img-10.jpg",
-      "assets/img/products/brand-new/11/img-11.jpg",
-      "assets/img/products/brand-new/11/img-12.jpg",
-      "assets/img/products/brand-new/11/img-13.jpg",
-      "assets/img/products/brand-new/11/img-14.jpg",
-      "assets/img/products/brand-new/11/img-15.jpg",
-      "assets/img/products/brand-new/11/img-16.jpg"
-    ],
-    "colorImages": {
-      "Black": [
-        "assets/img/products/brand-new/11/img-01.jpg",
-        "assets/img/products/brand-new/11/img-14.jpg",
-        "assets/img/products/brand-new/11/img-15.jpg"
-      ],
-      "White": [
-        "assets/img/products/brand-new/11/img-02.jpg"
-      ],
-      "Green": [
-        "assets/img/products/brand-new/11/img-03.jpg",
-        "assets/img/products/brand-new/11/img-04.jpg"
-      ],
-      "Yellow": [
-        "assets/img/products/brand-new/11/img-05.jpg",
-        "assets/img/products/brand-new/11/img-06.jpg",
-        "assets/img/products/brand-new/11/img-16.jpg"
-      ],
-      "Purple": [
-        "assets/img/products/brand-new/11/img-09.jpg",
-        "assets/img/products/brand-new/11/img-10.jpg"
-      ],
-      "(PRODUCT)RED": [
-        "assets/img/products/brand-new/11/img-11.jpg",
-        "assets/img/products/brand-new/11/img-12.jpg",
-        "assets/img/products/brand-new/11/img-13.jpg"
-      ]
-    }
+    "notes": "Battery changed.",
+    "video": "assets/videos/refurbished/iphone-11-64-r4200-b100.mp4",
+    "poster": "assets/videos/refurbished/iphone-11-64-r4200-b100-poster.jpg"
   },
   {
     "category": "refurbished",
@@ -4731,47 +4546,21 @@ window.DENZ_PRODUCTS=[
     "id": "rf-16-plus-128-r13000",
     "name": "iPhone 16 Plus",
     "condition": "9/10 · Clean",
-    "battery": "Confirm with Denz",
-    "network": "Unlocked",
     "prices": {
       "128GB": 13000
     },
     "storageOptions": [
       "128GB"
     ],
-    "notes": "Clean iPhone 16 Plus refurbished stock.",
-    "video": "assets/videos/refurbished/iphone-16-plus-128-r13000.mp4",
-    "poster": "assets/videos/refurbished/iphone-16-plus-128-r13000-poster.jpg"
+    "notes": "",
+    "images": [
+      "assets/img/products/refurbished/iphone-16-plus-128-r13000.webp"
+    ]
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
-    "colors": [
-      {
-        "name": "Midnight",
-        "hex": "#23262a"
-      },
-      {
-        "name": "Starlight",
-        "hex": "#faf7ef"
-      },
-      {
-        "name": "Blue",
-        "hex": "#447792"
-      },
-      {
-        "name": "Pink",
-        "hex": "#f4c8cf"
-      },
-      {
-        "name": "Green",
-        "hex": "#4e6858"
-      },
-      {
-        "name": "(PRODUCT)RED",
-        "hex": "#c51f2b"
-      }
-    ],
+    "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4784,66 +4573,16 @@ window.DENZ_PRODUCTS=[
     "name": "iPhone 13",
     "condition": "9/10",
     "battery": "89%",
-    "network": "Unlocked",
     "prices": {
       "128GB": 6400
     },
     "storageOptions": [
       "128GB"
     ],
-    "notes": "Clean refurbished iPhone 13 stock.",
+    "notes": "",
     "images": [
-      "assets/img/products/brand-new/13/img-01.jpg",
-      "assets/img/products/brand-new/13/img-02.jpg",
-      "assets/img/products/brand-new/13/img-03.jpg",
-      "assets/img/products/brand-new/13/img-04.jpg",
-      "assets/img/products/brand-new/13/img-05.jpg",
-      "assets/img/products/brand-new/13/img-06.jpg",
-      "assets/img/products/brand-new/13/img-07.jpg",
-      "assets/img/products/brand-new/13/img-08.jpg",
-      "assets/img/products/brand-new/13/img-09.jpg",
-      "assets/img/products/brand-new/13/img-10.jpg",
-      "assets/img/products/brand-new/13/img-11.jpg",
-      "assets/img/products/brand-new/13/img-12.jpg",
-      "assets/img/products/brand-new/13/img-13.jpg",
-      "assets/img/products/brand-new/13/img-14.jpg",
-      "assets/img/products/brand-new/13/img-15.jpg",
-      "assets/img/products/brand-new/13/img-17.jpg",
-      "assets/img/products/brand-new/13/img-18.jpg",
-      "assets/img/products/brand-new/13/img-19.jpg"
-    ],
-    "colorImages": {
-      "Midnight": [
-        "assets/img/products/brand-new/13/img-18.jpg",
-        "assets/img/products/brand-new/13/img-19.jpg",
-        "assets/img/products/brand-new/13/img-01.jpg",
-        "assets/img/products/brand-new/13/img-02.jpg"
-      ],
-      "Starlight": [
-        "assets/img/products/brand-new/13/img-03.jpg",
-        "assets/img/products/brand-new/13/img-04.jpg",
-        "assets/img/products/brand-new/13/img-05.jpg"
-      ],
-      "Blue": [
-        "assets/img/products/brand-new/13/img-06.jpg",
-        "assets/img/products/brand-new/13/img-07.jpg",
-        "assets/img/products/brand-new/13/img-08.jpg"
-      ],
-      "Pink": [
-        "assets/img/products/brand-new/13/img-09.jpg",
-        "assets/img/products/brand-new/13/img-10.jpg",
-        "assets/img/products/brand-new/13/img-11.jpg"
-      ],
-      "Green": [
-        "assets/img/products/brand-new/13/img-15.jpg",
-        "assets/img/products/brand-new/13/img-17.jpg"
-      ],
-      "(PRODUCT)RED": [
-        "assets/img/products/brand-new/13/img-13.jpg",
-        "assets/img/products/brand-new/13/img-12.jpg",
-        "assets/img/products/brand-new/13/img-14.jpg"
-      ]
-    }
+      "assets/img/products/refurbished/iphone-13-128-r6400.webp"
+    ]
   },
   {
     "category": "refurbished",
@@ -4858,41 +4597,23 @@ window.DENZ_PRODUCTS=[
       "Free screen protector"
     ],
     "id": "rf-se2-64-r2500",
-    "name": "iPhone SE 2nd Gen (2020)",
+    "name": "iPhone SE 2nd Gen 2020",
     "condition": "8/10 · Clean",
     "battery": "80%",
-    "network": "Unlocked",
     "prices": {
       "64GB": 2500
     },
     "storageOptions": [
       "64GB"
     ],
-    "notes": "Running the new iOS 26. Small phone with camera/software generation similar to iPhone 11.",
+    "notes": "On iOS 26. Small mighty machine with a great camera and software like iPhone 11.",
     "video": "assets/videos/refurbished/iphone-se-2-64-r2500.mp4",
     "poster": "assets/videos/refurbished/iphone-se-2-64-r2500-poster.jpg"
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
-    "colors": [
-      {
-        "name": "Space Black",
-        "hex": "#3b3a3c"
-      },
-      {
-        "name": "Silver",
-        "hex": "#e4e2de"
-      },
-      {
-        "name": "Gold",
-        "hex": "#d5bf9d"
-      },
-      {
-        "name": "Deep Purple",
-        "hex": "#554d5f"
-      }
-    ],
+    "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4907,78 +4628,20 @@ window.DENZ_PRODUCTS=[
     "battery": "80%",
     "network": "MTN only",
     "prices": {
-      "Ask storage": 8000
+      "Confirm storage": 8000
     },
     "storageOptions": [
-      "Ask storage"
+      "Confirm storage"
     ],
-    "notes": "Discounted because this specific unit uses MTN only.",
+    "notes": "Cheap because it uses MTN only.",
     "images": [
-      "assets/img/products/brand-new/14-pro-max/img-01.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-02.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-03.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-04.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-05.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-06.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-07.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-08.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-09.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-10.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-11.jpg",
-      "assets/img/products/brand-new/14-pro-max/img-12.jpg"
-    ],
-    "colorImages": {
-      "Space Black": [
-        "assets/img/products/brand-new/14-pro-max/img-02.jpg",
-        "assets/img/products/brand-new/14-pro-max/img-03.jpg",
-        "assets/img/products/brand-new/14-pro-max/img-04.jpg"
-      ],
-      "Silver": [
-        "assets/img/products/brand-new/14-pro-max/img-05.jpg",
-        "assets/img/products/brand-new/14-pro-max/img-06.jpg",
-        "assets/img/products/brand-new/14-pro-max/img-07.jpg"
-      ],
-      "Gold": [
-        "assets/img/products/brand-new/14-pro-max/img-09.jpg",
-        "assets/img/products/brand-new/14-pro-max/img-08.jpg",
-        "assets/img/products/brand-new/14-pro-max/img-10.jpg"
-      ],
-      "Deep Purple": [
-        "assets/img/products/brand-new/14-pro-max/img-01.jpg",
-        "assets/img/products/brand-new/14-pro-max/img-11.jpg",
-        "assets/img/products/brand-new/14-pro-max/img-12.jpg"
-      ]
-    }
+      "assets/img/products/refurbished/iphone-14-pro-max-r8000.webp"
+    ]
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
-    "colors": [
-      {
-        "name": "Black",
-        "hex": "#1f2020"
-      },
-      {
-        "name": "White",
-        "hex": "#f2f0e9"
-      },
-      {
-        "name": "Green",
-        "hex": "#a7c1ad"
-      },
-      {
-        "name": "Yellow",
-        "hex": "#f3d46b"
-      },
-      {
-        "name": "Purple",
-        "hex": "#c7b8d5"
-      },
-      {
-        "name": "(PRODUCT)RED",
-        "hex": "#c82532"
-      }
-    ],
+    "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -4987,88 +4650,25 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "id": "rf-11-64-b85",
+    "id": "rf-11-64-r4200-b85",
     "name": "iPhone 11",
     "condition": "7/10",
     "battery": "85%",
-    "network": "Unlocked",
     "prices": {
       "64GB": 4200
     },
     "storageOptions": [
       "64GB"
     ],
-    "notes": "Current refurbished iPhone 11 stock.",
+    "notes": "",
     "images": [
-      "assets/img/products/brand-new/11/img-01.jpg",
-      "assets/img/products/brand-new/11/img-02.jpg",
-      "assets/img/products/brand-new/11/img-03.jpg",
-      "assets/img/products/brand-new/11/img-04.jpg",
-      "assets/img/products/brand-new/11/img-05.jpg",
-      "assets/img/products/brand-new/11/img-06.jpg",
-      "assets/img/products/brand-new/11/img-09.jpg",
-      "assets/img/products/brand-new/11/img-10.jpg",
-      "assets/img/products/brand-new/11/img-11.jpg",
-      "assets/img/products/brand-new/11/img-12.jpg",
-      "assets/img/products/brand-new/11/img-13.jpg",
-      "assets/img/products/brand-new/11/img-14.jpg",
-      "assets/img/products/brand-new/11/img-15.jpg",
-      "assets/img/products/brand-new/11/img-16.jpg"
-    ],
-    "colorImages": {
-      "Black": [
-        "assets/img/products/brand-new/11/img-01.jpg",
-        "assets/img/products/brand-new/11/img-14.jpg",
-        "assets/img/products/brand-new/11/img-15.jpg"
-      ],
-      "White": [
-        "assets/img/products/brand-new/11/img-02.jpg"
-      ],
-      "Green": [
-        "assets/img/products/brand-new/11/img-03.jpg",
-        "assets/img/products/brand-new/11/img-04.jpg"
-      ],
-      "Yellow": [
-        "assets/img/products/brand-new/11/img-05.jpg",
-        "assets/img/products/brand-new/11/img-06.jpg",
-        "assets/img/products/brand-new/11/img-16.jpg"
-      ],
-      "Purple": [
-        "assets/img/products/brand-new/11/img-09.jpg",
-        "assets/img/products/brand-new/11/img-10.jpg"
-      ],
-      "(PRODUCT)RED": [
-        "assets/img/products/brand-new/11/img-11.jpg",
-        "assets/img/products/brand-new/11/img-12.jpg",
-        "assets/img/products/brand-new/11/img-13.jpg"
-      ]
-    }
+      "assets/img/products/refurbished/iphone-11-64-r4200-b85.webp"
+    ]
   },
   {
     "category": "refurbished",
     "categoryLabel": "Refurbished",
-    "colors": [
-      {
-        "name": "Black",
-        "hex": "#242426"
-      },
-      {
-        "name": "Blue",
-        "hex": "#d5e6ea"
-      },
-      {
-        "name": "Green",
-        "hex": "#d8e8dd"
-      },
-      {
-        "name": "Yellow",
-        "hex": "#f5e9bd"
-      },
-      {
-        "name": "Pink",
-        "hex": "#efd4d7"
-      }
-    ],
+    "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
     "delivery": "Nationwide delivery available",
@@ -5079,56 +4679,18 @@ window.DENZ_PRODUCTS=[
     ],
     "id": "rf-15-128-r8500",
     "name": "iPhone 15",
-    "condition": "Special · Very clean",
+    "condition": "On special",
     "battery": "81%",
-    "network": "Unlocked",
     "prices": {
       "128GB": 8500
     },
     "storageOptions": [
       "128GB"
     ],
-    "notes": "iPhone 15 special.",
+    "notes": "",
     "images": [
-      "assets/img/products/brand-new/15/img-02.jpg",
-      "assets/img/products/brand-new/15/img-03.jpg",
-      "assets/img/products/brand-new/15/img-05.jpg",
-      "assets/img/products/brand-new/15/img-06.jpg",
-      "assets/img/products/brand-new/15/img-07.jpg",
-      "assets/img/products/brand-new/15/img-08.jpg",
-      "assets/img/products/brand-new/15/img-09.jpg",
-      "assets/img/products/brand-new/15/img-10.jpg",
-      "assets/img/products/brand-new/15/img-11.jpg",
-      "assets/img/products/brand-new/15/img-12.jpg",
-      "assets/img/products/brand-new/15/img-13.jpg",
-      "assets/img/products/brand-new/15/img-14.jpg",
-      "assets/img/products/brand-new/15/img-15.jpg"
-    ],
-    "colorImages": {
-      "Black": [
-        "assets/img/products/brand-new/15/img-13.jpg",
-        "assets/img/products/brand-new/15/img-12.jpg",
-        "assets/img/products/brand-new/15/img-14.jpg"
-      ],
-      "Blue": [
-        "assets/img/products/brand-new/15/img-09.jpg",
-        "assets/img/products/brand-new/15/img-10.jpg",
-        "assets/img/products/brand-new/15/img-11.jpg"
-      ],
-      "Green": [
-        "assets/img/products/brand-new/15/img-06.jpg",
-        "assets/img/products/brand-new/15/img-07.jpg",
-        "assets/img/products/brand-new/15/img-08.jpg"
-      ],
-      "Yellow": [
-        "assets/img/products/brand-new/15/img-02.jpg",
-        "assets/img/products/brand-new/15/img-03.jpg"
-      ],
-      "Pink": [
-        "assets/img/products/brand-new/15/img-05.jpg",
-        "assets/img/products/brand-new/15/img-15.jpg"
-      ]
-    }
+      "assets/img/products/refurbished/iphone-15-128-r8500.webp"
+    ]
   },
   {
     "category": "refurbished",
@@ -5146,14 +4708,13 @@ window.DENZ_PRODUCTS=[
     "name": "iPhone 17 Pro Max",
     "condition": "10/10 · Very clean",
     "battery": "98%",
-    "network": "Unlocked",
     "prices": {
       "256GB": 25500
     },
     "storageOptions": [
       "256GB"
     ],
-    "notes": "Very clean iPhone 17 Pro Max.",
+    "notes": "Very clean unit.",
     "video": "assets/videos/refurbished/iphone-17-pro-max-256-b98.mp4",
     "poster": "assets/videos/refurbished/iphone-17-pro-max-256-b98-poster.jpg"
   },
@@ -5173,14 +4734,13 @@ window.DENZ_PRODUCTS=[
     "name": "iPhone 17 Pro Max",
     "condition": "10/10 · Very clean",
     "battery": "100%",
-    "network": "Unlocked",
     "prices": {
       "256GB": 25500
     },
     "storageOptions": [
       "256GB"
     ],
-    "notes": "Very clean iPhone 17 Pro Max.",
+    "notes": "Very clean unit.",
     "video": "assets/videos/refurbished/iphone-17-pro-max-256-b100.mp4",
     "poster": "assets/videos/refurbished/iphone-17-pro-max-256-b100-poster.jpg"
   }
