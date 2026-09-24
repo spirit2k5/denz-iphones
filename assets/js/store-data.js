@@ -1,7 +1,7 @@
 window.DENZ_META={
   whatsapp:"27829319390",
-  maps:"https://www.google.com/maps/place/449+Letsogo,+Meadowlands+West+Zone+8,+Meadowlands+West,+1852/@-26.2089308,27.8885514,73m/data=!3m1!1e3!4m6!3m5!1s0x1e95a0e7edf98797:0x48f1f47646b726c1!8m2!3d-26.2088791!4d27.8886253!16s%2Fg%2F11v0_3y9lg?entry=ttu&g_ep=EgoyMDI2MDkyMS4wIKXMDSoASAFQAw%3D%3D",
-  mapsEmbed:"https://www.google.com/maps?q=-26.2088791,27.8886253&z=19&output=embed"
+  maps:"https://www.google.com/maps/place/449+Letsogo,+Meadowlands+West+Zone+8,+Meadowlands+West,+1852/@-26.2089308,27.8885514,73m/data=!3m1!1e3!4m6!3m5!1s0x1e95a0e7edf98797:0x48f1f47646b726c1!8m2!3d-26.2088791!4d27.8886253!16s%2Fg%2F11v0_3y9lg?entry=ttu",
+  mapsEmbed:"https://www.google.com/maps?q=449%20Letsogo%2C%20Meadowlands%20West%20Zone%208%2C%20Meadowlands%20West%2C%201852&z=19&output=embed"
 };
 window.DENZ_PRODUCTS=[
   {
