@@ -12,14 +12,14 @@ function initTheme(){
  let t=localStorage.getItem(THEME_KEY)||'light',adminTapCount=0,adminTapTimer=null;
  const isHome=()=>{const p=location.pathname.split('/').pop();return !p||p==='index.html'};
  document.documentElement.dataset.theme=t;
- $('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{
+ document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{
    t=document.documentElement.dataset.theme==='light'?'dark':'light';
    document.documentElement.dataset.theme=t;
    localStorage.setItem(THEME_KEY,t);
    if(!isHome())return;
    adminTapCount++;
    clearTimeout(adminTapTimer);
-   if(adminTapCount>=5){adminTapCount=0;location.href='admin.html';return}
+   if(adminTapCount===5){adminTapCount=0;location.href='admin.html';return}
    adminTapTimer=setTimeout(()=>{adminTapCount=0},5000);
  }))
 }
