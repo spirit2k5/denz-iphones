@@ -8,6 +8,18 @@ const safeGet=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{re
 const getCart=()=>safeGet(CART_KEY,[]),setCart=c=>{safeSet(CART_KEY,c);updateCartCount();renderDrawer();};
 const toast=msg=>{let t=$('.toast');if(!t){t=document.createElement('div');t.className='toast';document.body.appendChild(t)}t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)};
 function updateCartCount(){const n=getCart().length;$$('[data-cart-count]').forEach(x=>x.textContent=n)}
+function initDeviceMode(){
+ const apply=()=>{
+   const w=window.innerWidth;
+   const coarse=window.matchMedia('(pointer:coarse)').matches;
+   const mode=(w<=600||coarse&&w<=780)?'mobile':w<=1050?'tablet':'desktop';
+   document.body.dataset.device=mode;
+   document.documentElement.dataset.device=mode;
+ };
+ apply();
+ window.addEventListener('resize',apply,{passive:true});
+ window.addEventListener('orientationchange',apply,{passive:true});
+}
 function initTheme(){
  let t=localStorage.getItem(THEME_KEY)||'light',adminTapCount=0,adminTapTimer=null;
  const isHome=()=>{const p=location.pathname.split('/').pop();return !p||p==='index.html'};
