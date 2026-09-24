@@ -187,3 +187,15 @@ body[data-device="mobile"] .btn-primary,
 body[data-device="mobile"] .btn-secondary,
 body[data-device="mobile"] .btn-blue{min-height:44px}
 body[data-device="mobile"] .card-arrow{width:42px;height:42px}
+
+
+/* spirit2k5 creator credit */
+.creator-credit{font-weight:700;letter-spacing:.02em}
+.creator-credit a{
+  color:var(--logo-blue);
+  text-decoration:none;
+  font-weight:900;
+  border-bottom:1px solid color-mix(in srgb,var(--logo-blue) 45%,transparent);
+  transition:.2s ease;
+}
+.creator-credit a:hover{opacity:.78}
