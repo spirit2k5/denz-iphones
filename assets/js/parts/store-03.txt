@@ -11,5 +11,5 @@ function initPrices(){let body=$('[data-price-body]');if(!body)return;body.inner
 function initLayby(){let inp=$('[data-layby-amount]'),out=$('[data-layby-result]');if(!inp||!out)return;const calc=()=>{let n=Number(inp.value||0);out.textContent=n>0?`${money(Math.ceil(n/4))} × 4 months`:'R0'};inp.addEventListener('input',calc);calc()}
 function initMap(){let f=$('[data-map-frame]');if(f)f.src=META.mapsEmbed;$$('[data-map-directions]').forEach(a=>a.href=META.maps)}
 function initWa(){$$('[data-wa-general]').forEach(a=>a.href=wa('Hi Denz, I am interested in buying an iPhone. Please help me with stock and prices.'))}
-document.addEventListener('DOMContentLoaded',()=>{initTheme();initNav();updateCartCount();initWa();initDrawer();initGrids();initProduct();initCartPage();initPrices();initLayby();initMap()});
+const boot=()=>{initTheme();initNav();updateCartCount();initWa();initDrawer();initGrids();initProduct();initCartPage();initPrices();initLayby();initMap()};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();
