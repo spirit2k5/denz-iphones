@@ -8,7 +8,21 @@ const safeGet=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{re
 const getCart=()=>safeGet(CART_KEY,[]),setCart=c=>{safeSet(CART_KEY,c);updateCartCount();renderDrawer();};
 const toast=msg=>{let t=$('.toast');if(!t){t=document.createElement('div');t.className='toast';document.body.appendChild(t)}t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)};
 function updateCartCount(){const n=getCart().length;$$('[data-cart-count]').forEach(x=>x.textContent=n)}
-function initTheme(){let t=localStorage.getItem(THEME_KEY)||'light';document.documentElement.dataset.theme=t;$$('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;localStorage.setItem(THEME_KEY,t)}))}
+function initTheme(){
+ let t=localStorage.getItem(THEME_KEY)||'light',adminTapCount=0,adminTapTimer=null;
+ const isHome=()=>{const p=location.pathname.split('/').pop();return !p||p==='index.html'};
+ document.documentElement.dataset.theme=t;
+ $('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{
+   t=document.documentElement.dataset.theme==='light'?'dark':'light';
+   document.documentElement.dataset.theme=t;
+   localStorage.setItem(THEME_KEY,t);
+   if(!isHome())return;
+   adminTapCount++;
+   clearTimeout(adminTapTimer);
+   if(adminTapCount>=5){adminTapCount=0;location.href='admin.html';return}
+   adminTapTimer=setTimeout(()=>{adminTapCount=0},5000);
+ }))
+}
 function initNav(){const page=location.pathname.split('/').pop()||'index.html';$$('[data-nav]').forEach(a=>{if(a.getAttribute('href')===page)a.classList.add('active')})}
 function low(p){let v=Object.values(p.prices||{}).filter(x=>Number.isFinite(x));return v.length?Math.min(...v):null}
 function price(p){let vals=Object.values(p.prices||{}).filter(x=>Number.isFinite(x));if(!vals.length)return 'Ask Denz';if(p.category!=='brand-new'&&vals.length===1)return money(vals[0]);return `From ${money(Math.min(...vals))}`}
