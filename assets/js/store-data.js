@@ -1,7 +1,7 @@
 window.DENZ_META={
   whatsapp:"27829319390",
-  maps:"https://www.google.com/maps/dir/?api=1&destination=-26.208546990084738,27.888779757672495",
-  mapsEmbed:"https://www.google.com/maps?q=-26.208546990084738,27.888779757672495&z=17&output=embed"
+  maps:"https://www.google.com/maps/dir/?api=1&destination=Meadowlands%20West%20Zone%208%2C%20Meadowlands%20West%2C%201852",
+  mapsEmbed:"https://www.google.com/maps?q=Meadowlands%20West%20Zone%208%2C%20Meadowlands%20West%2C%201852&z=17&output=embed"
 };
 window.DENZ_PRODUCTS=[
   {
