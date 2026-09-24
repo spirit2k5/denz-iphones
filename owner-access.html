@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Denz iPhones · Owner Access</title>
+<link rel="stylesheet" href="assets/css/admin.css?v=20260924-owner-access1">
+<style>
+.access-wrap{max-width:760px;margin:5vh auto}
+.access-card{padding:28px}
+.access-steps{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.access-step{border:1px solid #e4e7ec;border-radius:16px;padding:18px;background:#fff}
+.access-step small{font-weight:800;color:#087fff;letter-spacing:.08em}
+.access-step h2{margin:6px 0 10px}
+.note{background:#eff8ff;border:1px solid #b2ddff;color:#175cd3;padding:12px 14px;border-radius:12px}
+.ok{color:#067647}.err{color:#b42318}
+@media(max-width:700px){.access-steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html"><b>DENZ</b> iPHONES</a>
+  <div><a href="admin.html">Admin</a><a href="index.html">Store</a></div>
+</header>
+<main>
+  <div class="access-wrap">
+    <section class="card access-card">
+      <small>OWNER SECURITY</small>
+      <h1>Owner Access</h1>
+      <p class="note">Use this page to create/confirm an approved owner account or reset an owner password. No password-reset email is needed.</p>
+
+      <div class="access-steps">
+        <section class="access-step">
+          <small>STEP 1</small>
+          <h2>Authorise the change</h2>
+          <p>Sign in with an owner account that already works.</p>
+          <label>Authorised owner email
+            <select id="authEmail">
+              <option value="mamafha30@gmail.com">mamafha30@gmail.com</option>
+              <option value="mahloricarlton@gmail.com">mahloricarlton@gmail.com</option>
+            </select>
+          </label>
+          <label>Current password<input id="authPassword" type="password" autocomplete="current-password"></label>
+          <button id="authoriseBtn" type="button">Authorise</button>
+          <p id="authMsg"></p>
+        </section>
+
+        <section id="manageStep" class="access-step" style="opacity:.45;pointer-events:none">
+          <small>STEP 2</small>
+          <h2>Create / reset owner</h2>
+          <p>Select the owner account and choose the new password.</p>
+          <label>Owner account
+            <select id="targetEmail">
+              <option value="mamafha30@gmail.com">mamafha30@gmail.com</option>
+              <option value="mahloricarlton@gmail.com">mahloricarlton@gmail.com</option>
+            </select>
+          </label>
+          <label>New password<input id="newPassword" type="password" minlength="6" autocomplete="new-password"></label>
+          <label>Confirm password<input id="confirmPassword" type="password" minlength="6" autocomplete="new-password"></label>
+          <button id="saveOwnerBtn" type="button">Create / Reset owner login</button>
+          <p id="ownerMsg"></p>
+        </section>
+      </div>
+
+      <div class="actions" style="margin-top:22px">
+        <a href="admin.html" class="alt" style="text-decoration:none;padding:11px 15px;border-radius:11px;font-weight:800">Back to Admin</a>
+        <button id="signOutBtn" class="alt" type="button" hidden>Sign out</button>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/owner-access.js?v=20260924-owner-access1"></script>
+</body>
+</html>
