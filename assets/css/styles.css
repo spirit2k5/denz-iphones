@@ -3,3 +3,8 @@
 @import url("parts/style-03.css");
 @import url("parts/style-04.css");
 @import url("parts/style-05.css");
+
+/* Refurbished supplied stock videos: autoplay only, no playback UI. */
+.refurb-autoplay-video{pointer-events:none}
+.refurb-autoplay-video::-webkit-media-controls{display:none!important}
+.refurb-autoplay-video::-webkit-media-controls-enclosure{display:none!important}
