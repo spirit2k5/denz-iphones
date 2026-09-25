@@ -1,8 +1,8 @@
-@import url("parts/style-01.css");
-@import url("parts/style-02.css");
-@import url("parts/style-03.css");
-@import url("parts/style-04.css");
-@import url("parts/style-05.css");
+@import url("parts/style-01.css?v=20260925-cheaper2");
+@import url("parts/style-02.css?v=20260925-cheaper2");
+@import url("parts/style-03.css?v=20260925-cheaper2");
+@import url("parts/style-04.css?v=20260925-cheaper2");
+@import url("parts/style-05.css?v=20260925-cheaper2");
 
 /* Cheaper Options supplied stock videos: autoplay only, no playback UI. */
 .cheap-autoplay-video{pointer-events:none}
