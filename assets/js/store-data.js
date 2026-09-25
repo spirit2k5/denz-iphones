@@ -4326,7 +4326,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4354,7 +4354,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4380,7 +4380,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4406,7 +4406,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4432,7 +4432,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4459,7 +4459,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4486,7 +4486,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4512,7 +4512,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4538,7 +4538,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4564,7 +4564,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4591,7 +4591,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4617,7 +4617,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4645,7 +4645,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4672,7 +4672,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4699,7 +4699,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
@@ -4725,7 +4725,7 @@ window.DENZ_PRODUCTS=[
   },
   {
     "category": "refurbished",
-    "categoryLabel": "Refurbished",
+    "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
     "warranty": "Confirm with Denz",
