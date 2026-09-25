@@ -4,10 +4,10 @@
 @import url("parts/style-04.css");
 @import url("parts/style-05.css");
 
-/* Refurbished supplied stock videos: autoplay only, no playback UI. */
-.refurb-autoplay-video{pointer-events:none}
-.refurb-autoplay-video::-webkit-media-controls{display:none!important}
-.refurb-autoplay-video::-webkit-media-controls-enclosure{display:none!important}
+/* Cheaper Options supplied stock videos: autoplay only, no playback UI. */
+.cheap-autoplay-video{pointer-events:none}
+.cheap-autoplay-video::-webkit-media-controls{display:none!important}
+.cheap-autoplay-video::-webkit-media-controls-enclosure{display:none!important}
 
 
 /* DENZ_RESPONSIVE_V1
@@ -84,7 +84,7 @@ table{max-width:100%}
     width:100%;
   }
   .interactive-card,.product-card{width:100%;max-width:100%}
-  .interactive-card .product-media,.card-gallery,.card-video-wrap,.refurb-video-missing{
+  .interactive-card .product-media,.card-gallery,.card-video-wrap,.cheap-video-missing{
     width:100%;
     height:clamp(320px,54vw,365px);
   }
@@ -130,7 +130,7 @@ table{max-width:100%}
     padding-bottom:0;
   }
   .product-card{scroll-snap-align:none}
-  .interactive-card .product-media,.card-gallery,.card-video-wrap,.refurb-video-missing{
+  .interactive-card .product-media,.card-gallery,.card-video-wrap,.cheap-video-missing{
     height:clamp(360px,105vw,430px);
   }
   .card-gallery>img{height:calc(100% - 74px)}
