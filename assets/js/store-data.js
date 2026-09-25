@@ -4325,7 +4325,7 @@ window.DENZ_PRODUCTS=[
     "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4349,11 +4349,11 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "Cycle count 22.",
     "images": [
-      "assets/img/products/refurbished/iphone-17-pro-max-512-r23500.webp"
+      "assets/img/products/cheaper-options/iphone-17-pro-max-512-r23500.webp"
     ]
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4375,11 +4375,11 @@ window.DENZ_PRODUCTS=[
       "128GB"
     ],
     "notes": "Battery has been changed with an original Apple battery.",
-    "video": "assets/videos/refurbished/iphone-15-128-r8000-correct.mp4",
-    "poster": "assets/videos/refurbished/iphone-15-128-r8000-correct-poster.jpg"
+    "video": "assets/videos/cheaper-options/iphone-15-128-r8000-correct.mp4",
+    "poster": "assets/videos/cheaper-options/iphone-15-128-r8000-correct-poster.jpg"
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4401,11 +4401,11 @@ window.DENZ_PRODUCTS=[
       "128GB"
     ],
     "notes": "Battery has been replaced with an original battery.",
-    "video": "assets/videos/refurbished/iphone-13-128-r6300-correct.mp4",
-    "poster": "assets/videos/refurbished/iphone-13-128-r6300-correct-poster.jpg"
+    "video": "assets/videos/cheaper-options/iphone-13-128-r6300-correct.mp4",
+    "poster": "assets/videos/cheaper-options/iphone-13-128-r6300-correct-poster.jpg"
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4427,11 +4427,11 @@ window.DENZ_PRODUCTS=[
       "64GB"
     ],
     "notes": "Everything works.",
-    "video": "assets/videos/refurbished/iphone-xr-64-r3850.mp4",
-    "poster": "assets/videos/refurbished/iphone-xr-64-r3850-poster.jpg"
+    "video": "assets/videos/cheaper-options/iphone-xr-64-r3850.mp4",
+    "poster": "assets/videos/cheaper-options/iphone-xr-64-r3850-poster.jpg"
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4454,11 +4454,11 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "",
     "images": [
-      "assets/img/products/refurbished/iphone-12-64-r4500.webp"
+      "assets/img/products/cheaper-options/iphone-12-64-r4500.webp"
     ]
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4481,11 +4481,11 @@ window.DENZ_PRODUCTS=[
       "128GB"
     ],
     "notes": "",
-    "video": "assets/videos/refurbished/iphone-15-pro-128-r10500.mp4",
-    "poster": "assets/videos/refurbished/iphone-15-pro-128-r10500-poster.jpg"
+    "video": "assets/videos/cheaper-options/iphone-15-pro-128-r10500.mp4",
+    "poster": "assets/videos/cheaper-options/iphone-15-pro-128-r10500-poster.jpg"
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4507,11 +4507,11 @@ window.DENZ_PRODUCTS=[
       "128GB"
     ],
     "notes": "Cheapest iPhone 13 available. Scratches are less visible with a case. Only one at this price; first come, first serve.",
-    "video": "assets/videos/refurbished/iphone-13-128-r5500-correct.mp4",
-    "poster": "assets/videos/refurbished/iphone-13-128-r5500-correct-poster.jpg"
+    "video": "assets/videos/cheaper-options/iphone-13-128-r5500-correct.mp4",
+    "poster": "assets/videos/cheaper-options/iphone-13-128-r5500-correct-poster.jpg"
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4533,11 +4533,11 @@ window.DENZ_PRODUCTS=[
       "64GB"
     ],
     "notes": "Battery changed.",
-    "video": "assets/videos/refurbished/iphone-11-64-r4200-b100.mp4",
-    "poster": "assets/videos/refurbished/iphone-11-64-r4200-b100-poster.jpg"
+    "video": "assets/videos/cheaper-options/iphone-11-64-r4200-b100.mp4",
+    "poster": "assets/videos/cheaper-options/iphone-11-64-r4200-b100-poster.jpg"
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4559,11 +4559,11 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "",
     "images": [
-      "assets/img/products/refurbished/iphone-16-plus-128-r13000.webp"
+      "assets/img/products/cheaper-options/iphone-16-plus-128-r13000.webp"
     ]
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4586,11 +4586,11 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "",
     "images": [
-      "assets/img/products/refurbished/iphone-13-128-r6400.webp"
+      "assets/img/products/cheaper-options/iphone-13-128-r6400.webp"
     ]
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4612,11 +4612,11 @@ window.DENZ_PRODUCTS=[
       "64GB"
     ],
     "notes": "On iOS 26. Small mighty machine with a great camera and software like iPhone 11.",
-    "video": "assets/videos/refurbished/iphone-se-2-64-r2500.mp4",
-    "poster": "assets/videos/refurbished/iphone-se-2-64-r2500-poster.jpg"
+    "video": "assets/videos/cheaper-options/iphone-se-2-64-r2500.mp4",
+    "poster": "assets/videos/cheaper-options/iphone-se-2-64-r2500-poster.jpg"
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4640,11 +4640,11 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "Cheap because it uses MTN only.",
     "images": [
-      "assets/img/products/refurbished/iphone-14-pro-max-r8000.webp"
+      "assets/img/products/cheaper-options/iphone-14-pro-max-r8000.webp"
     ]
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4667,11 +4667,11 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "",
     "images": [
-      "assets/img/products/refurbished/iphone-11-64-r4200-b85.webp"
+      "assets/img/products/cheaper-options/iphone-11-64-r4200-b85.webp"
     ]
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4694,11 +4694,11 @@ window.DENZ_PRODUCTS=[
     ],
     "notes": "",
     "images": [
-      "assets/img/products/refurbished/iphone-15-128-r8500.webp"
+      "assets/img/products/cheaper-options/iphone-15-128-r8500.webp"
     ]
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4720,11 +4720,11 @@ window.DENZ_PRODUCTS=[
       "256GB"
     ],
     "notes": "Very clean unit.",
-    "video": "assets/videos/refurbished/iphone-17-pro-max-256-b98.mp4",
-    "poster": "assets/videos/refurbished/iphone-17-pro-max-256-b98-poster.jpg"
+    "video": "assets/videos/cheaper-options/iphone-17-pro-max-256-b98.mp4",
+    "poster": "assets/videos/cheaper-options/iphone-17-pro-max-256-b98-poster.jpg"
   },
   {
-    "category": "refurbished",
+    "category": "cheaper-options",
     "categoryLabel": "Cheaper Options",
     "colors": [],
     "featured": true,
@@ -4746,8 +4746,8 @@ window.DENZ_PRODUCTS=[
       "256GB"
     ],
     "notes": "Very clean unit.",
-    "video": "assets/videos/refurbished/iphone-17-pro-max-256-b100.mp4",
-    "poster": "assets/videos/refurbished/iphone-17-pro-max-256-b100-poster.jpg"
+    "video": "assets/videos/cheaper-options/iphone-17-pro-max-256-b100.mp4",
+    "poster": "assets/videos/cheaper-options/iphone-17-pro-max-256-b100-poster.jpg"
   }
 ];
 
