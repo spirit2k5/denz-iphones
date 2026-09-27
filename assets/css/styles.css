@@ -73,7 +73,7 @@ table{max-width:100%}
   .phone-art{width:min(78vw,390px)}
   .section{padding:64px 0}
   .section-head{gap:14px}
-  .section-head h2{font-size:clamp(38px,10vw,52px);overflow-wrap:anywhere}
+  .section-head h1,.section-head h2{font-size:clamp(38px,10vw,52px);overflow-wrap:anywhere}
   .category-grid,.product-grid{
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
@@ -173,7 +173,7 @@ table{max-width:100%}
   .hud-inner{width:calc(100% - 12px)}
   .brand-copy strong{font-size:13px}
   .hero-copy h1{font-size:38px}
-  .section-head h2{font-size:36px}
+  .section-head h1,.section-head h2{font-size:36px}
   .card-actions{grid-template-columns:1fr}
   .card-wa{min-height:44px}
   .cart-line{grid-template-columns:50px minmax(0,1fr)}
