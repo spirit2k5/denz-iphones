@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://denziphone.com/</loc><lastmod>2026-10-07</lastmod><changefreq>daily</changefreq><priority>1</priority></url>
-  <url><loc>https://denziphone.com/brand-new.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://denziphone.com/brand-new.html</loc><lastmod>2026-10-08</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://denziphone.com/preowned.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://denziphone.com/cheaper-options.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://denziphone.com/prices.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://denziphone.com/prices.html</loc><lastmod>2026-10-08</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://denziphone.com/layby.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://denziphone.com/contact.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://denziphone.com/about.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -77,4 +77,6 @@
   <url><loc>https://denziphone.com/iphone-15-cheaper-option-128gb-81.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://denziphone.com/iphone-17-pro-max-cheaper-option-256gb-98.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://denziphone.com/iphone-17-pro-max-cheaper-option-256gb-100.html</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://denziphone.com/iphone-18-pro-brand-new.html</loc><lastmod>2026-10-08</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://denziphone.com/iphone-18-pro-max-brand-new.html</loc><lastmod>2026-10-08</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>

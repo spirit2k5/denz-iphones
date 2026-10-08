@@ -2151,6 +2151,122 @@ window.DENZ_PRODUCTS=[
     "notes": "Sealed-box stock. Confirm live stock before payment."
   },
   {
+    "category": "brand-new",
+    "categoryLabel": "Brand New",
+    "condition": "Brand new",
+    "battery": "100% / new",
+    "network": "Confirm with Denz",
+    "storageOptions": [
+      "256GB"
+    ],
+    "colors": [
+      {
+        "name": "Silver",
+        "hex": "#e7e7e4"
+      },
+      {
+        "name": "Black",
+        "hex": "#1f2022"
+      },
+      {
+        "name": "Blue",
+        "hex": "#a9c4e3"
+      },
+      {
+        "name": "Burgundy",
+        "hex": "#5a1f2b"
+      }
+    ],
+    "images": [
+      "assets/img/products/brand-new/18/silver.webp",
+      "assets/img/products/brand-new/18/black.webp",
+      "assets/img/products/brand-new/18/blue.webp",
+      "assets/img/products/brand-new/18/burgundy.webp"
+    ],
+    "colorImages": {
+      "Silver": [
+        "assets/img/products/brand-new/18/silver.webp"
+      ],
+      "Black": [
+        "assets/img/products/brand-new/18/black.webp"
+      ],
+      "Blue": [
+        "assets/img/products/brand-new/18/blue.webp"
+      ],
+      "Burgundy": [
+        "assets/img/products/brand-new/18/burgundy.webp"
+      ]
+    },
+    "included": [],
+    "warranty": "",
+    "delivery": "Confirm with Denz",
+    "notes": "Brand New. Confirm live stock before payment.",
+    "id": "bn-18-pro",
+    "name": "iPhone 18 Pro",
+    "prices": {
+      "256GB": 28000
+    },
+    "featured": false
+  },
+  {
+    "category": "brand-new",
+    "categoryLabel": "Brand New",
+    "condition": "Brand new",
+    "battery": "100% / new",
+    "network": "Confirm with Denz",
+    "storageOptions": [
+      "256GB"
+    ],
+    "colors": [
+      {
+        "name": "Silver",
+        "hex": "#e7e7e4"
+      },
+      {
+        "name": "Black",
+        "hex": "#1f2022"
+      },
+      {
+        "name": "Blue",
+        "hex": "#a9c4e3"
+      },
+      {
+        "name": "Burgundy",
+        "hex": "#5a1f2b"
+      }
+    ],
+    "images": [
+      "assets/img/products/brand-new/18/silver.webp",
+      "assets/img/products/brand-new/18/black.webp",
+      "assets/img/products/brand-new/18/blue.webp",
+      "assets/img/products/brand-new/18/burgundy.webp"
+    ],
+    "colorImages": {
+      "Silver": [
+        "assets/img/products/brand-new/18/silver.webp"
+      ],
+      "Black": [
+        "assets/img/products/brand-new/18/black.webp"
+      ],
+      "Blue": [
+        "assets/img/products/brand-new/18/blue.webp"
+      ],
+      "Burgundy": [
+        "assets/img/products/brand-new/18/burgundy.webp"
+      ]
+    },
+    "included": [],
+    "warranty": "",
+    "delivery": "Confirm with Denz",
+    "notes": "Brand New. Confirm live stock before payment.",
+    "id": "bn-18-pro-max",
+    "name": "iPhone 18 Pro Max",
+    "prices": {
+      "256GB": 30000
+    },
+    "featured": true
+  },
+  {
     "id": "po-xr",
     "name": "iPhone XR",
     "category": "preowned",
