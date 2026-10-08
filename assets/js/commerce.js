@@ -41,6 +41,51 @@ function decorateCards(){ $(".product-card[data-product-id]").forEach(function(c
      actions.appendChild(alertBtn);
    }
  }
+
+ if(p){
+   var actions=card.querySelector(".card-actions");
+   var existingYoco=actions&&actions.querySelector("[data-card-yoco]");
+   var selectedStorage=card.dataset.selectedStorage||Object.keys(p.prices||{})[0]||"";
+   var selectedPrice=Number(p.prices&&p.prices[selectedStorage]);
+   var canYoco=p.status!=="sold-out"&&Number(p.stockQuantity)>0&&Number.isFinite(selectedPrice)&&selectedPrice>0;
+
+   if(canYoco&&actions&&!existingYoco){
+     var yocoBtn=document.createElement("button");
+     yocoBtn.type="button";
+     yocoBtn.className="card-yoco";
+     yocoBtn.setAttribute("data-card-yoco","");
+     yocoBtn.textContent="Buy with Yoco";
+     yocoBtn.onclick=function(e){
+       e.preventDefault();
+       e.stopPropagation();
+
+       var currentStorage=card.dataset.selectedStorage||Object.keys(p.prices||{})[0]||"";
+       var currentPrice=Number(p.prices&&p.prices[currentStorage]);
+
+       if(p.status==="sold-out"||Number(p.stockQuantity)<=0){
+         toast("This phone is sold out");
+         return;
+       }
+       if(!Number.isFinite(currentPrice)||currentPrice<=0){
+         toast("This storage option does not have a confirmed online price yet");
+         return;
+       }
+
+       var add=card.querySelector("[data-card-add]");
+       if(!add||add.disabled){
+         toast("This phone cannot be ordered online right now");
+         return;
+       }
+
+       add.click();
+       toast("Opening secure Yoco checkout…");
+       setTimeout(function(){location.href="cart.html"},220);
+     };
+     actions.insertBefore(yocoBtn,actions.querySelector(".card-wa"));
+   }else if(!canYoco&&existingYoco){
+     existingYoco.remove();
+   }
+ }
  if(!card.querySelector(".commerce-card-tools")){var d=document.createElement("div");d.className="commerce-card-tools";d.innerHTML='<button type="button" data-wish aria-label="Save to wishlist">♡</button><button type="button" data-compare aria-label="Compare phone">⇄</button>';var media=card.querySelector(".product-media");if(media)media.appendChild(d);d.querySelector("[data-wish]").onclick=function(e){e.preventDefault();e.stopPropagation();toggleWish(id)};d.querySelector("[data-compare]").onclick=function(e){e.preventDefault();e.stopPropagation();toggleCompare(id)}}var w=card.querySelector("[data-wish]"),c=card.querySelector("[data-compare]");if(w){w.textContent=wishlist.has(id)?"♥":"♡";w.classList.toggle("active",wishlist.has(id))}if(c)c.classList.toggle("active",compare.has(id))})}
 function updateCompareBar(){var bar=$("#denzCompareBar");if(!compare.size){if(bar)bar.remove();return}if(!bar){bar=document.createElement("a");bar.id="denzCompareBar";bar.className="compare-float";bar.href="compare.html";document.body.appendChild(bar)}bar.textContent="Compare "+compare.size+" phone"+(compare.size===1?"":"s")}
 function enhanceFooterPolicies(){
