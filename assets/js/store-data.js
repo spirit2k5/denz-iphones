@@ -2169,7 +2169,7 @@ window.DENZ_PRODUCTS=[
         "hex": "#1f2022"
       },
       {
-        "name": "Blue",
+        "name": "Glacier",
         "hex": "#a9c4e3"
       },
       {
@@ -2190,11 +2190,11 @@ window.DENZ_PRODUCTS=[
       "Black": [
         "assets/img/products/brand-new/18/black.webp"
       ],
-      "Blue": [
-        "assets/img/products/brand-new/18/blue.webp"
-      ],
       "Burgundy": [
         "assets/img/products/brand-new/18/burgundy.webp"
+      ],
+      "Glacier": [
+        "assets/img/products/brand-new/18/blue.webp"
       ]
     },
     "included": [],
@@ -2227,7 +2227,7 @@ window.DENZ_PRODUCTS=[
         "hex": "#1f2022"
       },
       {
-        "name": "Blue",
+        "name": "Glacier",
         "hex": "#a9c4e3"
       },
       {
@@ -2248,11 +2248,11 @@ window.DENZ_PRODUCTS=[
       "Black": [
         "assets/img/products/brand-new/18/black.webp"
       ],
-      "Blue": [
-        "assets/img/products/brand-new/18/blue.webp"
-      ],
       "Burgundy": [
         "assets/img/products/brand-new/18/burgundy.webp"
+      ],
+      "Glacier": [
+        "assets/img/products/brand-new/18/blue.webp"
       ]
     },
     "included": [],
