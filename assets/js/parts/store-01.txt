@@ -1,5 +1,5 @@
 (() => {
-const META=window.DENZ_META||{}, PRODUCTS=window.DENZ_PRODUCTS||[];
+const META=window.DENZ_META||{}, PRODUCTS=(window.DENZ_PRODUCTS||[]).map(window.DENZ_CATEGORIES.classify);
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const CART_KEY='denz-cart-v8', THEME_KEY='denz-theme-v8';
 const money=n=>new Intl.NumberFormat('en-ZA',{style:'currency',currency:'ZAR',maximumFractionDigits:0}).format(n||0);
@@ -40,7 +40,7 @@ function initTheme(){
 function initNav(){const page=location.pathname.split('/').pop()||'index.html';$$('[data-nav]').forEach(a=>{if(a.getAttribute('href')===page)a.classList.add('active')})}
 function low(p){let v=Object.values(p.prices||{}).filter(x=>Number.isFinite(x));return v.length?Math.min(...v):null}
 function price(p){let vals=Object.values(p.prices||{}).filter(x=>Number.isFinite(x));if(!vals.length)return 'Ask Denz';if(p.category!=='brand-new'&&vals.length===1)return money(vals[0]);return `From ${money(Math.min(...vals))}`}
-function catClass(c){return c==='brand-new'?'new':c==='preowned'?'owned':'cheap'}
+function catClass(c){return (c==='brand-new'||c==='sealed-box')?'new':c==='preowned'?'owned':'cheap'}
 function preferredStorage(p){return Object.keys(p.prices||{})[0]||'Confirm with Denz'}
 function preferredColor(p){return p.colors?.[0]?.name||'As shown / confirm with Denz'}
 function imagesFor(p,color){let arr=p.colorImages?.[color];return arr?.length?arr:(p.images||[])}

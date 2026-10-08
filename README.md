@@ -9,7 +9,8 @@ https://denziphone.com/
 ## Store
 
 Browse:
-- Brand New iPhones
+- Sealed Box iPhones (XR through 15 Pro Max)
+- Brand New iPhones (16 through 18)
 - Pre-Owned iPhones
 - Cheaper Options
 - Current price information
