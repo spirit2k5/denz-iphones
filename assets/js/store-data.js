@@ -1937,10 +1937,10 @@ window.DENZ_PRODUCTS=[
     "battery": "100% / new",
     "network": "Unlocked",
     "prices": {
-      "128GB": 16000
+      "256GB": 16399
     },
     "storageOptions": [
-      "128GB"
+      "256GB"
     ],
     "colors": [
       {
@@ -2027,7 +2027,7 @@ window.DENZ_PRODUCTS=[
     "battery": "100% / new",
     "network": "Unlocked",
     "prices": {
-      "256GB": 25000
+      "256GB": 24999
     },
     "storageOptions": [
       "256GB"
@@ -2093,7 +2093,7 @@ window.DENZ_PRODUCTS=[
     "battery": "100% / new",
     "network": "Unlocked",
     "prices": {
-      "256GB": 28000
+      "256GB": 27999
     },
     "storageOptions": [
       "256GB"
@@ -2180,17 +2180,20 @@ window.DENZ_PRODUCTS=[
     "images": [
       "assets/img/products/brand-new/18/final-silver-01.webp",
       "assets/img/products/brand-new/18/final-silver-02.webp",
+      "assets/img/products/brand-new/18/silver-01.webp",
       "assets/img/products/brand-new/18/final-black-01.webp",
       "assets/img/products/brand-new/18/final-black-02.webp",
       "assets/img/products/brand-new/18/final-glacier-01.webp",
       "assets/img/products/brand-new/18/final-glacier-02.webp",
+      "assets/img/products/brand-new/18/blue.webp",
       "assets/img/products/brand-new/18/final-burgundy-01.webp",
       "assets/img/products/brand-new/18/final-burgundy-02.webp"
     ],
     "colorImages": {
       "Silver": [
         "assets/img/products/brand-new/18/final-silver-01.webp",
-        "assets/img/products/brand-new/18/final-silver-02.webp"
+        "assets/img/products/brand-new/18/final-silver-02.webp",
+        "assets/img/products/brand-new/18/silver-01.webp"
       ],
       "Black": [
         "assets/img/products/brand-new/18/final-black-01.webp",
@@ -2198,7 +2201,8 @@ window.DENZ_PRODUCTS=[
       ],
       "Glacier": [
         "assets/img/products/brand-new/18/final-glacier-01.webp",
-        "assets/img/products/brand-new/18/final-glacier-02.webp"
+        "assets/img/products/brand-new/18/final-glacier-02.webp",
+        "assets/img/products/brand-new/18/blue.webp"
       ],
       "Burgundy": [
         "assets/img/products/brand-new/18/final-burgundy-01.webp",
@@ -2212,7 +2216,7 @@ window.DENZ_PRODUCTS=[
     "id": "bn-18-pro",
     "name": "iPhone 18 Pro",
     "prices": {
-      "256GB": 28000
+      "256GB": 31999
     },
     "featured": false
   },
@@ -2223,7 +2227,8 @@ window.DENZ_PRODUCTS=[
     "battery": "100% / new",
     "network": "Confirm with Denz",
     "storageOptions": [
-      "256GB"
+      "256GB",
+      "512GB"
     ],
     "colors": [
       {
@@ -2246,17 +2251,20 @@ window.DENZ_PRODUCTS=[
     "images": [
       "assets/img/products/brand-new/18/final-silver-01.webp",
       "assets/img/products/brand-new/18/final-silver-02.webp",
+      "assets/img/products/brand-new/18/silver-01.webp",
       "assets/img/products/brand-new/18/final-black-01.webp",
       "assets/img/products/brand-new/18/final-black-02.webp",
       "assets/img/products/brand-new/18/final-glacier-01.webp",
       "assets/img/products/brand-new/18/final-glacier-02.webp",
+      "assets/img/products/brand-new/18/blue.webp",
       "assets/img/products/brand-new/18/final-burgundy-01.webp",
       "assets/img/products/brand-new/18/final-burgundy-02.webp"
     ],
     "colorImages": {
       "Silver": [
         "assets/img/products/brand-new/18/final-silver-01.webp",
-        "assets/img/products/brand-new/18/final-silver-02.webp"
+        "assets/img/products/brand-new/18/final-silver-02.webp",
+        "assets/img/products/brand-new/18/silver-01.webp"
       ],
       "Black": [
         "assets/img/products/brand-new/18/final-black-01.webp",
@@ -2264,7 +2272,8 @@ window.DENZ_PRODUCTS=[
       ],
       "Glacier": [
         "assets/img/products/brand-new/18/final-glacier-01.webp",
-        "assets/img/products/brand-new/18/final-glacier-02.webp"
+        "assets/img/products/brand-new/18/final-glacier-02.webp",
+        "assets/img/products/brand-new/18/blue.webp"
       ],
       "Burgundy": [
         "assets/img/products/brand-new/18/final-burgundy-01.webp",
@@ -2278,7 +2287,8 @@ window.DENZ_PRODUCTS=[
     "id": "bn-18-pro-max",
     "name": "iPhone 18 Pro Max",
     "prices": {
-      "256GB": 30000
+      "256GB": 35500,
+      "512GB": 37500
     },
     "featured": true
   },
