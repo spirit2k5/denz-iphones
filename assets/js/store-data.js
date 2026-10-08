@@ -2178,35 +2178,31 @@ window.DENZ_PRODUCTS=[
       }
     ],
     "images": [
-      "assets/img/products/brand-new/18/final-silver-01.webp",
-      "assets/img/products/brand-new/18/final-silver-02.webp",
-      "assets/img/products/brand-new/18/silver-01.webp",
-      "assets/img/products/brand-new/18/final-black-01.webp",
-      "assets/img/products/brand-new/18/final-black-02.webp",
-      "assets/img/products/brand-new/18/final-glacier-01.webp",
-      "assets/img/products/brand-new/18/final-glacier-02.webp",
-      "assets/img/products/brand-new/18/blue.webp",
-      "assets/img/products/brand-new/18/final-burgundy-01.webp",
-      "assets/img/products/brand-new/18/final-burgundy-02.webp"
+      "assets/img/products/brand-new/18-pro/img-01.webp",
+      "assets/img/products/brand-new/18-pro/img-02.webp",
+      "assets/img/products/brand-new/18-pro/img-03.webp",
+      "assets/img/products/brand-new/18-pro/img-04.webp",
+      "assets/img/products/brand-new/18-pro/img-05.webp",
+      "assets/img/products/brand-new/18-pro/img-06.webp",
+      "assets/img/products/brand-new/18-pro/img-07.webp",
+      "assets/img/products/brand-new/18-pro/img-08.webp"
     ],
     "colorImages": {
       "Silver": [
-        "assets/img/products/brand-new/18/final-silver-01.webp",
-        "assets/img/products/brand-new/18/final-silver-02.webp",
-        "assets/img/products/brand-new/18/silver-01.webp"
+        "assets/img/products/brand-new/18-pro/img-01.webp",
+        "assets/img/products/brand-new/18-pro/img-02.webp"
       ],
       "Black": [
-        "assets/img/products/brand-new/18/final-black-01.webp",
-        "assets/img/products/brand-new/18/final-black-02.webp"
+        "assets/img/products/brand-new/18-pro/img-03.webp",
+        "assets/img/products/brand-new/18-pro/img-04.webp"
       ],
       "Glacier": [
-        "assets/img/products/brand-new/18/final-glacier-01.webp",
-        "assets/img/products/brand-new/18/final-glacier-02.webp",
-        "assets/img/products/brand-new/18/blue.webp"
+        "assets/img/products/brand-new/18-pro/img-05.webp",
+        "assets/img/products/brand-new/18-pro/img-06.webp"
       ],
       "Burgundy": [
-        "assets/img/products/brand-new/18/final-burgundy-01.webp",
-        "assets/img/products/brand-new/18/final-burgundy-02.webp"
+        "assets/img/products/brand-new/18-pro/img-07.webp",
+        "assets/img/products/brand-new/18-pro/img-08.webp"
       ]
     },
     "included": [],
@@ -2249,35 +2245,31 @@ window.DENZ_PRODUCTS=[
       }
     ],
     "images": [
-      "assets/img/products/brand-new/18/final-silver-01.webp",
-      "assets/img/products/brand-new/18/final-silver-02.webp",
-      "assets/img/products/brand-new/18/silver-01.webp",
-      "assets/img/products/brand-new/18/final-black-01.webp",
-      "assets/img/products/brand-new/18/final-black-02.webp",
-      "assets/img/products/brand-new/18/final-glacier-01.webp",
-      "assets/img/products/brand-new/18/final-glacier-02.webp",
-      "assets/img/products/brand-new/18/blue.webp",
-      "assets/img/products/brand-new/18/final-burgundy-01.webp",
-      "assets/img/products/brand-new/18/final-burgundy-02.webp"
+      "assets/img/products/brand-new/18-pro-max/img-01.webp",
+      "assets/img/products/brand-new/18-pro-max/img-02.webp",
+      "assets/img/products/brand-new/18-pro-max/img-03.webp",
+      "assets/img/products/brand-new/18-pro-max/img-04.webp",
+      "assets/img/products/brand-new/18-pro-max/img-05.webp",
+      "assets/img/products/brand-new/18-pro-max/img-06.webp",
+      "assets/img/products/brand-new/18-pro-max/img-07.webp",
+      "assets/img/products/brand-new/18-pro-max/img-08.webp"
     ],
     "colorImages": {
       "Silver": [
-        "assets/img/products/brand-new/18/final-silver-01.webp",
-        "assets/img/products/brand-new/18/final-silver-02.webp",
-        "assets/img/products/brand-new/18/silver-01.webp"
+        "assets/img/products/brand-new/18-pro-max/img-01.webp",
+        "assets/img/products/brand-new/18-pro-max/img-02.webp"
       ],
       "Black": [
-        "assets/img/products/brand-new/18/final-black-01.webp",
-        "assets/img/products/brand-new/18/final-black-02.webp"
+        "assets/img/products/brand-new/18-pro-max/img-03.webp",
+        "assets/img/products/brand-new/18-pro-max/img-04.webp"
       ],
       "Glacier": [
-        "assets/img/products/brand-new/18/final-glacier-01.webp",
-        "assets/img/products/brand-new/18/final-glacier-02.webp",
-        "assets/img/products/brand-new/18/blue.webp"
+        "assets/img/products/brand-new/18-pro-max/img-05.webp",
+        "assets/img/products/brand-new/18-pro-max/img-06.webp"
       ],
       "Burgundy": [
-        "assets/img/products/brand-new/18/final-burgundy-01.webp",
-        "assets/img/products/brand-new/18/final-burgundy-02.webp"
+        "assets/img/products/brand-new/18-pro-max/img-07.webp",
+        "assets/img/products/brand-new/18-pro-max/img-08.webp"
       ]
     },
     "included": [],
