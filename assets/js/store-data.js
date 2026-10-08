@@ -2290,7 +2290,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "64GB": 3700,
@@ -2390,7 +2390,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-11",
@@ -2398,7 +2398,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "64GB": 4500,
@@ -2486,7 +2486,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-11-pro",
@@ -2494,7 +2494,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "64GB": 5300
@@ -2564,7 +2564,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-11-pro-max",
@@ -2572,7 +2572,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "64GB": 5500,
@@ -2644,7 +2644,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-12",
@@ -2652,7 +2652,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "64GB": 5000,
@@ -2748,7 +2748,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-12-pro",
@@ -2756,7 +2756,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 6500
@@ -2826,7 +2826,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-12-pro-max",
@@ -2834,7 +2834,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 7500,
@@ -2906,7 +2906,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-13",
@@ -2914,7 +2914,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 6800
@@ -3008,7 +3008,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-13-pro",
@@ -3016,7 +3016,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 8000,
@@ -3100,7 +3100,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-13-pro-max",
@@ -3108,7 +3108,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 8900,
@@ -3192,7 +3192,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-14",
@@ -3200,7 +3200,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 7200
@@ -3294,7 +3294,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-14-plus",
@@ -3302,7 +3302,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 7500
@@ -3396,7 +3396,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-14-pro",
@@ -3404,7 +3404,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 8500,
@@ -3476,7 +3476,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-14-pro-max",
@@ -3484,7 +3484,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 11000,
@@ -3556,7 +3556,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-15",
@@ -3564,7 +3564,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 9500
@@ -3642,7 +3642,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-15-plus",
@@ -3650,7 +3650,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 10000
@@ -3728,7 +3728,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-15-pro",
@@ -3736,7 +3736,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 11500,
@@ -3808,7 +3808,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-15-pro-max",
@@ -3816,7 +3816,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 13000,
@@ -3888,7 +3888,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-16",
@@ -3896,7 +3896,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 12000,
@@ -3982,7 +3982,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-16-plus",
@@ -3990,7 +3990,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 12500
@@ -4072,7 +4072,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-16-pro",
@@ -4080,7 +4080,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 13500,
@@ -4152,7 +4152,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-16-pro-max",
@@ -4160,7 +4160,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 15000,
@@ -4232,7 +4232,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-17",
@@ -4240,7 +4240,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "128GB": 15000,
@@ -4324,7 +4324,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-17-pro",
@@ -4332,7 +4332,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "256GB": 23000
@@ -4390,7 +4390,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "id": "po-17-pro-max",
@@ -4398,7 +4398,7 @@ window.DENZ_PRODUCTS=[
     "category": "preowned",
     "categoryLabel": "Pre-Owned",
     "condition": "Pre-owned · Stock to confirm",
-    "battery": "health to confirm",
+    "battery": "90%+",
     "network": "Unlocked",
     "prices": {
       "256GB": 25000
@@ -4456,7 +4456,7 @@ window.DENZ_PRODUCTS=[
       "Free case / pouch",
       "Free screen protector"
     ],
-    "notes": "Catalogue photos show the model and colour. Confirm the available unit, battery health, condition and final price with Denz before payment."
+    "notes": "Battery capacity is above 90%. Catalogue photos show the model and colour. Confirm the exact battery percentage, available unit, condition and final price with Denz before payment."
   },
   {
     "category": "cheaper-options",
@@ -4473,7 +4473,7 @@ window.DENZ_PRODUCTS=[
     "id": "rf-17-pro-max-512-current",
     "name": "iPhone 17 Pro Max",
     "condition": "Still new",
-    "battery": "100%",
+    "battery": "100% · Battery changed",
     "network": "eSIM only · American stock",
     "prices": {
       "512GB": 23500
@@ -4481,7 +4481,7 @@ window.DENZ_PRODUCTS=[
     "storageOptions": [
       "512GB"
     ],
-    "notes": "Cycle count 22.",
+    "notes": "Cycle count 22. Battery has been changed.",
     "images": [
       "assets/img/products/cheaper-options/iphone-17-pro-max-512-r23500.webp"
     ]
@@ -4527,7 +4527,7 @@ window.DENZ_PRODUCTS=[
     "id": "rf-13-128-r6300",
     "name": "iPhone 13",
     "condition": "8/10",
-    "battery": "100%",
+    "battery": "100% · Battery changed",
     "prices": {
       "128GB": 6300
     },
@@ -4659,7 +4659,7 @@ window.DENZ_PRODUCTS=[
     "id": "rf-11-64-r4200-b100",
     "name": "iPhone 11",
     "condition": "7/10",
-    "battery": "100%",
+    "battery": "100% · Battery changed",
     "prices": {
       "64GB": 4200
     },
@@ -4872,14 +4872,14 @@ window.DENZ_PRODUCTS=[
     "id": "rf-17-pro-max-256-b100",
     "name": "iPhone 17 Pro Max",
     "condition": "10/10 · Very clean",
-    "battery": "100%",
+    "battery": "100% · Battery changed",
     "prices": {
       "256GB": 25500
     },
     "storageOptions": [
       "256GB"
     ],
-    "notes": "Very clean unit.",
+    "notes": "Very clean unit. Battery has been changed.",
     "video": "assets/videos/cheaper-options/iphone-17-pro-max-256-b100.mp4",
     "poster": "assets/videos/cheaper-options/iphone-17-pro-max-256-b100-poster.jpg"
   }
