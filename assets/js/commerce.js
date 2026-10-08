@@ -27,7 +27,7 @@ async function requestStockAlert(p){
  var r=await sb.from("denz_stock_alerts").insert({user_id:session.user.id,email:session.user.email||null,product_source_id:p.id,active:true});
  toast(r.error?r.error.message:"Stock alert saved");
 }
-function decorateCards(){ $(".product-card[data-product-id]").forEach(function(card){var id=card.dataset.productId,p=productById(id),media=card.querySelector(".product-media");if(p&&media&&!card.querySelector(".stock-chip")){var q=Number(p.stockQuantity);var chip=document.createElement("span");chip.className="stock-chip "+(q<=0?"sold":q<=2?"low":"in");chip.textContent=q<=0?"Sold Out":q<=2?"Low Stock":"In Stock";media.appendChild(chip)}
+function decorateCards(){ $$(".product-card[data-product-id]").forEach(function(card){var id=card.dataset.productId,p=productById(id),media=card.querySelector(".product-media");if(p&&media&&!card.querySelector(".stock-chip")){var q=Number(p.stockQuantity);var chip=document.createElement("span");chip.className="stock-chip "+(q<=0?"sold":q<=2?"low":"in");chip.textContent=q<=0?"Sold Out":q<=2?"Low Stock":"In Stock";media.appendChild(chip)}
  if(p&&Number(p.stockQuantity)<=0){
    var add=card.querySelector("[data-card-add]");
    if(add){add.disabled=true;add.textContent="Sold Out"}
@@ -89,7 +89,7 @@ function decorateCards(){ $(".product-card[data-product-id]").forEach(function(c
  if(!card.querySelector(".commerce-card-tools")){var d=document.createElement("div");d.className="commerce-card-tools";d.innerHTML='<button type="button" data-wish aria-label="Save to wishlist">♡</button><button type="button" data-compare aria-label="Compare phone">⇄</button>';var media=card.querySelector(".product-media");if(media)media.appendChild(d);d.querySelector("[data-wish]").onclick=function(e){e.preventDefault();e.stopPropagation();toggleWish(id)};d.querySelector("[data-compare]").onclick=function(e){e.preventDefault();e.stopPropagation();toggleCompare(id)}}var w=card.querySelector("[data-wish]"),c=card.querySelector("[data-compare]");if(w){w.textContent=wishlist.has(id)?"♥":"♡";w.classList.toggle("active",wishlist.has(id))}if(c)c.classList.toggle("active",compare.has(id))})}
 function updateCompareBar(){var bar=$("#denzCompareBar");if(!compare.size){if(bar)bar.remove();return}if(!bar){bar=document.createElement("a");bar.id="denzCompareBar";bar.className="compare-float";bar.href="compare.html";document.body.appendChild(bar)}bar.textContent="Compare "+compare.size+" phone"+(compare.size===1?"":"s")}
 function enhanceFooterPolicies(){
-  $(".footer a[href='terms.html']").forEach(function(anchor){
+  $$(".footer a[href='terms.html']").forEach(function(anchor){
     var box=anchor.parentElement;
     if(!box.querySelector("a[href='payment-policy.html']")){
       anchor.insertAdjacentHTML("beforebegin",'<a href="payment-policy.html">Payment Policy</a><a href="delivery.html">Delivery Policy</a><a href="warranty.html">Warranty Information</a>');
