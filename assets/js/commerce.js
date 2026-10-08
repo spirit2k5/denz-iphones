@@ -44,18 +44,18 @@ function decorateCards(){ $$(".product-card[data-product-id]").forEach(function(
 
  if(p){
    var actions=card.querySelector(".card-actions");
-   var existingYoco=actions&&actions.querySelector("[data-card-yoco]");
+   var existingPaystack=actions&&actions.querySelector("[data-card-paystack]");
    var selectedStorage=card.dataset.selectedStorage||Object.keys(p.prices||{})[0]||"";
    var selectedPrice=Number(p.prices&&p.prices[selectedStorage]);
-   var canYoco=p.status!=="sold-out"&&Number(p.stockQuantity)>0&&Number.isFinite(selectedPrice)&&selectedPrice>0;
+   var canPaystack=p.status!=="sold-out"&&Number(p.stockQuantity)>0&&Number.isFinite(selectedPrice)&&selectedPrice>0;
 
-   if(canYoco&&actions&&!existingYoco){
-     var yocoBtn=document.createElement("button");
-     yocoBtn.type="button";
-     yocoBtn.className="card-yoco";
-     yocoBtn.setAttribute("data-card-yoco","");
-     yocoBtn.textContent="Buy with Yoco";
-     yocoBtn.onclick=function(e){
+   if(canPaystack&&actions&&!existingPaystack){
+     var paystackBtn=document.createElement("button");
+     paystackBtn.type="button";
+     paystackBtn.className="card-paystack";
+     paystackBtn.setAttribute("data-card-paystack","");
+     paystackBtn.textContent="Buy with Paystack";
+     paystackBtn.onclick=function(e){
        e.preventDefault();
        e.stopPropagation();
 
@@ -78,12 +78,12 @@ function decorateCards(){ $$(".product-card[data-product-id]").forEach(function(
        }
 
        add.click();
-       toast("Opening secure Yoco checkout…");
+       toast("Opening secure Paystack checkout…");
        setTimeout(function(){location.href="cart.html"},220);
      };
-     actions.insertBefore(yocoBtn,actions.querySelector(".card-wa"));
-   }else if(!canYoco&&existingYoco){
-     existingYoco.remove();
+     actions.insertBefore(paystackBtn,actions.querySelector(".card-wa"));
+   }else if(!canPaystack&&existingPaystack){
+     existingPaystack.remove();
    }
  }
  if(!card.querySelector(".commerce-card-tools")){var d=document.createElement("div");d.className="commerce-card-tools";d.innerHTML='<button type="button" data-wish aria-label="Save to wishlist">♡</button><button type="button" data-compare aria-label="Compare phone">⇄</button>';var media=card.querySelector(".product-media");if(media)media.appendChild(d);d.querySelector("[data-wish]").onclick=function(e){e.preventDefault();e.stopPropagation();toggleWish(id)};d.querySelector("[data-compare]").onclick=function(e){e.preventDefault();e.stopPropagation();toggleCompare(id)}}var w=card.querySelector("[data-wish]"),c=card.querySelector("[data-compare]");if(w){var wishMark=wishlist.has(id)?"♥":"♡";if(w.textContent!==wishMark)w.textContent=wishMark;w.classList.toggle("active",wishlist.has(id))}if(c)c.classList.toggle("active",compare.has(id))})}
@@ -144,8 +144,8 @@ function bindProductExtras(){
    if(sold&&add){add.disabled=true;add.textContent="Sold Out"}
    var y=document.createElement("button");
    y.type="button";
-   y.className=sold?"stock-alert-btn product-yoco":"yoco-pay product-yoco";
-   y.textContent=sold?"Notify me when available":"Buy securely with Yoco";
+   y.className=sold?"stock-alert-btn product-paystack":"paystack-pay product-paystack";
+   y.textContent=sold?"Notify me when available":"Buy securely with Paystack";
    y.onclick=function(){
      if(sold){requestStockAlert(p);return}
      if(add)add.click();
@@ -161,8 +161,8 @@ function bindProductExtras(){
 var similar=(window.DENZ_PRODUCTS||[]).filter(function(x){return x.id!==p.id&&x.category===p.category}).sort(function(a,b){return Math.abs((low(a)||0)-(low(p)||0))-Math.abs((low(b)||0)-(low(p)||0))}).slice(0,4);if(similar.length){var sec=document.createElement("section");sec.className="reviews-box";sec.innerHTML='<div class="section-head"><div><span class="kicker">You may also like</span><h2>Similar phones</h2></div></div><div class="mini-product-grid">'+similar.map(miniProduct).join("")+'</div>';host.parentNode.appendChild(sec)}}
 
 function bindComparePage(){var root=$("[data-compare-page]");if(!root)return;var ids=Array.from(compare),ps=ids.map(productById).filter(Boolean);if(!ps.length){root.innerHTML='<div class="commerce-empty"><h2>No phones selected</h2><p>Use the compare button on any phone card.</p><a class="btn-primary" href="search.html">Find phones</a></div>';return}var rows=[["Price",function(p){return low(p)!=null?money(low(p)):"Ask Denz"}],["Storage",function(p){return Object.keys(p.prices||{}).join(", ")}],["Battery",function(p){return p.battery||"Confirm"}],["Condition",function(p){return p.condition||"Confirm"}],["Network",function(p){return p.network||"Confirm"}],["Warranty",function(p){return p.warranty||"Confirm"}],["Category",function(p){return p.categoryLabel||p.category}]];root.innerHTML='<div class="compare-table"><div class="compare-row compare-head"><div>Compare</div>'+ps.map(function(p){return '<div><img src="'+esc(imageOf(p))+'" alt="'+esc(p.name)+'"><b>'+esc(p.name)+'</b><button data-remove-compare="'+esc(p.id)+'">Remove</button></div>'}).join("")+'</div>'+rows.map(function(r){return '<div class="compare-row"><div><b>'+r[0]+'</b></div>'+ps.map(function(p){return '<div>'+esc(r[1](p))+'</div>'}).join("")+'</div>'}).join("")+'</div>';$$("[data-remove-compare]",root).forEach(function(b){b.onclick=function(){toggleCompare(b.dataset.removeCompare);bindComparePage()}})}
-function bindYoco(){ $$("[data-checkout-form]").forEach(function(form){if(form.dataset.yocoBound)return;form.dataset.yocoBound="1";var btn=document.createElement("button");btn.type="button";btn.className="yoco-pay";btn.textContent="Pay securely with Yoco";var wa=form.querySelector(".checkout-wa");if(wa)wa.insertAdjacentElement("beforebegin",btn);else form.appendChild(btn);btn.onclick=async function(){var c=cart();if(!c.length)return toast("Your cart is empty");var email=form.querySelector("[name=email]");if(email&&!email.value.trim()){email.required=true;email.reportValidity();return}if(!form.reportValidity())return;var d=Object.fromEntries(new FormData(form).entries()),ful=form.querySelector('input[name="fulfilment"]:checked');if(!ful)return toast("Choose delivery or collection");btn.disabled=true;btn.textContent="Opening secure Yoco checkout…";var body={requestId:(crypto.randomUUID?crypto.randomUUID():Date.now()+"-"+Math.random().toString(36).slice(2)).replace(/-/g,""),items:c.map(function(x){return{id:x.id,storage:x.storage,color:x.color,quantity:1}}),fulfilment:ful.value,name:d.name,email:d.email,phone:d.phone,whatsapp:d.whatsapp||d.phone,address:d.address,address2:d.address2||"",suburb:d.suburb,city:d.city,province:d.province,postal:d.postal,notes:d.notes,termsAccepted:!!form.querySelector("[name=legal_accept]:checked")};var h={"Content-Type":"application/json","apikey":SUPA_KEY};if(session)h.Authorization="Bearer "+session.access_token;try{var r=await fetch(SUPA_URL+"/functions/v1/denz-yoco-checkout",{method:"POST",headers:h,body:JSON.stringify(body)}),j=await r.json();if(!r.ok)throw new Error(j.message||j.error||"Could not start payment");location.href=j.redirectUrl}catch(e){toast(e.message);btn.disabled=false;btn.textContent="Pay securely with Yoco"}}})}
-function bindPaymentStatus(){var root=$("[data-payment-status]");if(!root)return;var order=new URLSearchParams(location.search).get("order");if(!order){root.innerHTML="<p>Order reference missing.</p>";return}fetch(SUPA_URL+"/functions/v1/denz-order-status?order="+encodeURIComponent(order),{headers:{apikey:SUPA_KEY}}).then(function(r){return r.json()}).then(function(x){root.innerHTML='<h2>'+esc(x.order_number||"Order")+'</h2><p>Order status: <strong>'+esc(x.status||"received")+'</strong></p><p>Payment: <strong>'+esc(x.payment_status||"pending")+'</strong></p><p>Total: <strong>'+money(x.total)+'</strong></p><p>If payment has just been completed, confirmation can take a few seconds while Yoco sends the secure payment notification.</p>'}).catch(function(){root.innerHTML="<p>We could not load the order status yet.</p>"})}
+function bindPaystack(){ $$("[data-checkout-form]").forEach(function(form){if(form.dataset.paystackBound)return;form.dataset.paystackBound="1";var btn=document.createElement("button");btn.type="button";btn.className="paystack-pay";btn.textContent="Pay securely with Paystack";var wa=form.querySelector(".checkout-wa");if(wa)wa.insertAdjacentElement("beforebegin",btn);else form.appendChild(btn);btn.onclick=async function(){var c=cart();if(!c.length)return toast("Your cart is empty");var email=form.querySelector("[name=email]");if(email&&!email.value.trim()){email.required=true;email.reportValidity();return}if(!form.reportValidity())return;var d=Object.fromEntries(new FormData(form).entries()),ful=form.querySelector('input[name="fulfilment"]:checked');if(!ful)return toast("Choose delivery or collection");btn.disabled=true;btn.textContent="Opening secure Paystack checkout…";var body={requestId:(crypto.randomUUID?crypto.randomUUID():Date.now()+"-"+Math.random().toString(36).slice(2)).replace(/-/g,""),items:c.map(function(x){return{id:x.id,storage:x.storage,color:x.color,quantity:1}}),fulfilment:ful.value,name:d.name,email:d.email,phone:d.phone,whatsapp:d.whatsapp||d.phone,address:d.address,address2:d.address2||"",suburb:d.suburb,city:d.city,province:d.province,postal:d.postal,notes:d.notes,termsAccepted:!!form.querySelector("[name=legal_accept]:checked")};var h={"Content-Type":"application/json","apikey":SUPA_KEY};if(session)h.Authorization="Bearer "+session.access_token;try{var r=await fetch(SUPA_URL+"/functions/v1/denz-paystack-checkout",{method:"POST",headers:h,body:JSON.stringify(body)}),j=await r.json();if(!r.ok)throw new Error(j.message||j.error||"Could not start payment");location.href=j.redirectUrl}catch(e){toast(e.message);btn.disabled=false;btn.textContent="Pay securely with Paystack"}}})}
+function bindPaymentStatus(){var root=$("[data-payment-status]");if(!root)return;var order=new URLSearchParams(location.search).get("order");if(!order){root.innerHTML="<p>Order reference missing.</p>";return}fetch(SUPA_URL+"/functions/v1/denz-order-status?order="+encodeURIComponent(order),{headers:{apikey:SUPA_KEY}}).then(function(r){return r.json()}).then(function(x){root.innerHTML='<h2>'+esc(x.order_number||"Order")+'</h2><p>Order status: <strong>'+esc(x.status||"received")+'</strong></p><p>Payment: <strong>'+esc(x.payment_status||"pending")+'</strong></p><p>Total: <strong>'+money(x.total)+'</strong></p><p>If payment has just been completed, confirmation can take a few seconds while Denz verifies the payment with Paystack.</p>'}).catch(function(){root.innerHTML="<p>We could not load the order status yet.</p>"})}
 function syncCart(){if(!sb||!session)return;var save=function(){sb.from("denz_saved_carts").upsert({user_id:session.user.id,cart:cart(),updated_at:new Date().toISOString()})};window.addEventListener("storage",function(e){if(e.key==="denz-cart-v8")save()});setTimeout(save,1500)}
 function init(){
  enhanceFooterPolicies();
@@ -175,7 +175,7 @@ function init(){
    await bindReviews();
    bindProductExtras();
    await bindHomeReviews();
-   bindYoco();
+   bindPaystack();
    syncCart();
    decorateCards();
    updateCompareBar();
@@ -195,7 +195,7 @@ function init(){
      pendingCards=false;
      pendingCheckout=false;
      if(cards)decorateCards();
-     if(checkout)bindYoco();
+     if(checkout)bindPaystack();
    });
  };
 
