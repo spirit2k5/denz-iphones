@@ -21,6 +21,8 @@ function initDeviceMode(){
  apply();
  window.addEventListener('resize',apply,{passive:true});
  window.addEventListener('orientationchange',apply,{passive:true});
+ const layout=window.matchMedia('(max-width:800px)');
+ layout.addEventListener('change',event=>{$$('.card-config').forEach(config=>config.open=!event.matches)});
 }
 function initTheme(){
  let t=localStorage.getItem(THEME_KEY)||'light',adminTapCount=0,adminTapTimer=null;
@@ -51,16 +53,17 @@ function mediaCard(p,color){
  return `<div class="card-gallery" data-card-gallery><img data-card-image src="${src}" alt="${p.name} ${color||''}" loading="lazy"><button class="card-arrow prev" type="button" data-card-prev aria-label="Previous image">‹</button><button class="card-arrow next" type="button" data-card-next aria-label="Next image">›</button><span class="card-counter" data-card-counter>1/${Math.max(1,imgs.length)}</span><div class="card-thumbs" data-card-thumbs>${imgs.map((im,i)=>`<button type="button" class="card-thumb ${i===0?'active':''}" data-card-thumb="${i}"><img src="${im}" alt="${p.name} ${color||''} view ${i+1}" loading="lazy"></button>`).join('')}</div></div>`
 }
 function card(p){
- let storage=preferredStorage(p),color=preferredColor(p),specs=[p.battery&&`Battery ${p.battery}`,p.network,p.condition].filter(Boolean),known=p.prices?.[storage];
+ let storage=preferredStorage(p),color=preferredColor(p),specs=[p.battery&&`Battery ${p.battery}`,p.network].filter(Boolean),known=p.prices?.[storage];
  let colors=p.colors?.length?`<div class="card-option"><div class="card-option-head"><span>Colour</span><strong data-card-color-label>${color}</strong></div><div class="card-colors">${p.colors.map(c=>`<button type="button" class="card-color ${c.name===color?'active':''}" data-card-color="${c.name}" title="${c.name}"><span class="swatch" style="--swatch:${c.hex}"></span><span>${c.name}</span></button>`).join('')}</div></div>`:`<div class="card-stock-note">Specific stock unit · supplied stock media</div>`;
  let storageCtl=(p.storageOptions||[]).length?`<div class="card-option"><div class="card-option-head"><span>Storage</span><strong data-card-storage-label>${storage}</strong></div><div class="card-storage">${p.storageOptions.map(s=>`<button type="button" class="card-storage-btn ${s===storage?'active':''}" data-card-storage="${s}">${s}${Number.isFinite(p.prices?.[s])?` · ${money(p.prices[s])}`:''}</button>`).join('')}</div></div>`:'';
  return `<article class="product-card interactive-card" data-product-id="${p.id}" data-selected-color="${color}" data-selected-storage="${storage}">
  <div class="product-media">${mediaCard(p,color)}<div class="badge-row"><span class="badge ${catClass(p.category)}">${p.categoryLabel}</span>${p.network&&p.network!=='Unlocked'?`<span class="badge alert">${p.network}</span>`:''}</div></div>
- <div class="product-body"><div class="product-title-row"><div><h3>${p.name}</h3><p>${p.condition}</p></div><strong data-card-price>${Number.isFinite(known)?money(known):price(p)}</strong></div><div class="mini-specs">${specs.slice(0,3).map(s=>`<span>${s}</span>`).join('')}</div>${colors}${storageCtl}
+ <div class="product-body"><div class="product-title-row"><div><h3>${p.name}</h3><p>${p.condition}</p></div><strong data-card-price>${Number.isFinite(known)?money(known):price(p)}</strong></div><div class="mini-specs">${specs.slice(0,3).map(s=>`<span>${s}</span>`).join('')}</div><details class="card-config" open><summary>Choose options</summary>${colors}${storageCtl}</details>
  <div class="card-actions"><button class="card-add" type="button" data-card-add>Add to cart</button><a target="_blank" rel="noreferrer" class="card-wa" data-card-wa>WhatsApp</a></div><a href="${seoPath(p)}" class="card-details">Full details →</a></div></article>`
 }
 function bindCard(cardEl){
  const p=PRODUCTS.find(x=>x.id===cardEl.dataset.productId);if(!p)return;
+ const config=$(".card-config",cardEl);if(config)config.open=window.innerWidth>800;
  let color=cardEl.dataset.selectedColor||preferredColor(p),storage=cardEl.dataset.selectedStorage||preferredStorage(p),imgs=imagesFor(p,color),idx=0;
  const main=()=> $('[data-card-image]',cardEl),counter=()=> $('[data-card-counter]',cardEl),thumbWrap=()=> $('[data-card-thumbs]',cardEl);
  const renderThumbs=()=>{let w=thumbWrap();if(!w)return;w.innerHTML=imgs.map((im,i)=>`<button type="button" class="card-thumb ${i===idx?'active':''}" data-card-thumb="${i}"><img src="${im}" alt="${p.name} ${color} view ${i+1}" loading="lazy"></button>`).join('');$$('[data-card-thumb]',w).forEach(b=>b.addEventListener('click',()=>show(Number(b.dataset.cardThumb))))};
