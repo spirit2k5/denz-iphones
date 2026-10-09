@@ -1,7 +1,8 @@
 (function(){
+var authReturnQuery=new URLSearchParams(location.search),authReturnHash=new URLSearchParams(location.hash.slice(1));
 var SUPA_URL="https://vpgexijihrozwugqqagy.supabase.co";
 var SUPA_KEY="sb_publishable_ijbK9YBBaV9j8kyBzwbFOA_iepnbPtC";
-var sb=window.supabase&&window.supabase.createClient?window.supabase.createClient(SUPA_URL,SUPA_KEY):null;
+var sb=window.supabase&&window.supabase.createClient?window.supabase.createClient(SUPA_URL,SUPA_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}}):null;
 window.DENZ_SB=sb;
 var session=null,wishlist=new Set(),compare=new Set(JSON.parse(localStorage.getItem("denz-compare-v1")||"[]"));
 function $(s,r){return (r||document).querySelector(s)} function $$(s,r){return Array.from((r||document).querySelectorAll(s))}
@@ -12,7 +13,7 @@ function imageOf(p){return (p.images&&p.images[0])||p.poster||"assets/img/brand/
 function cart(){try{return JSON.parse(localStorage.getItem("denz-cart-v8")||"[]")}catch(e){return[]}}
 function toast(t){var e=$(".toast");if(!e){e=document.createElement("div");e.className="toast";document.body.appendChild(e)}e.textContent=t;e.classList.add("show");setTimeout(function(){e.classList.remove("show")},2000)}
 function productById(id){return (window.DENZ_PRODUCTS||[]).find(function(p){return p.id===id})}
-async function loadSession(){if(!sb)return;var r=await sb.auth.getSession();session=r.data.session||null;if(session){var rs=await Promise.all([sb.from("denz_wishlist").select("product_source_id").eq("user_id",session.user.id),sb.from("denz_saved_carts").select("cart").eq("user_id",session.user.id).maybeSingle()]);var w=rs[0];if(!w.error)(w.data||[]).forEach(function(x){wishlist.add(x.product_source_id)});var saved=rs[1].data&&rs[1].data.cart;if(Array.isArray(saved)&&saved.length&&!cart().length){localStorage.setItem("denz-cart-v8",JSON.stringify(saved));window.dispatchEvent(new StorageEvent("storage",{key:"denz-cart-v8"}));toast("Your saved cart was restored")}}else{try{JSON.parse(localStorage.getItem("denz-wishlist-v1")||"[]").forEach(function(x){wishlist.add(x)})}catch(e){}}updateAccountLinks()}
+async function loadSession(){if(!sb)return;var r=await sb.auth.getSession();if(r.error)throw r.error;session=r.data.session||null;wishlist.clear();if(session){var rs=await Promise.all([sb.from("denz_wishlist").select("product_source_id").eq("user_id",session.user.id),sb.from("denz_saved_carts").select("cart").eq("user_id",session.user.id).maybeSingle()]);var w=rs[0];if(!w.error)(w.data||[]).forEach(function(x){wishlist.add(x.product_source_id)});var saved=rs[1].data&&rs[1].data.cart;if(Array.isArray(saved)&&saved.length&&!cart().length){localStorage.setItem("denz-cart-v8",JSON.stringify(saved));window.dispatchEvent(new StorageEvent("storage",{key:"denz-cart-v8"}));toast("Your saved cart was restored")}}else{try{JSON.parse(localStorage.getItem("denz-wishlist-v1")||"[]").forEach(function(x){wishlist.add(x)})}catch(e){}}updateAccountLinks()}
 function saveGuestWish(){localStorage.setItem("denz-wishlist-v1",JSON.stringify(Array.from(wishlist)))}
 async function toggleWish(id){if(wishlist.has(id)){wishlist.delete(id);if(session)await sb.from("denz_wishlist").delete().eq("user_id",session.user.id).eq("product_source_id",id);else saveGuestWish();toast("Removed from wishlist")}else{wishlist.add(id);if(session)await sb.from("denz_wishlist").upsert({user_id:session.user.id,product_source_id:id});else saveGuestWish();toast("Saved to wishlist")}decorateCards()}
 function toggleCompare(id){if(compare.has(id))compare.delete(id);else{if(compare.size>=3){toast("Compare up to 3 phones");return}compare.add(id)}localStorage.setItem("denz-compare-v1",JSON.stringify(Array.from(compare)));decorateCards();updateCompareBar()}
@@ -98,22 +99,39 @@ function enhanceFooterPolicies(){
 }
 function bottomNav(){if($("#denzMobileNav"))return;var n=document.createElement("nav");n.id="denzMobileNav";n.className="mobile-bottom-nav";n.innerHTML='<a href="index.html"><span>⌂</span>Home</a><a href="search.html"><span>⌕</span>Search</a><a href="account.html#wishlist"><span>♡</span>Wishlist</a><a href="cart.html"><span>▣</span>Cart</a><a href="account.html"><span>◉</span>Account</a>';document.body.appendChild(n)}
 function updateAccountLinks(){var a=$(".hud-actions");if(a&&!a.querySelector(".account-mini")){var x=document.createElement("a");x.className="account-mini";x.href=session?"account.html":"login.html";x.textContent=session?"Account":"Login";a.appendChild(x)}else if(a&&a.querySelector(".account-mini")){var x2=a.querySelector(".account-mini");x2.href=session?"account.html":"login.html";x2.textContent=session?"Account":"Login"}}
-function bindAuth(){var root=$("[data-auth-page]");if(!root||!sb)return;var msg=$("[data-auth-msg]",root);function say(t,bad){msg.textContent=t||"";msg.className=bad?"auth-msg bad":"auth-msg"}
+function bindAuth(){var root=$("[data-auth-page]");if(!root)return;if(!sb){$("[data-auth-msg]",root).textContent="Sign-in could not load. Please refresh the page.";return;}var msg=$("[data-auth-msg]",root);function say(t,bad){msg.textContent=t||"";msg.className=bad?"auth-msg bad":"auth-msg"}
 var login=$("[data-login-form]",root);if(login)login.addEventListener("submit",async function(e){e.preventDefault();var f=new FormData(login),r=await sb.auth.signInWithPassword({email:String(f.get("email")||"").trim(),password:String(f.get("password")||"")});if(r.error)return say(r.error.message,true);location.href="account.html"});
 var signup=$("[data-signup-form]",root);if(signup)signup.addEventListener("submit",async function(e){e.preventDefault();var f=new FormData(signup),name=String(f.get("name")||"").trim(),r=await sb.auth.signUp({email:String(f.get("email")||"").trim(),password:String(f.get("password")||""),options:{data:{full_name:name},emailRedirectTo:location.origin+"/account.html"}});if(r.error)return say(r.error.message,true);say("Account created. Check your email if confirmation is required.")});
-var g=$("[data-google-login]",root);if(g)g.onclick=async function(){var r=await sb.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.origin+"/account.html"}});if(r.error)say(r.error.message,true)};
+var g=$("[data-google-login]",root);if(g)g.onclick=async function(){
+ if(g.disabled)return;
+ g.disabled=true;g.textContent="Connecting to Google…";say("Opening Google sign-in…");
+ try{
+   var settings=await fetch(SUPA_URL+"/auth/v1/settings",{headers:{apikey:SUPA_KEY}});
+   if(!settings.ok)throw new Error("Sign-in is temporarily unavailable. Please try again.");
+   var providers=await settings.json();
+   if(!providers.external||!providers.external.google)throw new Error("Google sign-in is being set up. Please use email sign-in for now.");
+   var r=await sb.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.origin+"/account.html",skipBrowserRedirect:true}});
+   if(r.error)throw r.error;
+   if(!r.data||!r.data.url)throw new Error("Google sign-in could not start. Please try again.");
+   location.assign(r.data.url);
+ }catch(error){say(error.message||"Google sign-in could not start. Please try again.",true);g.disabled=false;g.textContent="Continue with Google";}
+};
 var fp=$("[data-forgot]",root);if(fp)fp.onclick=async function(){var email=prompt("Enter your email address");if(!email)return;var r=await sb.auth.resetPasswordForEmail(email,{redirectTo:location.origin+"/login.html?reset=1"});say(r.error?r.error.message:"Password reset email sent.",!!r.error)}
 }
 async function bindAccount(){var root=$("[data-account-app]");if(!root||!sb)return;if(!session){root.innerHTML='<div class="commerce-empty"><h2>Sign in to your Denz account</h2><p>View orders, reviews, wishlist and saved details.</p><a class="btn-primary" href="login.html">Sign in / create account</a></div>';return}
 var uid=session.user.id;var rs=await Promise.all([sb.from("denz_profiles").select("*").eq("user_id",uid).maybeSingle(),sb.from("denz_orders").select("*").eq("user_id",uid).order("created_at",{ascending:false}),sb.from("denz_reviews").select("*").eq("user_id",uid).order("created_at",{ascending:false}),sb.from("denz_notifications").select("*").eq("user_id",uid).order("created_at",{ascending:false}).limit(20)]);var profile=rs[0].data||{},orders=rs[1].data||[],reviews=rs[2].data||[],notes=rs[3].data||[];var wish=Array.from(wishlist).map(productById).filter(Boolean);
-root.innerHTML='<div class="account-head"><div><span class="kicker">MY DENZ</span><h1>'+esc(profile.display_name||session.user.email)+'</h1><p>'+esc(session.user.email)+'</p></div><button class="btn-secondary" data-signout>Sign out</button></div>'+
+root.innerHTML='<div class="account-head"><div><span class="kicker">MY DENZ</span><h1>'+esc(profile.display_name||session.user.user_metadata?.full_name||session.user.email)+'</h1><p>'+esc(session.user.email)+'</p></div><button class="btn-secondary" data-signout>Sign out</button></div>'+
 '<div class="account-grid"><section class="commerce-panel" id="orders"><h2>My Orders</h2>'+(orders.length?orders.map(function(o){return '<article class="order-card"><div><strong>'+esc(o.order_number)+'</strong><span>'+new Date(o.created_at).toLocaleDateString("en-ZA")+'</span></div><div><b>'+money(o.total)+'</b><span class="status-pill">'+esc(o.status.replaceAll("_"," "))+'</span><small>Payment: '+esc(o.payment_status)+'</small><button class="btn-secondary" type="button" data-reorder-order="'+o.id+'">Reorder</button></div></article>'}).join(""):'<p>No orders yet.</p>')+'</section>'+
 '<section class="commerce-panel" id="wishlist"><h2>Wishlist</h2>'+(wish.length?'<div class="mini-product-grid">'+wish.map(miniProduct).join("")+'</div>':'<p>No saved phones yet.</p>')+'</section>'+
 '<section class="commerce-panel"><h2>My Reviews</h2>'+(reviews.length?reviews.map(function(r){return '<div class="review-row"><b>'+esc(r.product_source_id)+'</b><span>'+"★".repeat(r.rating)+' · '+esc(r.status)+(r.verified_purchase?' · Verified purchase':'')+'</span><p>'+esc(r.body)+'</p></div>'}).join(""):'<p>No reviews yet.</p>')+'</section>'+
 '<section class="commerce-panel"><h2>Notifications</h2>'+(notes.length?notes.map(function(n){return '<div class="review-row"><b>'+esc(n.title)+'</b><span>'+new Date(n.created_at).toLocaleString("en-ZA")+'</span><p>'+esc(n.body)+'</p></div>'}).join(""):'<p>No notifications.</p>')+'</section>'+
-'<section class="commerce-panel"><h2>Account details</h2><form data-profile-form class="profile-form"><label>Display name<input name="display_name" value="'+esc(profile.display_name||"")+'"></label><label>Phone<input name="phone" value="'+esc(profile.phone||"")+'"></label><label>WhatsApp<input name="whatsapp" value="'+esc(profile.whatsapp||"")+'"></label><label>Address<input name="address_line1" value="'+esc(profile.address_line1||"")+'"></label><label>Suburb<input name="suburb" value="'+esc(profile.suburb||"")+'"></label><label>City<input name="city" value="'+esc(profile.city||"")+'"></label><label>Province<input name="province" value="'+esc(profile.province||"")+'"></label><label>Postal code<input name="postal_code" value="'+esc(profile.postal_code||"")+'"></label><button class="btn-primary">Save details</button></form></section></div>';
-$("[data-reorder-order]",root).forEach(function(btn){btn.onclick=async function(){var r=await sb.from("denz_order_items").select("product_source_id,product_name,storage,color,unit_price,quantity").eq("order_id",btn.dataset.reorderOrder);if(r.error)return toast(r.error.message);var next=[];(r.data||[]).forEach(function(x){var p=productById(x.product_source_id);for(var i=0;i<Number(x.quantity||1);i++)next.push({uid:Date.now()+"-"+Math.random(),id:x.product_source_id,name:x.product_name,category:p?.categoryLabel||"",storage:x.storage,color:x.color||"",price:Number(x.unit_price),image:p?imageOf(p):""})});if(!next.length)return toast("No items found for this order");localStorage.setItem("denz-cart-v8",JSON.stringify(next));location.href="cart.html"}});
-root.querySelector("[data-signout]").onclick=async function(){await sb.auth.signOut();location.href="index.html"};
+'<section class="commerce-panel"><h2>Account details</h2><form data-profile-form class="profile-form"><label>Display name<input name="display_name" value="'+esc(profile.display_name||session.user.user_metadata?.full_name||"")+'"></label><label>Phone<input name="phone" value="'+esc(profile.phone||"")+'"></label><label>WhatsApp<input name="whatsapp" value="'+esc(profile.whatsapp||"")+'"></label><label>Address<input name="address_line1" value="'+esc(profile.address_line1||"")+'"></label><label>Suburb<input name="suburb" value="'+esc(profile.suburb||"")+'"></label><label>City<input name="city" value="'+esc(profile.city||"")+'"></label><label>Province<input name="province" value="'+esc(profile.province||"")+'"></label><label>Postal code<input name="postal_code" value="'+esc(profile.postal_code||"")+'"></label><button class="btn-primary">Save details</button></form></section></div>';
+$$("[data-reorder-order]",root).forEach(function(btn){btn.onclick=async function(){var r=await sb.from("denz_order_items").select("product_source_id,product_name,storage,color,unit_price,quantity").eq("order_id",btn.dataset.reorderOrder);if(r.error)return toast(r.error.message);var next=[];(r.data||[]).forEach(function(x){var p=productById(x.product_source_id);for(var i=0;i<Number(x.quantity||1);i++)next.push({uid:Date.now()+"-"+Math.random(),id:x.product_source_id,name:x.product_name,category:p?.categoryLabel||"",storage:x.storage,color:x.color||"",price:Number(x.unit_price),image:p?imageOf(p):""})});if(!next.length)return toast("No items found for this order");localStorage.setItem("denz-cart-v8",JSON.stringify(next));location.href="cart.html"}});
+root.querySelector("[data-signout]").onclick=async function(){
+ var button=this;button.disabled=true;
+ try{var r=await sb.auth.signOut();if(r.error)throw r.error;location.href="index.html";}
+ catch(error){button.disabled=false;toast(error.message||"Could not sign out. Please try again.");}
+};
 var pf=root.querySelector("[data-profile-form]");pf.addEventListener("submit",async function(e){e.preventDefault();var d=Object.fromEntries(new FormData(pf).entries());d.user_id=uid;d.email=session.user.email;var r=await sb.from("denz_profiles").upsert(d);toast(r.error?r.error.message:"Account details saved")})
 }
 function miniProduct(p){return '<a class="mini-product" href="product.html?id='+encodeURIComponent(p.id)+'"><img src="'+esc(imageOf(p))+'" alt="'+esc(p.name)+'"><div><b>'+esc(p.name)+'</b><span>'+esc(p.categoryLabel||p.category)+'</span><strong>'+(low(p)!=null?money(low(p)):"Ask Denz")+'</strong></div></a>'}
@@ -163,13 +181,28 @@ var similar=(window.DENZ_PRODUCTS||[]).filter(function(x){return x.id!==p.id&&x.
 function bindComparePage(){var root=$("[data-compare-page]");if(!root)return;var ids=Array.from(compare),ps=ids.map(productById).filter(Boolean);if(!ps.length){root.innerHTML='<div class="commerce-empty"><h2>No phones selected</h2><p>Use the compare button on any phone card.</p><a class="btn-primary" href="search.html">Find phones</a></div>';return}var rows=[["Price",function(p){return low(p)!=null?money(low(p)):"Ask Denz"}],["Storage",function(p){return Object.keys(p.prices||{}).join(", ")}],["Battery",function(p){return p.battery||"Confirm"}],["Condition",function(p){return p.condition||"Confirm"}],["Network",function(p){return p.network||"Confirm"}],["Warranty",function(p){return p.warranty||"Confirm"}],["Category",function(p){return p.categoryLabel||p.category}]];root.innerHTML='<div class="compare-table"><div class="compare-row compare-head"><div>Compare</div>'+ps.map(function(p){return '<div><img src="'+esc(imageOf(p))+'" alt="'+esc(p.name)+'"><b>'+esc(p.name)+'</b><button data-remove-compare="'+esc(p.id)+'">Remove</button></div>'}).join("")+'</div>'+rows.map(function(r){return '<div class="compare-row"><div><b>'+r[0]+'</b></div>'+ps.map(function(p){return '<div>'+esc(r[1](p))+'</div>'}).join("")+'</div>'}).join("")+'</div>';$$("[data-remove-compare]",root).forEach(function(b){b.onclick=function(){toggleCompare(b.dataset.removeCompare);bindComparePage()}})}
 function bindPaystack(){ $$("[data-checkout-form]").forEach(function(form){if(form.dataset.paystackBound)return;form.dataset.paystackBound="1";var btn=document.createElement("button");btn.type="button";btn.className="paystack-pay";btn.textContent="Pay securely with Paystack";var wa=form.querySelector(".checkout-wa");if(wa)wa.insertAdjacentElement("beforebegin",btn);else form.appendChild(btn);btn.onclick=async function(){var c=cart();if(!c.length)return toast("Your cart is empty");var email=form.querySelector("[name=email]");if(email&&!email.value.trim()){email.required=true;email.reportValidity();return}if(!form.reportValidity())return;var d=Object.fromEntries(new FormData(form).entries()),ful=form.querySelector('input[name="fulfilment"]:checked');if(!ful)return toast("Choose delivery or collection");btn.disabled=true;btn.textContent="Opening secure Paystack checkout…";var body={requestId:(crypto.randomUUID?crypto.randomUUID():Date.now()+"-"+Math.random().toString(36).slice(2)).replace(/-/g,""),items:c.map(function(x){return{id:x.id,storage:x.storage,color:x.color,quantity:1}}),fulfilment:ful.value,name:d.name,email:d.email,phone:d.phone,whatsapp:d.whatsapp||d.phone,address:d.address,address2:d.address2||"",suburb:d.suburb,city:d.city,province:d.province,postal:d.postal,notes:d.notes,termsAccepted:!!form.querySelector("[name=legal_accept]:checked")};var h={"Content-Type":"application/json","apikey":SUPA_KEY};if(session)h.Authorization="Bearer "+session.access_token;try{var r=await fetch(SUPA_URL+"/functions/v1/denz-paystack-checkout",{method:"POST",headers:h,body:JSON.stringify(body)}),j=await r.json();if(!r.ok)throw new Error(j.message||j.error||"Could not start payment");location.href=j.redirectUrl}catch(e){toast(e.message);btn.disabled=false;btn.textContent="Pay securely with Paystack"}}})}
 function bindPaymentStatus(){var root=$("[data-payment-status]");if(!root)return;var order=new URLSearchParams(location.search).get("order");if(!order){root.innerHTML="<p>Order reference missing.</p>";return}fetch(SUPA_URL+"/functions/v1/denz-order-status?order="+encodeURIComponent(order),{headers:{apikey:SUPA_KEY}}).then(function(r){return r.json()}).then(function(x){root.innerHTML='<h2>'+esc(x.order_number||"Order")+'</h2><p>Order status: <strong>'+esc(x.status||"received")+'</strong></p><p>Payment: <strong>'+esc(x.payment_status||"pending")+'</strong></p><p>Total: <strong>'+money(x.total)+'</strong></p><p>If payment has just been completed, confirmation can take a few seconds while Denz verifies the payment with Paystack.</p>'}).catch(function(){root.innerHTML="<p>We could not load the order status yet.</p>"})}
-function syncCart(){if(!sb||!session)return;var save=function(){sb.from("denz_saved_carts").upsert({user_id:session.user.id,cart:cart(),updated_at:new Date().toISOString()})};window.addEventListener("storage",function(e){if(e.key==="denz-cart-v8")save()});setTimeout(save,1500)}
+function syncCart(){if(!sb||!session)return;var save=function(){if(!session)return;sb.from("denz_saved_carts").upsert({user_id:session.user.id,cart:cart(),updated_at:new Date().toISOString()})};window.addEventListener("storage",function(e){if(e.key==="denz-cart-v8")save()});setTimeout(save,1500)}
+function authReturnMessage(){
+ var query=authReturnQuery,hash=authReturnHash;
+ if(!query.has("error")&&!hash.has("error"))return;
+ var code=query.get("error")||hash.get("error"),message=code==="access_denied"?"Google sign-in was cancelled. You can try again.":"Sign-in could not be completed. Please try again.";
+ var msg=$("[data-auth-msg]");
+ if(msg){msg.textContent=message;msg.className="auth-msg bad";}
+ else if($("[data-account-app]")){var note=document.createElement("p");note.className="auth-msg bad";note.setAttribute("role","alert");note.textContent=message;$("[data-account-app]").before(note);}
+ ["error","error_code","error_description"].forEach(function(key){query.delete(key);hash.delete(key);});
+ history.replaceState(null,"",location.pathname+(query.toString()?"?"+query:"")+(hash.toString()?"#"+hash:""));
+}
 function init(){
+ bindAuth();
+ authReturnMessage();
+ if(sb)sb.auth.onAuthStateChange(function(event,next){
+   session=next;updateAccountLinks();
+   if(event==="SIGNED_OUT"){wishlist.clear();setTimeout(function(){bindAccount();decorateCards();},0);}
+ });
  enhanceFooterPolicies();
  bottomNav();
 
  loadSession().then(async function(){
-   bindAuth();
    await bindAccount();
    await bindRecentlyViewed();
    await bindReviews();
@@ -179,6 +212,10 @@ function init(){
    syncCart();
    decorateCards();
    updateCompareBar();
+ }).catch(function(){
+   var root=$("[data-account-app]");
+   if(root)root.innerHTML='<div class="commerce-empty"><h2>Your account could not load</h2><p>Please refresh the page or try signing in again.</p><a class="btn-primary" href="login.html">Sign in</a></div>';
+   var msg=$("[data-auth-msg]");if(msg&&!msg.textContent){msg.textContent="Your session could not load. You can try signing in again.";msg.className="auth-msg bad";}
  });
 
  bindSearch();

@@ -21,3 +21,5 @@
   .card-actions .card-wa{grid-column:1/-1}
   .card-paystack{width:100%}
 }
+
+.auth-card>.google-btn{width:100%;display:block;margin-bottom:16px}.google-btn:disabled{opacity:.65;cursor:wait}.auth-divider{text-align:center;color:var(--muted);font-size:13px;margin:16px 0}.auth-actions{margin-top:16px}
