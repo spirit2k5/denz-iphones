@@ -13,6 +13,7 @@ function imageOf(p){return (p.images&&p.images[0])||p.poster||"assets/img/brand/
 function cart(){try{return JSON.parse(localStorage.getItem("denz-cart-v8")||"[]")}catch(e){return[]}}
 function toast(t){var e=$(".toast");if(!e){e=document.createElement("div");e.className="toast";document.body.appendChild(e)}e.textContent=t;e.classList.add("show");setTimeout(function(){e.classList.remove("show")},2000)}
 function productById(id){return (window.DENZ_PRODUCTS||[]).find(function(p){return p.id===id})}
+function icon(name){if(typeof window.DENZ_ICONS==="function")return window.DENZ_ICONS(name);var paths={home:'<path d="m3 10 9-7 9 7v10H3z"/><path d="M9 20v-7h6v7"/>',search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',heart:'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',cart:'<path d="M2 3h3l2.4 12h12L22 7H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/>',user:'<circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/>',compare:'<path d="M3 7h17m-4-4 4 4-4 4M21 17H4m4-4-4 4 4 4"/>'};return '<svg class="ui-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'+(paths[name]||paths.user)+'</svg>';}
 async function loadSession(){if(!sb)return;var r=await sb.auth.getSession();if(r.error)throw r.error;session=r.data.session||null;wishlist.clear();if(session){var rs=await Promise.all([sb.from("denz_wishlist").select("product_source_id").eq("user_id",session.user.id),sb.from("denz_saved_carts").select("cart").eq("user_id",session.user.id).maybeSingle()]);var w=rs[0];if(!w.error)(w.data||[]).forEach(function(x){wishlist.add(x.product_source_id)});var saved=rs[1].data&&rs[1].data.cart;if(Array.isArray(saved)&&saved.length&&!cart().length){localStorage.setItem("denz-cart-v8",JSON.stringify(saved));window.dispatchEvent(new StorageEvent("storage",{key:"denz-cart-v8"}));toast("Your saved cart was restored")}}else{try{JSON.parse(localStorage.getItem("denz-wishlist-v1")||"[]").forEach(function(x){wishlist.add(x)})}catch(e){}}updateAccountLinks()}
 function saveGuestWish(){localStorage.setItem("denz-wishlist-v1",JSON.stringify(Array.from(wishlist)))}
 async function toggleWish(id){if(wishlist.has(id)){wishlist.delete(id);if(session)await sb.from("denz_wishlist").delete().eq("user_id",session.user.id).eq("product_source_id",id);else saveGuestWish();toast("Removed from wishlist")}else{wishlist.add(id);if(session)await sb.from("denz_wishlist").upsert({user_id:session.user.id,product_source_id:id});else saveGuestWish();toast("Saved to wishlist")}decorateCards()}
@@ -43,51 +44,8 @@ function decorateCards(){ $$(".product-card[data-product-id]").forEach(function(
    }
  }
 
- if(p){
-   var actions=card.querySelector(".card-actions");
-   var existingPaystack=actions&&actions.querySelector("[data-card-paystack]");
-   var selectedStorage=card.dataset.selectedStorage||Object.keys(p.prices||{})[0]||"";
-   var selectedPrice=Number(p.prices&&p.prices[selectedStorage]);
-   var canPaystack=p.status!=="sold-out"&&Number(p.stockQuantity)>0&&Number.isFinite(selectedPrice)&&selectedPrice>0;
-
-   if(canPaystack&&actions&&!existingPaystack){
-     var paystackBtn=document.createElement("button");
-     paystackBtn.type="button";
-     paystackBtn.className="card-paystack";
-     paystackBtn.setAttribute("data-card-paystack","");
-     paystackBtn.textContent="Buy with Paystack";
-     paystackBtn.onclick=function(e){
-       e.preventDefault();
-       e.stopPropagation();
-
-       var currentStorage=card.dataset.selectedStorage||Object.keys(p.prices||{})[0]||"";
-       var currentPrice=Number(p.prices&&p.prices[currentStorage]);
-
-       if(p.status==="sold-out"||Number(p.stockQuantity)<=0){
-         toast("This phone is sold out");
-         return;
-       }
-       if(!Number.isFinite(currentPrice)||currentPrice<=0){
-         toast("This storage option does not have a confirmed online price yet");
-         return;
-       }
-
-       var add=card.querySelector("[data-card-add]");
-       if(!add||add.disabled){
-         toast("This phone cannot be ordered online right now");
-         return;
-       }
-
-       add.click();
-       toast("Opening secure Paystack checkout…");
-       setTimeout(function(){location.href="cart.html"},220);
-     };
-     actions.insertBefore(paystackBtn,actions.querySelector(".card-wa"));
-   }else if(!canPaystack&&existingPaystack){
-     existingPaystack.remove();
-   }
- }
- if(!card.querySelector(".commerce-card-tools")){var d=document.createElement("div");d.className="commerce-card-tools";d.innerHTML='<button type="button" data-wish aria-label="Save to wishlist">♡</button><button type="button" data-compare aria-label="Compare phone">⇄</button>';var media=card.querySelector(".product-media");if(media)media.appendChild(d);d.querySelector("[data-wish]").onclick=function(e){e.preventDefault();e.stopPropagation();toggleWish(id)};d.querySelector("[data-compare]").onclick=function(e){e.preventDefault();e.stopPropagation();toggleCompare(id)}}var w=card.querySelector("[data-wish]"),c=card.querySelector("[data-compare]");if(w){var wishMark=wishlist.has(id)?"♥":"♡";if(w.textContent!==wishMark)w.textContent=wishMark;w.classList.toggle("active",wishlist.has(id))}if(c)c.classList.toggle("active",compare.has(id))})}
+ var existingPaystack=card.querySelector("[data-card-paystack]");if(existingPaystack)existingPaystack.remove();
+ if(!card.querySelector(".commerce-card-tools")){var d=document.createElement("div");d.className="commerce-card-tools";d.innerHTML='<button type="button" data-wish aria-label="Save to wishlist">'+icon("heart")+'</button><button type="button" data-compare aria-label="Compare phone">'+icon("compare")+'</button>';var media=card.querySelector(".product-media");if(media)media.appendChild(d);d.querySelector("[data-wish]").onclick=function(e){e.preventDefault();e.stopPropagation();toggleWish(id)};d.querySelector("[data-compare]").onclick=function(e){e.preventDefault();e.stopPropagation();toggleCompare(id)}}var w=card.querySelector("[data-wish]"),c=card.querySelector("[data-compare]");if(w){w.classList.toggle("active",wishlist.has(id));w.setAttribute("aria-pressed",String(wishlist.has(id)));w.setAttribute("aria-label",wishlist.has(id)?"Remove from wishlist":"Save to wishlist")}if(c){c.classList.toggle("active",compare.has(id));c.setAttribute("aria-pressed",String(compare.has(id)))}})}
 function updateCompareBar(){var bar=$("#denzCompareBar");if(!compare.size){if(bar)bar.remove();return}if(!bar){bar=document.createElement("a");bar.id="denzCompareBar";bar.className="compare-float";bar.href="compare.html";document.body.appendChild(bar)}bar.textContent="Compare "+compare.size+" phone"+(compare.size===1?"":"s")}
 function enhanceFooterPolicies(){
   $$(".footer a[href='terms.html']").forEach(function(anchor){
@@ -97,10 +55,13 @@ function enhanceFooterPolicies(){
     }
   });
 }
-function bottomNav(){if($("#denzMobileNav"))return;var n=document.createElement("nav");n.id="denzMobileNav";n.className="mobile-bottom-nav";n.innerHTML='<a href="index.html"><span>⌂</span>Home</a><a href="search.html"><span>⌕</span>Search</a><a href="account.html#wishlist"><span>♡</span>Wishlist</a><a href="cart.html"><span>▣</span>Cart</a><a href="account.html"><span>◉</span>Account</a>';document.body.appendChild(n)}
+function bottomNav(){if($("#denzMobileNav"))return;var n=document.createElement("nav"),page=location.pathname.split("/").pop()||"index.html";n.id="denzMobileNav";n.className="mobile-bottom-nav";n.setAttribute("aria-label","Mobile store navigation");n.innerHTML=[{href:"index.html",name:"Home",icon:"home",active:page==="index.html"},{href:"search.html",name:"Search",icon:"search",active:["search.html","sealed-box.html","brand-new.html","preowned.html","cheaper-options.html","product.html"].includes(page)||page.startsWith("iphone-")},{href:"account.html#wishlist",name:"Wishlist",icon:"heart",active:page==="account.html"&&location.hash==="#wishlist"},{href:"cart.html",name:"Cart",icon:"cart",active:page==="cart.html"},{href:"account.html",name:"Account",icon:"user",active:page==="login.html"||page==="account.html"&&location.hash!=="#wishlist"}].map(function(link){return '<a href="'+link.href+'"'+(link.active?' class="active" aria-current="page"':'')+'>'+icon(link.icon)+'<span>'+link.name+'</span></a>'}).join("");document.body.appendChild(n)}
 function updateAccountLinks(){var a=$(".hud-actions");if(a&&!a.querySelector(".account-mini")){var x=document.createElement("a");x.className="account-mini";x.href=session?"account.html":"login.html";x.textContent=session?"Account":"Login";a.appendChild(x)}else if(a&&a.querySelector(".account-mini")){var x2=a.querySelector(".account-mini");x2.href=session?"account.html":"login.html";x2.textContent=session?"Account":"Login"}}
+function safeAuthNext(value){if(!value||!/^\/(?!\/)/.test(value)||/[\\\u0000-\u001f]/.test(value))return null;try{var url=new URL(value,location.origin);if(url.origin!==location.origin||url.pathname.endsWith("/login.html"))return null;return url.pathname+url.search+url.hash;}catch(error){return null;}}
+function rememberAuthNext(){var next=safeAuthNext(new URLSearchParams(location.search).get("next"));try{if(next)sessionStorage.setItem("denz-auth-next-v1",next);else sessionStorage.removeItem("denz-auth-next-v1");}catch(error){}return next;}
+function completeSignin(){var next=safeAuthNext(new URLSearchParams(location.search).get("next"));try{next=next||safeAuthNext(sessionStorage.getItem("denz-auth-next-v1"));sessionStorage.removeItem("denz-auth-next-v1");}catch(error){}location.href=next||"account.html";}
 function bindAuth(){var root=$("[data-auth-page]");if(!root)return;if(!sb){$("[data-auth-msg]",root).textContent="Sign-in could not load. Please refresh the page.";return;}var msg=$("[data-auth-msg]",root);function say(t,bad){msg.textContent=t||"";msg.className=bad?"auth-msg bad":"auth-msg"}
-var login=$("[data-login-form]",root);if(login)login.addEventListener("submit",async function(e){e.preventDefault();var f=new FormData(login),r=await sb.auth.signInWithPassword({email:String(f.get("email")||"").trim(),password:String(f.get("password")||"")});if(r.error)return say(r.error.message,true);location.href="account.html"});
+var login=$("[data-login-form]",root);if(login)login.addEventListener("submit",async function(e){e.preventDefault();var f=new FormData(login),r=await sb.auth.signInWithPassword({email:String(f.get("email")||"").trim(),password:String(f.get("password")||"")});if(r.error)return say(r.error.message,true);completeSignin()});
 var signup=$("[data-signup-form]",root);if(signup)signup.addEventListener("submit",async function(e){e.preventDefault();var f=new FormData(signup),name=String(f.get("name")||"").trim(),r=await sb.auth.signUp({email:String(f.get("email")||"").trim(),password:String(f.get("password")||""),options:{data:{full_name:name},emailRedirectTo:location.origin+"/account.html"}});if(r.error)return say(r.error.message,true);say("Account created. Check your email if confirmation is required.")});
 var g=$("[data-google-login]",root);if(g)g.onclick=async function(){
  if(g.disabled)return;
@@ -113,7 +74,7 @@ var g=$("[data-google-login]",root);if(g)g.onclick=async function(){
    var r=await sb.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.origin+"/account.html",skipBrowserRedirect:true}});
    if(r.error)throw r.error;
    if(!r.data||!r.data.url)throw new Error("Google sign-in could not start. Please try again.");
-   location.assign(r.data.url);
+   rememberAuthNext();location.assign(r.data.url);
  }catch(error){say(error.message||"Google sign-in could not start. Please try again.",true);g.disabled=false;g.textContent="Continue with Google";}
 };
 var fp=$("[data-forgot]",root);if(fp)fp.onclick=async function(){var email=prompt("Enter your email address");if(!email)return;var r=await sb.auth.resetPasswordForEmail(email,{redirectTo:location.origin+"/login.html?reset=1"});say(r.error?r.error.message:"Password reset email sent.",!!r.error)}
@@ -135,20 +96,51 @@ root.querySelector("[data-signout]").onclick=async function(){
 var pf=root.querySelector("[data-profile-form]");pf.addEventListener("submit",async function(e){e.preventDefault();var d=Object.fromEntries(new FormData(pf).entries());d.user_id=uid;d.email=session.user.email;var r=await sb.from("denz_profiles").upsert(d);toast(r.error?r.error.message:"Account details saved")})
 }
 function miniProduct(p){return '<a class="mini-product" href="product.html?id='+encodeURIComponent(p.id)+'"><img src="'+esc(imageOf(p))+'" alt="'+esc(p.name)+'"><div><b>'+esc(p.name)+'</b><span>'+esc(p.categoryLabel||p.category)+'</span><strong>'+(low(p)!=null?money(low(p)):"Ask Denz")+'</strong></div></a>'}
-async function bindReviews(){var host=$("[data-product-detail]");if(!host||!sb)return;var id=new URLSearchParams(location.search).get("id");if(!id)return;var box=document.createElement("section");box.className="reviews-box";box.innerHTML='<div class="section-head"><div><span class="kicker">Customer reviews</span><h2>Reviews</h2></div><div data-review-summary></div></div><div data-review-list></div><form data-review-form class="review-form"><h3>Leave a review</h3><label>Rating<select name="rating"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select></label><label>Your review<textarea name="body" required minlength="2" maxlength="1500"></textarea></label><button class="btn-primary">Submit review</button><p data-review-msg></p></form>';host.parentNode.appendChild(box);
-async function refresh(){var r=await sb.from("denz_reviews").select("*").eq("product_source_id",id).eq("status","approved").order("created_at",{ascending:false});var a=r.data||[],avg=a.length?a.reduce(function(s,x){return s+x.rating},0)/a.length:0;box.querySelector("[data-review-summary]").textContent=a.length?(avg.toFixed(1)+" ★ · "+a.length+" review"+(a.length===1?"":"s")):"No reviews yet";box.querySelector("[data-review-list]").innerHTML=a.length?a.map(function(x){return '<article class="review-card"><div><strong>'+esc(x.display_name)+'</strong><span>'+"★".repeat(x.rating)+(x.verified_purchase?' · Verified Purchase':'')+'</span></div><p>'+esc(x.body)+'</p><small>'+new Date(x.created_at).toLocaleDateString("en-ZA")+'</small></article>'}).join(""):'<p class="muted">Be the first customer to review this phone.</p>'}
-await refresh();var form=box.querySelector("[data-review-form]");if(!session)form.innerHTML='<p>Sign in to leave a review.</p><a class="btn-secondary" href="login.html">Sign in</a>';else form.addEventListener("submit",async function(e){e.preventDefault();var fd=new FormData(form),pr=await sb.from("denz_profiles").select("display_name").eq("user_id",session.user.id).maybeSingle(),name=(pr.data&&pr.data.display_name)||session.user.email.split("@")[0],r=await sb.from("denz_reviews").insert({product_source_id:id,user_id:session.user.id,display_name:name,rating:Number(fd.get("rating")),body:String(fd.get("body")||"")});form.querySelector("[data-review-msg]").textContent=r.error?r.error.message:"Review submitted for approval.";if(!r.error)form.reset()});
-if(session)await sb.from("denz_recently_viewed").upsert({user_id:session.user.id,product_source_id:id,viewed_at:new Date().toISOString()})
+async function bindReviews(){
+ var host=$("[data-product-detail]");if(!host||$("#customer-reviews"))return;
+ var id=host.dataset.productId||new URLSearchParams(location.search).get("id");if(!id)return;
+ var box=document.createElement("section");box.id="customer-reviews";box.className="reviews-box";
+ box.innerHTML='<div class="section-head"><div><span class="kicker">Customer reviews</span><h2>Reviews</h2></div><div data-review-summary role="status" aria-live="polite">Loading reviews…</div></div><div data-review-list></div><form data-review-form class="review-form"><h3>Leave a review</h3><label>Rating<select name="rating"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select></label><label>Your review<textarea name="body" required minlength="2" maxlength="1500"></textarea></label><button type="submit" class="btn-primary">Submit review</button><p data-review-msg role="status" aria-live="polite"></p></form>';
+ host.parentNode.appendChild(box);
+ function countLink(count){$$('[data-review-link]',host).forEach(function(link){var mark=link.querySelector("svg");link.href="#customer-reviews";link.textContent=count==null?"Reviews":"Reviews ("+count+")";if(mark)link.prepend(mark);});}
+ async function refresh(){
+   var summary=box.querySelector("[data-review-summary]"),list=box.querySelector("[data-review-list]");summary.textContent="Loading reviews…";
+   try{
+     if(!sb)throw new Error("Reviews are temporarily unavailable.");
+     var r=await sb.from("denz_reviews").select("display_name,rating,body,created_at,verified_purchase").eq("product_source_id",id).eq("status","approved").order("created_at",{ascending:false});if(r.error)throw r.error;
+     var rows=Array.isArray(r.data)?r.data:[],a=rows.filter(function(x){return Number.isInteger(Number(x.rating))&&Number(x.rating)>=1&&Number(x.rating)<=5}),avg=a.length?a.reduce(function(s,x){return s+Number(x.rating)},0)/a.length:0;
+     summary.textContent=a.length?avg.toFixed(1)+" ★ · "+a.length+" review"+(a.length===1?"":"s"):"No approved reviews yet";countLink(a.length);
+     list.innerHTML=a.length?a.map(function(x){return '<article class="review-card"><div><strong>'+esc(x.display_name||"Customer")+'</strong><span>'+"★".repeat(Number(x.rating))+(x.verified_purchase?' · Verified Purchase':'')+'</span></div><p>'+esc(x.body)+'</p><small>'+new Date(x.created_at).toLocaleDateString("en-ZA")+'</small></article>';}).join(""):'<p class="muted">No approved reviews for this phone yet. Be the first to share your experience.</p>';
+   }catch(error){summary.textContent="Reviews could not load";countLink(null);list.innerHTML='<p class="muted">Please try loading this phone’s reviews again.</p><button type="button" class="btn-secondary" data-review-retry>Try again</button>';list.querySelector("[data-review-retry]").onclick=async function(){this.disabled=true;await refresh();};}
+ }
+ await refresh();
+ var form=box.querySelector("[data-review-form]"),signin="login.html?next="+encodeURIComponent(location.pathname+location.search+"#customer-reviews");
+ if(!sb||!session)form.innerHTML='<p>Sign in to leave a review. Reviews appear after approval.</p><a class="btn-secondary" href="'+esc(signin)+'">Sign in</a>';
+ else form.addEventListener("submit",async function(e){
+   e.preventDefault();var button=form.querySelector('[type="submit"]'),message=form.querySelector("[data-review-msg]");if(button.disabled)return;
+   var fd=new FormData(form),rating=Number(fd.get("rating")),body=String(fd.get("body")||"").trim();
+   if(!Number.isInteger(rating)||rating<1||rating>5||body.length<2||body.length>1500){message.textContent="Choose a rating from 1 to 5 and write a review between 2 and 1,500 characters.";return;}
+   button.disabled=true;message.textContent="Submitting your review…";
+   try{
+     if(!session)throw new Error("Please sign in again before submitting your review.");
+     var auth=await sb.auth.getUser();if(auth.error)throw auth.error;var user=auth.data&&auth.data.user;if(!user)throw new Error("Please sign in again before submitting your review.");
+     var pr=await sb.from("denz_profiles").select("display_name").eq("user_id",user.id).maybeSingle(),name=String((!pr.error&&pr.data&&pr.data.display_name)||user.user_metadata?.full_name||"Customer").trim()||"Customer";
+     var r=await sb.from("denz_reviews").insert({product_source_id:id,user_id:user.id,display_name:name,rating:rating,body:body,status:"pending"});if(r.error)throw r.error;
+     form.reset();message.textContent="Review submitted for approval. It will appear here after Denz approves it.";
+   }catch(error){message.textContent=error.message||"Your review could not be submitted. Please try again.";}finally{button.disabled=false;}
+ });
+ if(location.hash==="#customer-reviews")setTimeout(function(){box.scrollIntoView({block:"start"});},0);
+ if(sb&&session){var uid=session.user.id;await sb.from("denz_recently_viewed").upsert({user_id:uid,product_source_id:id,viewed_at:new Date().toISOString()});}
 }
 function bindSearch(){var root=$("[data-commerce-search]");if(!root)return;var q=$("[data-search-q]",root),cat=$("[data-search-category]",root),stock=$("[data-search-stock]",root),storage=$("[data-search-storage]",root),color=$("[data-search-color]",root),condition=$("[data-search-condition]",root),min=$("[data-search-min]",root),max=$("[data-search-max]",root),sort=$("[data-search-sort]",root),res=$("[data-search-results]",root);
 function render(){var a=(window.DENZ_PRODUCTS||[]).slice(),term=(q.value||"").toLowerCase(),mn=Number(min?.value||0),mx=Number(max?.value||0);if(term)a=a.filter(function(p){return (p.name+" "+p.categoryLabel+" "+(p.condition||"")+" "+Object.keys(p.prices||{}).join(" ")+" "+(p.colors||[]).map(function(x){return x.name}).join(" ")).toLowerCase().includes(term)});if(cat?.value)a=a.filter(function(p){return p.category===cat.value});if(stock?.value==="in")a=a.filter(function(p){return p.status!=="sold-out"&&(p.stockQuantity==null||p.stockQuantity>0)});if(storage?.value)a=a.filter(function(p){return (p.storageOptions||[]).includes(storage.value)});if(color?.value)a=a.filter(function(p){return (p.colors||[]).some(function(c){return c.name===color.value})});if(condition?.value)a=a.filter(function(p){return (p.condition||"").toLowerCase().includes(condition.value.toLowerCase())});if(mn)a=a.filter(function(p){return low(p)!=null&&low(p)>=mn});if(mx)a=a.filter(function(p){return low(p)!=null&&low(p)<=mx});if(sort?.value==="low")a.sort(function(a,b){return (low(a)||1e12)-(low(b)||1e12)});if(sort?.value==="high")a.sort(function(a,b){return (low(b)||0)-(low(a)||0)});if(sort?.value==="newest")a.sort(function(a,b){return new Date(b.createdAt||0)-new Date(a.createdAt||0)});res.innerHTML=a.length?a.map(function(p){var q=Number(p.stockQuantity);var st=q<=0?"Sold Out":q<=2?"Low Stock":"In Stock";return '<article class="search-card"><img src="'+esc(imageOf(p))+'" alt="'+esc(p.name)+'"><div><span>'+esc(p.categoryLabel||p.category)+' · '+st+'</span><h3>'+esc(p.name)+'</h3><p>'+esc(p.condition||"")+'</p><strong>'+(low(p)!=null?"From "+money(low(p)):"Ask Denz")+'</strong><a class="btn-secondary" href="product.html?id='+encodeURIComponent(p.id)+'">View phone</a></div></article>'}).join(""):'<div class="commerce-empty">No matching phones.</div>'}
 [q,cat,stock,storage,color,condition,min,max,sort].filter(Boolean).forEach(function(x){x.addEventListener(x===q||x===min||x===max?"input":"change",render)});Promise.resolve(window.DENZ_DATA_READY).finally(function(){var ps=window.DENZ_PRODUCTS||[];if(storage){storage.innerHTML='<option value="">All storage</option>'+Array.from(new Set(ps.flatMap(function(p){return p.storageOptions||[]}))).sort().map(function(x){return '<option>'+esc(x)+'</option>'}).join("")}if(color){color.innerHTML='<option value="">All colours</option>'+Array.from(new Set(ps.flatMap(function(p){return (p.colors||[]).map(function(c){return c.name})}))).sort().map(function(x){return '<option>'+esc(x)+'</option>'}).join("")}render()})}
 async function bindRecentlyViewed(){var root=$("[data-account-app]");if(!root||!sb||!session)return;var r=await sb.from("denz_recently_viewed").select("product_source_id,viewed_at").eq("user_id",session.user.id).order("viewed_at",{ascending:false}).limit(8);var ps=(r.data||[]).map(function(x){return productById(x.product_source_id)}).filter(Boolean);if(!ps.length)return;var sec=document.createElement("section");sec.className="commerce-panel";sec.innerHTML='<h2>Recently viewed</h2><div class="mini-product-grid">'+ps.map(miniProduct).join("")+'</div>';var grid=root.querySelector(".account-grid");if(grid)grid.appendChild(sec)}
-async function bindHomeReviews(){if(!sb||!location.pathname.endsWith("index.html")&&location.pathname!=="/"&&location.pathname!=="")return;var main=document.querySelector("main");if(!main||document.querySelector("[data-home-reviews]"))return;var r=await sb.from("denz_reviews").select("*").eq("status","approved").order("created_at",{ascending:false}).limit(6);var a=r.data||[];var sec=document.createElement("section");sec.className="section alt";sec.setAttribute("data-home-reviews","");sec.innerHTML='<div class="shell"><div class="section-head"><div><span class="kicker">Real customer reviews</span><h2>What customers say.</h2></div><a class="btn-secondary" href="login.html">Review a purchase</a></div>'+(a.length?'<div class="home-review-grid">'+a.map(function(x){return '<article class="review-card commerce-panel"><div><strong>'+esc(x.display_name)+'</strong><span>'+"★".repeat(x.rating)+(x.verified_purchase?' · Verified Purchase':'')+'</span></div><p>'+esc(x.body)+'</p></article>'}).join("")+'</div>':'<div class="commerce-panel"><p>No approved customer reviews yet. Reviews shown here will only come from real customer submissions.</p></div>')+'</div>';main.appendChild(sec)}
+async function bindHomeReviews(){if(!sb||!location.pathname.endsWith("index.html")&&location.pathname!=="/"&&location.pathname!=="")return;var main=document.querySelector("main");if(!main||document.querySelector("[data-home-reviews]"))return;var r=await sb.from("denz_reviews").select("display_name,rating,body,verified_purchase").eq("status","approved").order("created_at",{ascending:false}).limit(6);if(r.error)return;var a=(r.data||[]).filter(function(x){return Number.isInteger(Number(x.rating))&&Number(x.rating)>=1&&Number(x.rating)<=5});if(!a.length)return;var sec=document.createElement("section");sec.className="section alt";sec.setAttribute("data-home-reviews","");sec.innerHTML='<div class="shell"><div class="section-head"><div><span class="kicker">Customer reviews</span><h2>What customers say.</h2></div><a class="btn-secondary" href="search.html">Find your phone to review</a></div><div class="home-review-grid">'+a.map(function(x){return '<article class="review-card commerce-panel"><div><strong>'+esc(x.display_name||"Customer")+'</strong><span>'+"★".repeat(Number(x.rating))+(x.verified_purchase?' · Verified Purchase':'')+'</span></div><p>'+esc(x.body)+'</p></article>';}).join("")+'</div></div>';main.appendChild(sec)}
 function bindProductExtras(){
  var host=$("[data-product-detail]");
  if(!host||host.dataset.commerceExtras)return;
- var id=new URLSearchParams(location.search).get("id"),p=productById(id);
+ var id=host.dataset.productId||new URLSearchParams(location.search).get("id"),p=productById(id);
  if(!p)return;
  host.dataset.commerceExtras="1";
  var panel=host.querySelector(".detail-panel");
@@ -202,7 +194,12 @@ function init(){
  enhanceFooterPolicies();
  bottomNav();
 
- loadSession().then(async function(){
+ var storeReady=false;
+ Promise.all([loadSession(),Promise.resolve(window.DENZ_STORE_READY||window.DENZ_DATA_READY)]).then(async function(){
+   storeReady=true;
+   bindSearch();
+   bindComparePage();
+   if(session&&location.pathname.endsWith("/account.html")){var next=null;try{next=safeAuthNext(sessionStorage.getItem("denz-auth-next-v1"));}catch(error){}if(next){completeSignin();return;}}
    await bindAccount();
    await bindRecentlyViewed();
    await bindReviews();
@@ -218,8 +215,6 @@ function init(){
    var msg=$("[data-auth-msg]");if(msg&&!msg.textContent){msg.textContent="Your session could not load. You can try signing in again.";msg.className="auth-msg bad";}
  });
 
- bindSearch();
- bindComparePage();
  bindPaymentStatus();
 
  let pendingCards=false,pendingCheckout=false,observerScheduled=false;
@@ -228,6 +223,7 @@ function init(){
    observerScheduled=true;
    requestAnimationFrame(()=>{
      observerScheduled=false;
+     if(!storeReady)return;
      const cards=pendingCards,checkout=pendingCheckout;
      pendingCards=false;
      pendingCheckout=false;
