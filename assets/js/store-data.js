@@ -1597,8 +1597,8 @@ window.DENZ_PRODUCTS=[
   {
     "id": "bn-16",
     "name": "iPhone 16",
-    "category": "brand-new",
-    "categoryLabel": "Brand New",
+    "category": "sealed-box",
+    "categoryLabel": "Sealed Box",
     "condition": "Brand new · Sealed box",
     "battery": "100% / new",
     "network": "Unlocked",
@@ -1689,8 +1689,8 @@ window.DENZ_PRODUCTS=[
   {
     "id": "bn-16-plus",
     "name": "iPhone 16 Plus",
-    "category": "brand-new",
-    "categoryLabel": "Brand New",
+    "category": "sealed-box",
+    "categoryLabel": "Sealed Box",
     "condition": "Brand new · Sealed box",
     "battery": "100% / new",
     "network": "Unlocked",
@@ -1775,8 +1775,8 @@ window.DENZ_PRODUCTS=[
   {
     "id": "bn-16-pro",
     "name": "iPhone 16 Pro",
-    "category": "brand-new",
-    "categoryLabel": "Brand New",
+    "category": "sealed-box",
+    "categoryLabel": "Sealed Box",
     "condition": "Brand new · Sealed box",
     "battery": "100% / new",
     "network": "Unlocked",
@@ -1853,8 +1853,8 @@ window.DENZ_PRODUCTS=[
   {
     "id": "bn-16-pro-max",
     "name": "iPhone 16 Pro Max",
-    "category": "brand-new",
-    "categoryLabel": "Brand New",
+    "category": "sealed-box",
+    "categoryLabel": "Sealed Box",
     "condition": "Brand new · Sealed box",
     "battery": "100% / new",
     "network": "Unlocked",
@@ -4473,7 +4473,7 @@ window.DENZ_PRODUCTS=[
     "id": "rf-17-pro-max-512-current",
     "name": "iPhone 17 Pro Max",
     "condition": "Still new",
-    "battery": "100% · Battery changed",
+    "battery": "100%",
     "network": "eSIM only · American stock",
     "prices": {
       "512GB": 23500
@@ -4481,7 +4481,7 @@ window.DENZ_PRODUCTS=[
     "storageOptions": [
       "512GB"
     ],
-    "notes": "Cycle count 22. Battery has been changed.",
+    "notes": "Cycle count 22.",
     "images": [
       "assets/img/products/cheaper-options/iphone-17-pro-max-512-r23500.webp"
     ]
@@ -4527,14 +4527,14 @@ window.DENZ_PRODUCTS=[
     "id": "rf-13-128-r6300",
     "name": "iPhone 13",
     "condition": "8/10",
-    "battery": "100% · Battery changed",
+    "battery": "100%",
     "prices": {
       "128GB": 6300
     },
     "storageOptions": [
       "128GB"
     ],
-    "notes": "Battery has been replaced with an original battery.",
+    "notes": "",
     "video": "assets/videos/cheaper-options/iphone-13-128-r6300-correct.mp4",
     "poster": "assets/videos/cheaper-options/iphone-13-128-r6300-correct-poster.jpg"
   },
@@ -4659,14 +4659,14 @@ window.DENZ_PRODUCTS=[
     "id": "rf-11-64-r4200-b100",
     "name": "iPhone 11",
     "condition": "7/10",
-    "battery": "100% · Battery changed",
+    "battery": "100%",
     "prices": {
       "64GB": 4200
     },
     "storageOptions": [
       "64GB"
     ],
-    "notes": "Battery changed.",
+    "notes": "",
     "video": "assets/videos/cheaper-options/iphone-11-64-r4200-b100.mp4",
     "poster": "assets/videos/cheaper-options/iphone-11-64-r4200-b100-poster.jpg"
   },
@@ -4872,14 +4872,14 @@ window.DENZ_PRODUCTS=[
     "id": "rf-17-pro-max-256-b100",
     "name": "iPhone 17 Pro Max",
     "condition": "10/10 · Very clean",
-    "battery": "100% · Battery changed",
+    "battery": "100%",
     "prices": {
       "256GB": 25500
     },
     "storageOptions": [
       "256GB"
     ],
-    "notes": "Very clean unit. Battery has been changed.",
+    "notes": "Very clean unit.",
     "video": "assets/videos/cheaper-options/iphone-17-pro-max-256-b100.mp4",
     "poster": "assets/videos/cheaper-options/iphone-17-pro-max-256-b100-poster.jpg"
   }
